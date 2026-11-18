@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#191c1d">
+    <meta name="description" content="PLOT Studio — visual website builder and logic editor.">
+    <title>PLOT Studio</title>
+    <link rel="icon" type="image/webp" href="/99host-assets/plot-mark.webp">
+    <link rel="stylesheet" href="./studio.css?v=element-library">
+    <link rel="stylesheet" href="./dock-layout.css">
+    <link rel="stylesheet" href="./inspector.css">
+    <link rel="stylesheet" href="./logic.css">
+    <link rel="stylesheet" href="./data-editor.css">
+    <link rel="stylesheet" href="./backend-editor.css">
+    <link rel="stylesheet" href="./image-library.css">
+    <link rel="stylesheet" href="./block-variant-picker.css">
+    <link rel="stylesheet" href="./paint-editor.css">
+    <link rel="stylesheet" href="./workspace-shell.css">
+    <link rel="stylesheet" href="./phone-preview.css">
+  </head>
+  <body>
+    <header class="appbar">
+      <div class="app-start">
+        <a class="brand" href="./" target="_top" aria-label="PLOT Studio"><span class="brand-symbol"><img src="/99host-assets/plot-mark.webp" width="29" height="29" alt=""></span><span>PLOT<span class="brand-period">.</span></span></a>
+        <div class="project-control">
+          <button class="project-trigger" id="project-trigger" type="button" aria-haspopup="true" aria-expanded="false"><span id="project-name">Design</span><span data-icon="chevron-down"></span></button>
+          <div class="project-menu" id="project-menu" hidden>
+            <button type="button" data-project-action="rename"><span data-icon="edit"></span>Rename project</button>
+            <button type="button" data-project-action="themes"><span data-icon="sliders"></span>Site themes</button>
+            <button type="button" data-project-action="new"><span data-icon="plus"></span>New blank project</button>
+            <button type="button" data-project-action="save"><span data-icon="save"></span>Download .plot project</button>
+            <button type="button" data-project-action="import"><span data-icon="upload"></span>Import project</button>
+            <button type="button" data-project-action="server-save"><span data-icon="save"></span>Save to server</button>
+            <button type="button" data-project-action="server-library"><span data-icon="globe"></span>Server projects</button>
+            <button type="button" data-project-action="hosting"><span data-icon="server"></span>Publish project</button>
+            <button type="button" data-project-action="demo"><span data-icon="layers"></span>Open Lindenbank House demo</button>
+            <button type="button" data-project-action="database-demo"><span data-icon="database"></span>Open form + database demo</button>
+            <a href="/docs" target="_blank" rel="noopener"><span data-icon="book"></span>Handbook</a>
+            <a href="/studio/account" target="_top"><span data-icon="lock"></span>Account</a>
+            <form method="post" action="/studio/logout" target="_top"><button type="submit"><span data-icon="lock"></span>Sign out</button></form>
+          </div>
+          <input type="file" id="import-project" accept=".plot" hidden>
+        </div>
+      </div>
+      <nav class="mode-switch" aria-label="Editor views">
+        <button class="mode-button" type="button" data-mode="design" aria-pressed="true"><span data-icon="layout"></span>Design</button>
+        <button class="mode-button" type="button" data-mode="logic" aria-pressed="false"><span data-icon="nodes"></span>Logic</button>
+        <button class="mode-button" type="button" data-mode="data" aria-pressed="false"><span data-icon="database"></span>Data</button>
+        <button class="mode-button" type="button" data-mode="backend" aria-pressed="false"><span data-icon="server"></span>Backend</button>
+        <button class="mode-button" type="button" data-mode="paint" aria-pressed="false"><span data-icon="brush"></span>Paint</button>
+        <button class="mode-button" type="button" data-mode="code" aria-pressed="false"><span data-icon="code"></span>Code</button>
+      </nav>
+      <div class="app-actions">
+        <span class="saved" id="saved-status"><i></i><span>Saved locally</span></span>
+        <a class="ui-button quiet docs-action" href="/docs" target="_blank" rel="noopener"><span data-icon="book"></span><span>Docs</span></a>
+        <button class="ui-button quiet image-library-action" data-command="image-library" type="button" aria-label="Assets" title="Image assets"><span data-icon="image"></span><span>Assets</span></button>
+        <button class="ui-button quiet preview-action" data-command="preview" type="button" aria-label="Preview"><span data-icon="play"></span><span>Preview</span></button>
+        <button class="ui-button primary" data-command="export" type="button"><span data-icon="download"></span><span>Export</span></button>
+      </div>
+    </header>
+
+    <main class="app-workspace">
+      <section class="design-workspace" id="design-workspace" aria-label="Website editor">
+        <aside class="library" id="library" aria-label="Pages and elements" tabindex="-1">
+          <div class="library-tabs" role="group" aria-label="Library tabs">
+            <button type="button" data-library="blocks" aria-pressed="true"><span data-icon="grid"></span><span>Elements</span></button>
+            <button type="button" data-library="layers" aria-pressed="false"><span data-icon="layers"></span><span>Layers</span></button>
+            <button type="button" data-library="pages" aria-pressed="false"><span data-icon="pages"></span><span>Pages</span></button>
+          </div>
+          <div class="library-main" id="library-content"></div>
+          <div class="library-bottom"><span data-icon="keyboard"></span><span>Drag an element or click to add</span></div>
+        </aside>
+
+        <div class="dock-resizer" data-dock-handle="library" role="separator" aria-label="Resize library" aria-orientation="vertical" aria-controls="library" tabindex="0" title="Drag to resize. Double-click to reset." hidden></div>
+
+        <section class="canvas-panel" aria-label="Canvas">
+          <div class="canvas-toolbar">
+            <div class="canvas-start">
+              <button class="icon-button dock-toggle" type="button" data-command="library" aria-label="Show library" aria-controls="library" aria-expanded="false" title="Show library"><span data-icon="dock-left"></span></button>
+              <button class="icon-button undo" type="button" data-command="undo" aria-label="Undo" title="Undo (Ctrl+Z)"><span data-icon="undo"></span></button>
+              <button class="icon-button undo" type="button" data-command="redo" aria-label="Redo" title="Redo (Ctrl+Shift+Z)"><span data-icon="redo"></span></button>
+              <label class="canvas-page" title="Current page"><span class="sr-only">Current page</span><select id="page-picker"></select></label>
+            </div>
+            <div class="devices" role="group" aria-label="Preview device">
+              <button class="icon-button" data-device="desktop" type="button" aria-label="Desktop" title="Desktop" aria-pressed="true"><span data-icon="monitor"></span></button>
+              <button class="icon-button" data-device="tablet" type="button" aria-label="Tablet" title="Tablet" aria-pressed="false"><span data-icon="tablet"></span></button>
+              <button class="icon-button" data-device="mobile" type="button" aria-label="Phone" title="Phone" aria-pressed="false"><span data-icon="mobile"></span></button>
+            </div>
+            <div class="canvas-end">
+              <span id="canvas-width" class="canvas-width"></span>
+              <button class="icon-button canvas-transform-trigger" data-command="canvas-transform" type="button" aria-label="Canvas transform" aria-pressed="true" title="Canvas transform handles"><span data-icon="move"></span></button>
+              <button class="icon-button dock-focus-toggle" type="button" data-command="canvas-only" aria-label="Canvas only" aria-controls="library inspector-panel" aria-pressed="false" title="Canvas only"><span data-icon="focus"></span></button>
+              <button class="icon-button dock-toggle" type="button" data-command="inspector" aria-label="Show inspector" aria-controls="inspector-panel" aria-expanded="false" title="Show inspector"><span data-icon="dock-right"></span></button>
+            </div>
+          </div>
+          <div class="canvas-viewport" id="canvas-viewport">
+            <div class="artboard-chrome" id="artboard-chrome"><span><span data-icon="globe"></span><span id="artboard-path">/</span></span><span id="artboard-device">Desktop</span></div>
+            <div class="phone-picker" id="canvas-phone-picker" hidden>
+              <select id="canvas-phone-model" aria-label="Phone model">
+                <option value="mobile">iPhone 13 Pro</option>
+                <option value="galaxy-s25">Galaxy S25 · 2025</option>
+                <option value="galaxy-j3">Galaxy J3 · 2018</option>
+              </select>
+              <button type="button" class="phone-mode" id="canvas-phone-browser" aria-pressed="true">Browser bars</button>
+              <span class="phone-viewport-label" id="canvas-phone-viewport"></span>
+            </div>
+            <div class="device-frame" id="canvas-device-frame">
+              <div class="device-screen">
+                <div class="frame-mount" id="frame-mount">
+                  <iframe title="Site canvas" id="design-frame" sandbox="allow-scripts"></iframe>
+                  <div id="canvas-drop-target" aria-hidden="true" hidden></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="canvas-footer">
+            <span id="canvas-context">Page</span>
+            <span id="canvas-count"></span>
+            <label class="canvas-scale"><span class="sr-only">Canvas zoom</span>
+              <select id="canvas-scale" title="Canvas zoom">
+                <option value="fit">Fit</option><option value="0.5">50%</option><option value="0.75">75%</option>
+                <option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option>
+              </select>
+            </label>
+            <div class="canvas-place-tools" id="canvas-place-tools" hidden><span role="status">Choose a spot on the canvas</span><button type="button" class="library-variants" data-command="cancel-asset-placement">Cancel</button></div>
+          </footer>
+        </section>
+
+        <button class="dock-backdrop" type="button" aria-label="Close side panel" tabindex="-1" hidden></button>
+        <div class="dock-resizer" data-dock-handle="inspector" role="separator" aria-label="Resize inspector" aria-orientation="vertical" aria-controls="inspector-panel" tabindex="0" title="Drag to resize. Double-click to reset." hidden></div>
+
+        <aside class="inspector-panel" id="inspector-panel" aria-label="Inspector" tabindex="-1">
+          <div id="inspector"></div>
+        </aside>
+      </section>
+
+      <section class="logic-workspace" id="logic-workspace" aria-label="Logic editor" hidden>
+        <div id="logic"></div>
+      </section>
+
+      <section id="data-workspace" class="data-workspace" aria-label="Project database" hidden><div id="data-editor"></div></section>
+      <section id="backend-workspace" aria-label="Backend editor" hidden><div id="backend-editor"></div></section>
+      <section id="paint-workspace" aria-label="Paint editor" hidden><div id="paint-editor"></div></section>
+
+      <section class="code-workspace" id="code-workspace" aria-label="Site code" hidden>
+        <aside class="code-files">
+          <div class="file-heading"><h1>Site files</h1><p>Portable code for any static host.</p></div>
+          <div id="code-files"></div>
+          <div class="code-export"><button class="ui-button primary" data-command="export" type="button"><span data-icon="download"></span>Download ZIP</button></div>
+        </aside>
+        <div class="code-main">
+          <div class="code-toolbar"><strong id="code-filename">index.html</strong><button class="ui-button quiet" data-command="copy" type="button"><span data-icon="copy"></span>Copy code</button></div>
+          <pre id="code-pre" tabindex="0"><code id="code-source"></code></pre>
+          <textarea id="custom-code" class="custom-code" aria-label="Custom code" spellcheck="false" autocomplete="off" hidden></textarea>
+          <div class="code-status" id="code-status"></div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title">
+      <div class="preview-bar"><strong><span data-icon="play"></span><span id="preview-title">Live preview</span></strong><div><select id="preview-page" aria-label="Preview page"></select><select id="preview-device" aria-label="Preview device"><option value="desktop">Desktop</option><option value="tablet">Tablet</option><optgroup label="Phones"><option value="mobile">iPhone 13 Pro</option><option value="galaxy-s25">Galaxy S25 · 2025</option><option value="galaxy-j3">Galaxy J3 · 2018</option></optgroup></select><button class="icon-button" type="button" data-command="preview-console" aria-expanded="false" aria-controls="preview-console" aria-label="Show preview console" title="Console"><span data-icon="code"></span></button><button class="icon-button" type="button" data-command="preview-reset" aria-label="Restart preview" title="Restart preview"><span data-icon="reset"></span></button><button class="icon-button" type="button" data-command="close-preview" aria-label="Close preview" title="Close preview"><span data-icon="x"></span></button></div></div>
+      <div id="preview-alert" hidden></div>
+      <div class="phone-picker preview-phone-controls" id="preview-phone-controls" hidden><button type="button" class="phone-mode" id="preview-phone-browser" aria-pressed="true">Browser bars</button><span class="phone-viewport-label" id="preview-phone-viewport"></span></div>
+      <div id="preview-shell"><div class="device-frame" id="preview-device-frame"><div class="device-screen"><div id="preview-artboard"><iframe id="preview-frame" sandbox="allow-scripts allow-forms" title="Interactive site preview"></iframe></div></div></div></div>
+      <section id="preview-console" aria-label="Preview console" hidden>
+        <div class="console-toolbar"><strong>Console</strong><div><label title="Off by default for each preview"><input id="preview-network" type="checkbox"> Allow fetch and sockets</label><label><input id="preview-permissions" type="checkbox" checked> Enforce public API permissions</label><button id="preview-apply" class="ui-button quiet" type="button" data-command="preview-apply" hidden>Keep test records</button><button class="ui-button quiet" type="button" data-command="preview-clear">Clear</button></div></div>
+        <ol id="preview-log" aria-live="polite"></ol>
+      </section>
+    </dialog>
+
+    <dialog class="small-dialog" id="edit-dialog">
+      <form method="dialog" id="edit-form">
+        <div class="dialog-heading"><h2 id="edit-title"></h2><button class="icon-button" type="submit" value="cancel" formnovalidate aria-label="Close"><span data-icon="x"></span></button></div>
+        <div id="edit-fields"></div>
+        <footer><button class="ui-button quiet" type="submit" value="cancel" formnovalidate>Cancel</button><button class="ui-button primary" id="edit-confirm" type="submit" value="accept">Save</button></footer>
+      </form>
+    </dialog>
+
+    <dialog class="small-dialog remote-dialog" id="remote-dialog" aria-labelledby="remote-heading">
+      <div class="dialog-heading"><h2 id="remote-heading">Server projects</h2><button class="icon-button" type="button" data-remote-close aria-label="Close"><span data-icon="x"></span></button></div>
+      <div data-remote-content></div>
+      <label class="remote-checkpoint" data-remote-checkpoint-label>Revision note <span>Optional</span><input type="text" maxlength="80" data-remote-checkpoint placeholder="e.g. Before changing the intake workflow"></label>
+      <div data-remote-status role="status"></div>
+      <footer><button class="ui-button quiet" type="button" data-remote-fork hidden>Save as copy</button><button class="ui-button primary" type="button" data-remote-save>Save current project</button></footer>
+    </dialog>
+
+    <dialog class="small-dialog" id="export-dialog" aria-labelledby="export-heading">
+      <form id="export-form" method="dialog">
+        <div class="dialog-heading"><h2 id="export-heading">Export with server runtime</h2><button class="icon-button" type="submit" value="cancel" aria-label="Close"><span data-icon="x"></span></button></div>
+        <p class="export-note">The ZIP includes HTML, CSS, JavaScript, the site schema and a Python runtime.</p>
+        <label class="export-rows"><input id="export-rows" type="checkbox"> Include records as seed data</label>
+        <footer><button class="ui-button quiet" value="cancel">Cancel</button><button class="ui-button primary" value="download"><span data-icon="download"></span>Download ZIP</button></footer>
+      </form>
+    </dialog>
+
+    <dialog class="small-dialog theme-dialog" id="theme-dialog" aria-labelledby="theme-title">
+      <div class="dialog-heading"><h2 id="theme-title">Site themes</h2><button class="icon-button" type="button" data-command="close-themes" aria-label="Close"><span data-icon="x"></span></button></div>
+      <div id="theme-options"></div>
+    </dialog>
+
+    <dialog class="image-library-dialog" id="image-library" aria-labelledby="image-library-title">
+      <div class="image-library-header">
+        <div><h2 id="image-library-title">Image assets</h2><p data-image-instructions></p></div>
+        <form method="dialog"><button class="icon-button" type="submit" aria-label="Close image library"><span data-icon="x"></span></button></form>
+      </div>
+      <div class="image-library-content">
+        <section class="image-library-browser" aria-label="Browse images">
+          <div class="image-library-sources" role="group" aria-label="Image source">
+            <button class="ui-button quiet" type="button" data-image-source="uploads" aria-pressed="true">My images</button>
+            <button class="ui-button quiet" type="button" data-image-source="stock" aria-pressed="false">The Stock of Freedom</button>
+          </div>
+          <div class="image-library-controls">
+            <input type="search" data-image-search placeholder="Search images" aria-label="Search images">
+            <button class="ui-button primary" data-image-upload-button type="button">Upload images</button>
+          </div>
+          <input type="file" data-image-upload accept=".png,.jpeg,.jpg,.webp" multiple hidden>
+          <p class="image-library-help" data-image-upload-help>PNG, JPEG or WebP up to 12 MB each. You can drop files here.</p>
+          <div class="image-library-stock-tools" data-image-stock-tools hidden>
+            <label><span id="image-library-category-label">Category</span><select data-image-category aria-labelledby="image-library-category-label"><option value="">All categories</option></select></label>
+            <label><span id="image-library-shape-label">Orientation</span><select data-image-shape aria-labelledby="image-library-shape-label">
+              <option value="">Any orientation</option>
+              <option value="landscape">Landscape</option>
+              <option value="portrait">Portrait</option>
+              <option value="square">Square</option>
+              <option value="panorama">Panoramic</option>
+            </select></label>
+            <p class="image-library-stock-license">Generated imagery by Convro / CheapWork. Business website use requires a separate license. <a href="https://cheapwork.stream/stock-of-freedom/#license" target="_blank" rel="noopener noreferrer">Read source license</a></p>
+            <p class="image-library-stock-results" data-image-stock-results aria-live="polite"></p>
+          </div>
+          <div class="image-library-grid" data-image-list></div>
+          <button class="ui-button quiet" type="button" data-image-next hidden>Load more</button>
+        </section>
+        <section class="image-library-detail" data-image-detail aria-label="Selected image" hidden>
+          <button class="ui-button quiet image-library-back" type="button" data-image-back hidden>Back to results</button>
+          <div class="image-library-preview"><img data-image-preview alt=""></div>
+          <div><h3 data-image-title></h3><p data-image-meta></p><p data-image-description hidden></p></div>
+          <label class="image-library-url" data-image-url>Public image URL<input data-image-address readonly></label>
+          <div class="image-library-operations">
+            <button class="ui-button primary" type="button" data-image-use>Use on page</button>
+            <button class="ui-button quiet" type="button" data-image-place hidden>Place on canvas</button>
+            <button class="ui-button quiet" type="button" data-image-save hidden>Save to My images</button>
+            <button class="ui-button quiet" type="button" data-image-copy>Copy link</button>
+            <button class="ui-button quiet" type="button" data-image-edit>Edit in Paint</button>
+          </div>
+        </section>
+      </div>
+      <div class="image-library-status" data-image-status role="status"></div>
+    </dialog>
+
+    <div id="toast" role="status" aria-live="polite" hidden><span data-icon="check"></span><span id="toast-text"></span></div>
+    <script type="module" src="./studio.mjs"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+.cert-practice-page .cert-local-nav { justify-content: center; }
+.cert-practice-page .cert-practice-hero {
+  display: grid;
+  justify-items: center;
+  padding-block: clamp(24px, 4vw, 54px) clamp(32px, 5vw, 66px);
+  text-align: center;
+}
+.cert-practice-page .cert-practice-hero h1 {
+  font: 700 clamp(37px, 6vw, 80px)/1.02 'Instrument Sans', 'Segoe UI', sans-serif;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.cert-practice-hero p {
+  max-width: 56ch;
+  margin: 16px auto 18px;
+  color: var(--cert-muted);
+  font-size: clamp(16px, 1.62vw, 21px);
+  text-wrap: pretty;
+}
+.cert-practice-hero .cert-actions { justify-content: center; }
+.cert-practice-layout {
+  display: grid;
+  grid-template-columns: minmax(175px, 215px) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 78px);
+  align-items: start;
+  padding-block: 0 clamp(64px, 9vw, 130px);
+}
+.cert-practice-page .cert-practice-index {
+  position: sticky;
+  top: 24px;
+  padding: 17px 0 22px;
+  border-top: 1px solid var(--cert-rule);
+}
+.cert-practice-page .cert-practice-index h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+.cert-practice-index ol {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0;
+  padding-inline-start: 24px;
+  color: var(--cert-accent);
+  font-size: 14px;
+}
+.cert-practice-index a { color: var(--cert-ink); }
+.cert-practice-content { min-width: 0; }
+.cert-practice-task {
+  scroll-margin-top: 92px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cert-rule);
+}
+.cert-practice-task + .cert-practice-task { margin-top: clamp(58px, 8vw, 114px); }
+.cert-practice-page .cert-practice-task-head { margin-bottom: clamp(22px, 4vw, 44px); }
+.cert-practice-page .cert-practice-task-head h2 {
+  max-width: 24ch;
+  font-size: clamp(30px, 3.5vw, 50px);
+}
+.cert-practice-prompt {
+  max-width: 78ch;
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-inline-start: 2px solid var(--cert-accent);
+  background: var(--cert-panel);
+}
+.cert-practice-prompt > p {
+  margin: 0 0 6px;
+  color: var(--cert-accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+.cert-practice-prompt blockquote,
+.cert-practice-prompt blockquote p { margin: 0; }
+.cert-practice-page .cert-practice-exam-shot { margin-top: 16px; }
+.cert-practice-image.cert-practice-exam-shot a { padding: 0; }
+.cert-practice-page .cert-practice-exam-shot img { width: 100%; }
+.cert-practice-work code { overflow-wrap: anywhere; }
+.cert-practice-work {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(230px, 1fr);
+  gap: clamp(22px, 4vw, 48px);
+  align-items: start;
+}
+.cert-practice-work h3 { font-size: clamp(23px, 2.6vw, 32px); }
+.cert-practice-steps { margin: 18px 0 0; padding-inline-start: 24px; }
+.cert-practice-steps li { padding-inline-start: 6px; }
+.cert-practice-steps li + li { margin-top: 16px; }
+.cert-practice-steps li::marker { color: var(--cert-accent); font-weight: 600; }
+.cert-practice-steps p { margin: 3px 0 0; color: var(--cert-muted); }
+.cert-practice-steps + h3 { margin-top: 26px; }
+.cert-practice-work pre {
+  padding: 14px;
+  overflow: auto;
+  font-size: 14px;
+  background: var(--cert-panel);
+  border: 1px solid var(--cert-rule);
+}
+.cert-practice-work h3 + p { margin-top: 10px; color: var(--cert-muted); }
+.cert-practice-work aside {
+  padding: clamp(16px, 2vw, 24px);
+  background: var(--cert-panel);
+}
+.cert-practice-checks { margin: 16px 0 19px; }
+.cert-practice-checks > div { padding: 11px 0 12px; border-top: 1px solid var(--cert-rule); }
+.cert-practice-checks dt { color: var(--cert-ink); font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+.cert-practice-checks dd { margin: 4px 0 0; color: var(--cert-muted); font-size: 14px; }
+.cert-practice-work aside .cert-text-action { font-size: 14px; }
+.cert-practice-shots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(15px, 2.4vw, 29px);
+  align-items: start;
+  margin-top: clamp(24px, 4vw, 44px);
+}
+.cert-practice-shots .cert-practice-image-wide { grid-column: 1 / -1; }
+.cert-practice-image a {
+  display: grid;
+  justify-items: center;
+  padding: clamp(5px, 1vw, 12px);
+  border: 1px solid var(--cert-rule);
+  background: var(--cert-panel);
+}
+.cert-practice-page .cert-practice-image img { width: auto; max-width: 100%; height: auto; }
+.cert-practice-image a:hover { border-color: var(--cert-accent); }
+.cert-practice-closing { margin-top: 36px; }
+
+@media (max-width: 1020px) {
+  .cert-practice-layout { grid-template-columns: minmax(0, 1fr); }
+  .cert-practice-page .cert-practice-index { position: static; }
+  .cert-practice-index ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 30px; }
+}
+@media (max-width: 700px) {
+  .cert-practice-work { grid-template-columns: minmax(0, 1fr); }
+  .cert-practice-shots { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 420px) {
+  .cert-practice-index ol { grid-template-columns: minmax(0, 1fr); }
+}

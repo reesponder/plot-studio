@@ -1,0 +1,7 @@
+{
+  "name": "plot-studio-build-toolchain",
+  "private": true,
+  "dependencies": {
+    "esbuild": "0.28.2"
+  }
+}

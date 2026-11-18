@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#181817">
+    <meta name="description" content="The PLOT Studio guide to designing pages, from type and colour to responsive layouts, image crops and editable project templates.">
+    <title>Design handbook · PLOT Studio</title>
+    <link rel="canonical" href="https://plotstudio.pro/docs/design">
+    <link rel="icon" href="/99host-assets/plot-mark.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="/99host-assets/site-chrome.css?v=5">
+    <link rel="stylesheet" href="/99host-assets/design-handbook.css?v=3">
+    <script type="module" src="/99host-assets/site-chrome.mjs?v=1"></script>
+    <script src="/99host-assets/cookie-notice.js?v=1" defer></script>
+  </head>
+  <body class="design-handbook">
+    <a class="plot-skip" href="#main">Skip to design handbook</a>
+    <header class="plot-site-header">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="34" height="34" alt="">PLOT.</a>
+        <button class="plot-menu-button" type="button" aria-expanded="false" aria-controls="plot-main-navigation" aria-label="Open navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav id="plot-main-navigation" class="plot-site-nav" aria-label="Main navigation">
+          <a href="/#overview">Overview</a>
+          <a href="/docs" aria-current="location">Docs</a>
+          <a href="/certification">Certification</a>
+          <a href="/license">Licence</a>
+          <a class="plot-site-action" href="/studio/">Open Studio</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <header class="design-hero">
+        <div class="design-shell">
+          <div class="design-hero-copy">
+            <h1>Design handbook</h1>
+            <p>Type, colour and responsive layouts, with complete projects you can edit in PLOT Studio.</p>
+            <div class="design-actions"><a class="design-button" href="#templates">Browse 12 templates</a><a href="#composition">Read the guide</a></div>
+          </div>
+          <ul class="design-hero-spread" aria-label="Selected templates">
+            <li class="design-hero-featured"><a href="#template-quiet-forms-architecture">
+              <span class="design-hero-preview"><img src="/99host-assets/handbook/design-template-quiet-forms-architecture-desktop.webp?v=uhd1" width="3840" height="2160" alt="Serif lettering and a timber cabin on the Quiet Forms homepage." fetchpriority="high" decoding="async"></span>
+              <span class="design-hero-caption">Quiet Forms</span>
+            </a></li>
+            <li><a href="#template-field-notes-portfolio">
+              <span class="design-hero-preview"><img src="/99host-assets/handbook/design-template-field-notes-portfolio-phone.webp?v=uhd1" width="2160" height="3840" alt="The Field Notes portfolio with blue type and a photograph of a print in progress." decoding="async"></span>
+              <span class="design-hero-caption">Field Notes</span>
+            </a></li>
+            <li><a href="#template-room-tone-exhibition">
+              <span class="design-hero-preview"><img src="/99host-assets/handbook/design-template-room-tone-exhibition-phone.webp?v=uhd1" width="2160" height="3840" alt="The Room Tone exhibition opening with black lettering on a yellow poster." decoding="async"></span>
+              <span class="design-hero-caption">Room Tone</span>
+            </a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="design-shell design-layout">
+        <nav class="design-index" aria-labelledby="design-index-title">
+          <a class="design-handbook-return" href="/docs">All handbook chapters</a>
+          <h2 id="design-index-title">On this page</h2>
+          <ul>
+            <li><a href="#composition">Page composition</a></li>
+            <li><a href="#element-variants">Element variants</a></li>
+            <li><a href="#canvas-transforms">Move and resize on the canvas</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#colour">Colour and themes</a></li>
+            <li><a href="#spacing">Spacing and dimensions</a></li>
+            <li><a href="#grids">Columns and grids</a></li>
+            <li><a href="#hero">The hero</a></li>
+            <li><a href="#responsive">Responsive layout</a></li>
+            <li><a href="#images">Images and graphics</a></li>
+            <li><a href="#paint-and-assets">Paint and Assets</a></li>
+            <li><a href="#stock-of-freedom">The Stock of Freedom</a></li>
+            <li><a href="#surfaces">Borders and shadows</a></li>
+            <li><a href="#navigation">Navigation and forms</a></li>
+            <li><a href="#templates">Editable templates</a></li>
+            <li><a href="#layout-recipes">Layout recipes</a></li>
+            <li><a href="#screenshots">Studio screenshots</a></li>
+            <li><a href="#review">Review and handoff</a></li>
+          </ul>
+        </nav>
+
+        <article class="design-chapter" aria-label="Design instructions">
+          <section class="design-topic" id="composition" aria-labelledby="composition-title">
+            <div class="design-prose">
+              <h2 id="composition-title">Compose the page around a decision</h2>
+              <p>Write the main question the visitor brings to the page and the action they should be able to take. On an architecture portfolio, that might be whether the studio has handled a similar renovation. A relevant project, a short description of the scope, and a way to ask about availability can answer it.</p>
+              <p>Sketch the order in plain text. Lead with the project or offer, place its evidence nearby, and add supporting information where the visitor will need it. Give each region a purpose. If readers compare options, use repeated structure. If they follow a sequence, let each step have the room its content needs.</p>
+              <h3>Build the hierarchy in Layers</h3>
+              <p>Open <strong>Design</strong> and choose blocks in <strong>Elements</strong>. Start with a <strong>Section</strong> for each region and add the actual headings, text, and actions. Nest related blocks inside the same container and use <strong>Layers</strong> to inspect the resulting order. Add <strong>Columns</strong> only where adjacent content benefits from being compared or read together.</p>
+              <p>Use the block’s <strong>Content</strong> tab for words, links, sources and element-level options. Use <strong>Style</strong> for its layout and appearance. Read the page from top to bottom before polishing local details. That order carries into the narrow layout and influences keyboard navigation.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="element-variants" aria-labelledby="element-variants-title">
+            <div class="design-prose">
+              <h2 id="element-variants-title">Choose an editable block variant</h2>
+              <p>In Design, open <strong>Elements → Variants</strong> to browse the library, or click the style count beneath a specific element. Search for a block, then compare its layouts and four color palettes in the Desktop and Phone previews. The normal element button still adds the default block; you can also drag that button onto the canvas.</p>
+              <p>For a page with many destinations, open <strong>Navigation</strong> and compare a layout that gives links room with one that puts secondary pages in a menu. A hero variant controls the introduction below that navigation. Try one with the real page title before committing to a large or unusually narrow heading.</p>
+              <p>Select an existing block and choose <strong>Change variant</strong> from the inspector to try another appearance in place. Then use <strong>Content</strong> to edit the words, links and images and <strong>Style</strong> to adjust the result. Use the device controls to check the result at each width.</p>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-element-variants.webp" aria-label="Open full-size screenshot of element variants"><img src="/99host-assets/handbook/current-element-variants.webp" width="3840" height="2160" alt="The element variant picker with Navigation selected, four palettes and a preview of the Masthead layout at phone width." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Navigation variants.</strong> Select a layout, choose a palette and compare its desktop and phone views.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="design-topic" id="canvas-transforms" aria-labelledby="canvas-transforms-title">
+            <div class="design-prose">
+              <h2 id="canvas-transforms-title">Move and resize on the canvas</h2>
+              <p>With <strong>Canvas transform</strong> enabled, select a block in Design. Pull the <strong>Move element</strong> grip to reposition it, or drag an edge or corner to resize it. Hold <kbd>Shift</kbd> to constrain movement to one axis or keep the proportions when resizing from a corner. With a handle in focus, the arrow keys adjust it by one pixel, or ten with <kbd>Shift</kbd>. <kbd>Esc</kbd> cancels a drag, and <strong>Undo</strong> reverses a completed gesture.</p>
+              <p>For an exact offset, open <strong>Style → Position</strong> and enter <strong>Canvas X</strong> and <strong>Canvas Y</strong>. Moving a block leaves its space in the layout intact. Reorder or nest it in <strong>Layers</strong> to change the structure itself, or use the inspector’s positioning controls for deliberate overlaps. Switch the canvas to Tablet or Phone to adjust that breakpoint and see how the surrounding content fits.</p>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-canvas-transform.webp" aria-label="Open full-size screenshot of canvas transform handles"><img src="/99host-assets/handbook/current-canvas-transform.webp" width="3840" height="2160" alt="A selected Navigation block on the design canvas, showing the move grip and handles for resizing." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Canvas controls.</strong> The center grip moves the block; the small handles change its dimensions.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="design-topic" id="typography" aria-labelledby="typography-title">
+            <div class="design-prose">
+              <h2 id="typography-title">Set type for the real copy</h2>
+              <p>In Design, clear the block selection to see <strong>Site typography</strong>. Choose <strong>Body text</strong> and <strong>Headings</strong>, and set the site sizes for <strong>H1</strong>, <strong>H2</strong>, <strong>H3</strong> and <strong>Paragraph</strong>. Search the font picker and compare its samples using the actual words you intend to publish. Check weight, punctuation, accents and long names.</p>
+              <p>Choose a clear hierarchy. Use one H1 for the page’s main subject. Use H2 for sections and H3 for their subsections. The <strong>Level</strong> in a Heading block sets its semantic role. You can change the visual size independently under <strong>Style</strong> and <strong>Typography</strong>.</p>
+              <h3>A starting scale for a service page</h3>
+              <p>Try 64 px for the desktop headline, 36 px for sections, 24 px for subsections and 17 px for body text. Use a body line height near <code>1.55</code> and start with a text maximum width of <code>62ch</code>. Check the longest paragraph and most awkward headline before applying the scale widely. A regular display weight can be enough when the headline is already large.</p>
+              <p>Open <strong>Font family</strong>, <strong>Size</strong>, <strong>Weight</strong>, <strong>Line height</strong>, <strong>Letter spacing</strong> and <strong>Alignment</strong> in the block inspector when that block needs a deliberate exception. Enter <code>1.55</code> as a unitless line-height ratio and lengths such as <code>42px</code> for size. A Hero has a dedicated <strong>Hero title size</strong> setting. Give the phone headline a smaller local size if it buries the next action.</p>
+              <p>For a smoothly resizing title, try <code>clamp(38px, 7vw, 96px)</code> under <strong>Hero title size</strong>. At 390 px the minimum protects readability. On a wide screen the maximum prevents the headline from overwhelming the photograph. Change the middle value if you want the title to grow faster between those limits. <a href="#screen-site-type">See the site type scale</a> and <a href="#screen-hero-type">the local Hero setting</a>.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="colour" aria-labelledby="colour-title">
+            <div class="design-prose">
+              <h2 id="colour-title">Give colours specific roles</h2>
+              <p>In the project menu, open <strong>Site themes</strong>. Editorial, Studio, Warm paper, Utility, Field notes and Technical each set a site-wide combination of display and body fonts, a type scale, background, text and accent. Choose the baseline early, then refine the blocks that need exceptions. Applying a theme later changes the shared settings, so revisit pages that already rely on them.</p>
+              <p>With the canvas deselected, use <strong>Site colors</strong> to change the accent. It appears in details such as primary buttons and focus outlines. For a specific Section, Heading or other block, use the <strong>Colors</strong> group in <strong>Style</strong> to set its background, text colour or opacity. Keep a short palette and assign roles you can reuse.</p>
+            </div>
+            <dl class="design-palette" aria-label="Example palette and its jobs">
+              <div class="design-sample-page"><dt>Page background</dt><dd><code>#F4F1EA</code></dd></div>
+              <div class="design-sample-text"><dt>Body text</dt><dd><code>#24251F</code></dd></div>
+              <div class="design-sample-action"><dt>Primary action</dt><dd><code>#244735</code></dd></div>
+              <div class="design-sample-surface"><dt>Adjacent surface</dt><dd><code>#DED7C9</code></dd></div>
+            </dl>
+            <div class="design-prose">
+              <p>Check contrast for the actual text and its background, including secondary copy and error states. Read a dark photograph at its brightest crop before placing text over it. A solid background behind copy gives more predictable results. Identify success and errors in words. A message should still make sense when its colour cannot be distinguished. <a href="#screen-accent-swatches">See the accent swatches</a>.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="spacing" aria-labelledby="spacing-title">
+            <div class="design-prose">
+              <h2 id="spacing-title">Place space where it belongs</h2>
+              <p>Padding surrounds the contents <em>inside</em> a block. Margin is space <em>outside</em> the block. Gap defines the intervals between the children of a flex or grid container. If three cards need the same separation, set the container’s Gap rather than giving every card its own margin.</p>
+              <p>A practical starting rhythm is 8 px between a label and value, 16 px between related elements, 24 px between a paragraph and its action, and 56–80 px between sections. Set a single larger padding value on a Section as a starting point, then use the individual controls when top, right, bottom or left need different values.</p>
+              <h3>Let content determine height</h3>
+              <p>Use <strong>Style</strong> and <strong>Dimensions</strong> to set <strong>Width</strong>, <strong>Max width</strong> and <strong>Min height</strong>. A width of <code>100%</code> follows the available container. A max width keeps a prose column or form from becoming unwieldy. A modest min height can give a hero or card breathing room while allowing longer content to grow.</p>
+              <p>When an element overflows, start with a long word, an unbroken URL, a fixed width, or the gap between columns. Try a general width or a narrower max width and check the children first. Use <strong>Overflow</strong> when a region deliberately scrolls or an image deliberately clips. Check keyboard focus and required text before clipping anything.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="grids" aria-labelledby="grids-title">
+            <div class="design-prose">
+              <h2 id="grids-title">Choose a grid around the content</h2>
+              <p>Add a <strong>Columns</strong> block and choose two, three or four columns in <strong>Content</strong>. Place the items inside it in Layers. Two columns can pair an image with an explanation. A group of three equal columns works for comparable items with similar amounts of information. Use a simpler grid when one item needs more space than the others.</p>
+              <p>For a specific proportion, select the Columns block and enter a value in <strong>Style</strong>, <strong>Layout</strong>, <strong>Grid columns</strong>. Try <code>minmax(0, 3fr) minmax(0, 2fr)</code> for a 60/40 split. Keep Gap around <code>24px</code> while comparing the widths. The <code>minmax(0, …)</code> tracks allow columns to shrink when space is tight.</p>
+              <p>A Section can also become a layout container through <strong>Display</strong>. With Flex selected, configure <strong>Direction</strong>, <strong>Wrap</strong>, <strong>Main axis</strong> and <strong>Cross axis</strong>. Use a wrapping row for controls of unequal width. Use Grid when alignment across columns matters.</p>
+              <p>Test the grid with the longest title or widest image in the actual content. Read the column order with a keyboard, then switch to Phone to see where everything lands. For a layout override, set the phone grid explicitly to <code>minmax(0, 1fr)</code> where necessary.</p>
+              <p>Follow the same project from <a href="#screen-grid-desktop">three tracks on Desktop</a> to <a href="#screen-grid-tablet">two on Tablet</a> and <a href="#screen-grid-phone">one on Phone</a>. In each view, the inspector shows which value belongs to that device.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="hero" aria-labelledby="hero-title">
+            <div class="design-prose">
+              <h2 id="hero-title">Choose the hero’s proportions</h2>
+              <p>Add a <strong>Hero</strong> block for the page’s opening. Set its heading, description, button label and URL. Choose <strong>Split</strong> for copy next to an image, <strong>Reverse</strong> for the opposite desktop arrangement, or <strong>Center</strong> for an opening with the copy centred above the image. If a Hero supplies the page’s H1, begin the next section at H2.</p>
+              <p>Use the image when it explains the work, shows the object or establishes a useful context. A close photograph can hold a compact crop. A product screen may need room for its text to remain readable. For a custom proportion, build a Section containing Columns and use separate Heading, Text, Button and Image blocks.</p>
+              <h3>Test the first screen</h3>
+              <p>Switch to Phone. Read the entire headline, see where the subject of the image lands and check how far the first action sits below the header. Shorten the copy, reduce the dedicated Hero title size or adjust section padding as needed. The built-in Split and Reverse layouts stack on narrow screens. Check their actual result in Preview.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="responsive" aria-labelledby="responsive-title">
+            <div class="design-prose">
+              <h2 id="responsive-title">Decide what changes at each width</h2>
+              <p>Desktop is the base style. Tablet overrides apply through <code>1023px</code> and Phone overrides through <code>767px</code>. A Phone value takes precedence for its own property. Where no Phone value is set, the Tablet or Desktop setting applies. The Studio artboards use <code>820px</code> for Tablet and <code>390px</code> for Phone to represent common widths.</p>
+              <ol>
+                <li>In Desktop, set the order of blocks and a sensible base layout.</li>
+                <li>In Tablet, check how many items can stay side by side. A four-column grid may need two tracks.</li>
+                <li>In Phone, select specific blocks and set the local styles that need to differ, such as grid columns, type, gap and padding.</li>
+                <li>Open <strong>Preview</strong>, choose each device and exercise the navigation, buttons and fields. Test a narrow real browser after exporting or publishing a rehearsal.</li>
+              </ol>
+              <p>If a small-screen decision makes a larger problem, find the block in <strong>Layers</strong> and inspect the value that is being inherited. <strong>Clear overrides</strong> resets the selected block’s style for the selected device. Use it after checking whether you still need any other overrides on that same block.</p>
+              <p>Give phone users the same information and destinations they need to finish the task. Condense spacing and rearrange the reading order first. Keep the contact path and important feedback visible after the page stacks.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="images" aria-labelledby="images-title">
+            <div class="design-prose">
+              <h2 id="images-title">Use direct image URLs and deliberate crops</h2>
+              <p>Add an <strong>Image</strong>, <strong>Hero</strong>, <strong>Card</strong> or <strong>Gallery</strong>. In Content, paste a direct <code>https://</code> link or use <strong>Choose from assets</strong>. To prepare your own graphic or upload an image to Studio, follow the workflow in <a href="#paint-and-assets">Paint and Assets</a>.</p>
+              <p>For a Gallery, use one line per image in the form <code>URL | Alt text | Caption</code>. The alt text describes the information or function that matters in context. The caption can name the subject, credit the work or give detail readers need. Where an image is purely decorative and the same information is already present in the page, leave its alt text empty.</p>
+              <h3>Set a frame and choose how it fills</h3>
+              <p>Start with the source crop, especially for a hero image. A horizontal subject may be lost if a tall phone frame crops the sides. In <strong>Style</strong>, use <strong>Dimensions</strong> to test width, height, <strong>Aspect ratio</strong> and <strong>Image fit</strong>. Give the image a bounded frame when you need a specific ratio. Choose <strong>Cover</strong> when it may crop to fill and <strong>Contain</strong> when the entire image must be visible.</p>
+              <p>Compare a photograph and a chart in a <code>16 / 9</code> frame. Let the photograph fill the frame with Cover if the edges can be cropped. Use Contain for the chart so the axis labels survive. A row can share one aspect ratio while individual images use different fit settings. <a href="#screen-image-dimensions">See the frame in the Dimensions inspector</a>.</p>
+              <p>Use a screenshot at a size readers can inspect. Keep labels as real HTML when readers need to search, copy or enlarge them. For a broad graphic, include a useful description and a direct link to its full-size image if fine detail matters. Review long galleries on a mobile connection and use appropriately sized source files.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="stock-of-freedom" aria-labelledby="stock-of-freedom-title">
+            <div class="design-prose">
+              <h2 id="stock-of-freedom-title">Find a photo in The Stock of Freedom</h2>
+              <p>Open <strong>Assets → The Stock of Freedom</strong> and search by subject or setting. Use the category and orientation filters to narrow the results. Select an image for a larger preview, then choose <strong>Use on page</strong> for a quick insertion or <strong>Place on canvas</strong> to choose where it goes. Hold <kbd>Shift</kbd> when placing inside a container.</p>
+              <p>To replace an image in a Hero, Card or another existing block, start from <strong>Choose from assets</strong> on its image field. Studio stores a copy in Assets. Check the crop at the size you will publish and edit the alternative text for this page. See <a href="https://cheapwork.stream/stock-of-freedom/#license">the catalogue’s license</a> for its business-use terms.</p>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-stock-of-freedom.webp" aria-label="Open full-size screenshot of the stock catalogue"><img src="/99host-assets/handbook/current-stock-of-freedom.webp" width="3840" height="2160" alt="Stock of Freedom search showing architecture results, a photo preview, category and orientation filters, and placement actions." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Stock in Assets.</strong> Preview a search result before you place it or save it to My images.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="design-topic" id="paint-and-assets" aria-labelledby="paint-and-assets-title">
+            <div class="design-prose">
+              <h2 id="paint-and-assets-title">Draw and place a graphic</h2>
+              <p>For an icon, stamp or illustration that will sit on several backgrounds, start with a transparent sheet in <strong>Paint</strong>. Choose the height and width for the raster artwork, then choose the visible size separately in the page’s <strong>Dimensions</strong>. A small graphic should still read at its actual page size. Check the silhouette and any thin strokes in Phone Preview.</p>
+              <h3>Build a badge with a clean edge</h3>
+              <ol>
+                <li>In <strong>Paint</strong>, choose <strong>Add sheet</strong>. Name it, enter a square size such as <code>256 × 256 px</code> and set <strong>Background</strong> to <strong>Transparent</strong>.</li>
+                <li>Use <strong>Ellipse</strong> with <strong>Fill shape</strong> to draw the badge. Choose a colour that will read against the page. Use <strong>Brush</strong> or <strong>Line</strong> for the mark, then check its <strong>Stroke width</strong> and <strong>Opacity</strong> in <strong>Tool settings</strong>.</li>
+                <li>Use <strong>Duplicate sheet</strong> from <strong>Sheet actions</strong> to make a light or dark variant. Name each sheet for the intended placement. Each one has its own canvas, and Paint can hold up to 24 sheets.</li>
+                <li>Use <strong>Select</strong> to mark the bounds, then <strong>Crop selection</strong> to trim excess transparent space. Keep enough space around the graphic to fit its intended frame. Use <strong>Fit</strong> to see the whole sheet again.</li>
+              </ol>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-paint-workspace.webp" aria-label="Open full-size screenshot of the Paint workspace"><img src="/99host-assets/handbook/current-paint-workspace.webp" width="1440" height="900" alt="Paint workspace showing drawing tools, canvas sheet tabs and the tool settings panel." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Paint workspace.</strong> Choose a tool, adjust its settings and switch between sheets above the canvas.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-paint-brush.webp" aria-label="Open full-size screenshot of Brush settings"><img src="/99host-assets/handbook/current-paint-brush.webp" width="1440" height="900" alt="Brush selected with stroke width, opacity and brush tip controls beside the drawing." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Brush settings.</strong> Enter an exact stroke width or use the slider, then adjust opacity for the selected brush tip.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-paint-sheets.webp" aria-label="Open full-size screenshot of Paint sheets"><img src="/99host-assets/handbook/current-paint-sheets.webp" width="1440" height="900" alt="Named sheet tabs and the Paint sheet actions." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Sheet versions.</strong> Keep separate tabs for alternate colours or crops so you can compare them before export.</figcaption>
+              </figure>
+            </div>
+            <div class="design-prose">
+              <h3>Resize the image or adjust its canvas</h3>
+              <p>Open <strong>Image</strong> and choose <strong>Resize</strong>. <strong>Scale image to fit</strong> resamples the artwork. <strong>Change canvas only</strong> sets its boundaries while the artwork keeps the same pixel size. Leave <strong>Keep aspect ratio</strong> selected when resizing a photograph or an illustration whose proportions matter.</p>
+              <p>For pixel art, choose <strong>Scale using nearest neighbor</strong> and use a whole-number factor such as <code>32 × 32</code> to <code>128 × 128</code>. Zoom in and switch on <strong>Pixel grid</strong> to inspect the edges. The zoom and grid change your view while the dimensions set the exported size.</p>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-paint-pixels-diagram.webp" aria-label="Open the nearest-neighbor resizing diagram"><img src="/99host-assets/handbook/current-paint-pixels-diagram.webp" width="1050" height="300" alt="A small staircase drawn on a pixel grid is enlarged with nearest-neighbor scaling to keep its right angles." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Nearest-neighbor scaling.</strong> Each source pixel becomes a larger block of the same colour.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-paint-resize.webp" aria-label="Open full-size screenshot of the Resize dialog"><img src="/99host-assets/handbook/current-paint-resize.webp" width="1440" height="900" alt="The Resize image or canvas dialog with width, height, mode and aspect ratio controls." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Resize mode.</strong> Choose whether Studio should resample the drawing or adjust the canvas boundaries.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-paint-pixel-grid.webp" aria-label="Open full-size screenshot of the pixel grid"><img src="/99host-assets/handbook/current-paint-pixel-grid.webp" width="1440" height="900" alt="Enlarged drawing with Pixel grid enabled and zoom controls below the canvas." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Pixel grid.</strong> Inspect individual pixels when checking a small mark or cleaning an edge.</figcaption>
+              </figure>
+            </div>
+            <div class="design-prose">
+              <h3>Prepare a transparent cutout</h3>
+              <p>Open an image in Paint, or select an uploaded image in <strong>Assets</strong> and choose <strong>Edit in Paint</strong>. The image opens in a new sheet. For solid backgrounds and simple gradients, use <strong>Image → Remove background</strong>. Paint samples the corners and clears matching pixels connected to the outer edge.</p>
+              <p>Start with the default tolerance and inspect the checkerboard around the subject. Increase tolerance if a band of background remains. Undo and lower it if the subject loses detail. Leave <strong>Include matching pixels inside the drawing</strong> cleared when the subject has areas that share the background colour, such as white lettering on a white backdrop. For a complex edge, use the eraser at a closer zoom.</p>
+              <p>In <strong>Export</strong>, choose <strong>PNG</strong> or <strong>WebP</strong> to keep transparency. Choose <strong>JPEG</strong> with a background colour for a flat, opaque image. For a set of variations, <strong>All sheets · PNG ZIP</strong> downloads one PNG per sheet.</p>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-paint-background-diagram.webp" aria-label="Open the background removal diagram"><img src="/99host-assets/handbook/current-paint-background-diagram.webp" width="1050" height="300" alt="A drawn ring stays intact after matching pixels at the perimeter turn transparent." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Edge-connected removal.</strong> Checking the perimeter first helps protect enclosed parts of the drawing.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-paint-background-before.webp" aria-label="Open full-size screenshot before background removal"><img src="/99host-assets/handbook/current-paint-background-before.webp" width="1440" height="900" alt="Imported graphic with its opaque background still visible in Paint." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Before removal.</strong> Check whether the subject and its background use similar colours.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-paint-background-after.webp" aria-label="Open full-size screenshot after background removal"><img src="/99host-assets/handbook/current-paint-background-after.webp" width="1440" height="900" alt="The edited graphic with the surrounding background replaced by the checkerboard." loading="lazy" decoding="async"></a>
+                <figcaption><strong>After removal.</strong> The checkerboard reveals transparent pixels around the retained artwork.</figcaption>
+              </figure>
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-paint-export.webp" aria-label="Open full-size screenshot of Paint export formats"><img src="/99host-assets/handbook/current-paint-export.webp" width="1440" height="900" alt="Paint Export drawing dialog showing the available image and all-sheet formats." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Export drawing.</strong> Use the format menu to download the active sheet or archive the sheet set.</figcaption>
+              </figure>
+            </div>
+            <div class="design-prose">
+              <h3>Place the finished image on a page</h3>
+              <ol>
+                <li>Choose <strong>Save asset</strong> in Paint, then use <strong>Copy link</strong> in <strong>Asset link</strong> to share the public image URL. For a local image, open <strong>Assets</strong> and choose <strong>Upload images</strong>. It accepts <code>.png</code>, <code>.jpg</code>, <code>.jpeg</code> and <code>.webp</code> files up to <code>12 MB</code> each.</li>
+                <li>Choose <strong>Use on page</strong> to insert an Image block on the current page. To put the image in an existing block, select the block in Design, open <strong>Content</strong>, choose <strong>Choose from assets</strong> and then <strong>Apply to field</strong>.</li>
+                <li>Set the image’s role using the block’s <strong>Alt text</strong> field. Put a badge’s actual message in page text when visitors need to read it to understand the page. Check the asset against the page background in Desktop and Phone Preview.</li>
+              </ol>
+              <p>When <strong>Upload changes automatically</strong> is enabled, Paint uploads after you pause editing. A new saved version gets its own URL. Apply that version in Design when you want the page to display it. Asset URLs open for anyone with the link, including when the project itself is private.</p>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot design-shot-wide">
+                <a href="/99host-assets/handbook/current-asset-placement-diagram.webp" aria-label="Open the image placement diagram"><img src="/99host-assets/handbook/current-asset-placement-diagram.webp" width="1050" height="300" alt="An image selected in Assets goes through Apply to field and appears in the existing page block." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Replace an image in context.</strong> Start from the selected block’s image field to keep working in its current frame.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-assets-field-picker.webp" aria-label="Open full-size screenshot of the image field picker"><img src="/99host-assets/handbook/current-assets-field-picker.webp" width="1440" height="900" alt="Image assets picker opened for a selected Design field with Apply to field visible." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Apply to field.</strong> Choose the file from the library while editing the existing image field.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-assets-applied.webp" aria-label="Open full-size screenshot of the image applied in Design"><img src="/99host-assets/handbook/current-assets-applied.webp" width="1440" height="900" alt="A Studio asset displayed in the Design canvas with the image block inspector open." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Check the page.</strong> Review the placed image in its actual frame, then set its alternative text.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-paint-phone.webp" aria-label="Open full-size screenshot of Paint on a phone"><img src="/99host-assets/handbook/current-paint-phone.webp" width="390" height="844" alt="Paint at phone width, with a compact drawing toolbar and canvas." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Paint on a phone.</strong> Use Fit to return to the whole drawing after examining fine detail.</figcaption>
+              </figure>
+              <figure class="design-shot">
+                <a href="/99host-assets/handbook/current-assets-phone.webp" aria-label="Open full-size screenshot of Assets on a phone"><img src="/99host-assets/handbook/current-assets-phone.webp" width="390" height="844" alt="The Assets picker at phone width with a selected graphic and its actions." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Assets on a phone.</strong> Select a thumbnail to reach the available image actions.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="design-topic" id="surfaces" aria-labelledby="surfaces-title">
+            <div class="design-prose">
+              <h2 id="surfaces-title">Use borders and shadows to explain structure</h2>
+              <p>Open <strong>Style</strong> and <strong>Border and shadow</strong>. Set a border’s <strong>Width</strong>, <strong>Style</strong> and <strong>Color</strong> as a group. Start with a solid <code>1px</code> border for an input, a lightweight comparison surface or a selected item. Use <strong>Corner radius</strong> consistently across related components.</p>
+              <p>Use a shadow on a surface that needs depth or separation. In <strong>Shadow</strong>, try <code>0 8px 24px #0003</code> and compare it against the actual background. The values define horizontal offset, vertical offset, blur and colour. Review how a shadow looks at the edges of the phone artboard and inside any container that clips overflow.</p>
+              <p>Keep focus and selection distinct. Check links, form fields and buttons with Tab. A neutral border can identify a field, while a visible focus outline tells the keyboard user where the next action will occur.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="navigation" aria-labelledby="navigation-title">
+            <div class="design-prose">
+              <h2 id="navigation-title">Finish the paths people actually use</h2>
+              <h3>Navigation and page anchors</h3>
+              <p>Use <strong>Navigation</strong> to set a brand name and the destinations that belong in the header. <strong>Add pages automatically</strong> is convenient for a short site. For a larger site, switch it off and enter one <code>Label | URL</code> pair per line. Prioritise the destinations people will need regularly. Test the mobile menu, its labels and the way back to Home.</p>
+              <p>Give a Section or Heading an <strong>Anchor ID</strong> such as <code>pricing</code> and link to <code>#pricing</code> from the same page. Use the editor’s internal page destination for another project page. Check both links in Preview after editing page slugs. Name buttons for the action they perform, such as “Request a site visit”.</p>
+              <h3>Forms and feedback</h3>
+              <p>Add a <strong>Form</strong> with labelled inputs and an explicit submit label. Use Email and Number field types where appropriate and make important fields required. A placeholder can show an example, while the visible label keeps the purpose clear after typing. When wiring a form to a workflow, confirm its field names match the workflow’s data keys.</p>
+              <p>Use a visible feedback block beside the form. In Logic, connect <strong>Form submission</strong> to the relevant action and use separate messages for success and error. A <strong>Set text</strong> node can display those messages. If the form is intended to store or deliver data, connect a suitable data or backend node and test the resulting record or response as well as the text. <a href="/docs#recipes">See the Blueprint recipes</a>.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="templates" aria-labelledby="templates-title">
+            <div class="design-prose">
+              <h2 id="templates-title">Start from an editable template</h2>
+              <p>Choose from 12 editable projects. Open a Desktop screenshot or reveal its Phone preview before downloading. Save your current draft with <strong>Download .plot project</strong>, then use <strong>Import project</strong> to open a downloaded <code>.plot</code> file. In the imported draft, use Layers to inspect the sections, update the content and open Preview.</p>
+              <p>To add a single page inside your current project, use <strong>Pages</strong> and <strong>Add page</strong>. The built-in page options include Product landing page, Portfolio, Documentation and Contact. Add an appropriate URL slug, then replace demo names, images, links and any sample instructions.</p>
+            </div>
+            <div class="design-template-grid">
+              <article class="design-template" id="template-quiet-forms-architecture">
+                <figure><a href="/99host-assets/handbook/design-template-quiet-forms-architecture-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Quiet Forms"><img src="/99host-assets/handbook/design-template-quiet-forms-architecture-desktop.webp?v=uhd1" width="3840" height="2160" alt="Quiet Forms in Studio’s Desktop Preview. A split cabin photograph and a project gallery with different image proportions." loading="lazy" decoding="async"></a></figure>
+                <h3>Quiet Forms</h3>
+                <p class="design-template-type">Architecture · 1 page</p>
+                <p>A split cabin photograph and a project gallery with different image proportions.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/quiet-forms-architecture.plot" download aria-label="Download Quiet Forms as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-quiet-forms-architecture-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Quiet Forms"><img src="/99host-assets/handbook/design-template-quiet-forms-architecture-phone.webp?v=uhd1" width="2160" height="3840" alt="Quiet Forms rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-late-table-restaurant">
+                <figure><a href="/99host-assets/handbook/design-template-late-table-restaurant-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Late Table"><img src="/99host-assets/handbook/design-template-late-table-restaurant-desktop.webp?v=uhd1" width="3840" height="2160" alt="Late Table in Studio’s Desktop Preview. An oversized masthead, dinner menu with prices and a route to reservations." loading="lazy" decoding="async"></a></figure>
+                <h3>Late Table</h3>
+                <p class="design-template-type">Restaurant · 1 page</p>
+                <p>An oversized masthead, dinner menu with prices and a route to reservations.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/late-table-restaurant.plot" download aria-label="Download Late Table as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-late-table-restaurant-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Late Table"><img src="/99host-assets/handbook/design-template-late-table-restaurant-phone.webp?v=uhd1" width="2160" height="3840" alt="Late Table rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-field-notes-portfolio">
+                <figure><a href="/99host-assets/handbook/design-template-field-notes-portfolio-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Field Notes"><img src="/99host-assets/handbook/design-template-field-notes-portfolio-desktop.webp?v=uhd1" width="3840" height="2160" alt="Field Notes in Studio’s Desktop Preview. A cobalt masthead, print work organised as an index and an enquiries section." loading="lazy" decoding="async"></a></figure>
+                <h3>Field Notes</h3>
+                <p class="design-template-type">Designer portfolio · 1 page</p>
+                <p>A cobalt masthead, print work organised as an index and an enquiries section.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/field-notes-portfolio.plot" download aria-label="Download Field Notes as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-field-notes-portfolio-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Field Notes"><img src="/99host-assets/handbook/design-template-field-notes-portfolio-phone.webp?v=uhd1" width="2160" height="3840" alt="Field Notes rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-afterimage-lookbook">
+                <figure><a href="/99host-assets/handbook/design-template-afterimage-lookbook-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Afterimage"><img src="/99host-assets/handbook/design-template-afterimage-lookbook-desktop.webp?v=uhd1" width="3840" height="2160" alt="Afterimage in Studio’s Desktop Preview. A wide still life, a three-object collection and separate care notes." loading="lazy" decoding="async"></a></figure>
+                <h3>Afterimage</h3>
+                <p class="design-template-type">Product lookbook · 1 page</p>
+                <p>A wide still life, a three-object collection and separate care notes.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/afterimage-lookbook.plot" download aria-label="Download Afterimage as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-afterimage-lookbook-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Afterimage"><img src="/99host-assets/handbook/design-template-afterimage-lookbook-phone.webp?v=uhd1" width="2160" height="3840" alt="Afterimage rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-room-tone-exhibition">
+                <figure><a href="/99host-assets/handbook/design-template-room-tone-exhibition-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Room Tone"><img src="/99host-assets/handbook/design-template-room-tone-exhibition-desktop.webp?v=uhd1" width="3840" height="2160" alt="Room Tone in Studio’s Desktop Preview. A poster-like opening, gallery photographs and practical visitor information." loading="lazy" decoding="async"></a></figure>
+                <h3>Room Tone</h3>
+                <p class="design-template-type">Exhibition · 1 page</p>
+                <p>A poster-like opening, gallery photographs and practical visitor information.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/room-tone-exhibition.plot" download aria-label="Download Room Tone as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-room-tone-exhibition-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Room Tone"><img src="/99host-assets/handbook/design-template-room-tone-exhibition-phone.webp?v=uhd1" width="2160" height="3840" alt="Room Tone rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-common-ground-creative">
+                <figure><a href="/99host-assets/handbook/design-template-common-ground-creative-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Common Ground"><img src="/99host-assets/handbook/design-template-common-ground-creative-desktop.webp?v=uhd1" width="3840" height="2160" alt="Common Ground in Studio’s Desktop Preview. A reverse image layout, a comparison of services and an expandable FAQ." loading="lazy" decoding="async"></a></figure>
+                <h3>Common Ground</h3>
+                <p class="design-template-type">Creative services · 1 page</p>
+                <p>A reverse image layout, a comparison of services and an expandable FAQ.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/common-ground-creative.plot" download aria-label="Download Common Ground as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-common-ground-creative-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Common Ground"><img src="/99host-assets/handbook/design-template-common-ground-creative-phone.webp?v=uhd1" width="2160" height="3840" alt="Common Ground rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-relayboard">
+                <figure><a href="/99host-assets/handbook/design-template-relayboard-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Relayboard"><img src="/99host-assets/handbook/design-template-relayboard-desktop.webp?v=uhd1" width="3840" height="2160" alt="Relayboard in Studio’s Desktop Preview. A dark product site with a dashboard sample, workflow guide and changelog." loading="lazy" decoding="async"></a></figure>
+                <h3>Relayboard</h3>
+                <p class="design-template-type">Software product · 3 pages</p>
+                <p>A dark product site with a dashboard sample, workflow guide and changelog.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/relayboard.plot" download aria-label="Download Relayboard as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-relayboard-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Relayboard"><img src="/99host-assets/handbook/design-template-relayboard-phone.webp?v=uhd1" width="2160" height="3840" alt="Relayboard rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-margin-notes">
+                <figure><a href="/99host-assets/handbook/design-template-margin-notes-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Margin Notes"><img src="/99host-assets/handbook/design-template-margin-notes-desktop.webp?v=uhd1" width="3840" height="2160" alt="Margin Notes in Studio’s Desktop Preview. A type-first newsletter archive with a sample issue and an About page." loading="lazy" decoding="async"></a></figure>
+                <h3>Margin Notes</h3>
+                <p class="design-template-type">Editorial publication · 3 pages</p>
+                <p>A type-first newsletter archive with a sample issue and an About page.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/margin-notes.plot" download aria-label="Download Margin Notes as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-margin-notes-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Margin Notes"><img src="/99host-assets/handbook/design-template-margin-notes-phone.webp?v=uhd1" width="2160" height="3840" alt="Margin Notes rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-open-bench">
+                <figure><a href="/99host-assets/handbook/design-template-open-bench-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Open Bench"><img src="/99host-assets/handbook/design-template-open-bench-desktop.webp?v=uhd1" width="3840" height="2160" alt="Open Bench in Studio’s Desktop Preview. A community repair day with a timetable, venue and accessibility details." loading="lazy" decoding="async"></a></figure>
+                <h3>Open Bench</h3>
+                <p class="design-template-type">Event · 3 pages</p>
+                <p>A community repair day with a timetable, venue and accessibility details.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/open-bench.plot" download aria-label="Download Open Bench as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-open-bench-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Open Bench"><img src="/99host-assets/handbook/design-template-open-bench-phone.webp?v=uhd1" width="2160" height="3840" alt="Open Bench rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-spoke-works">
+                <figure><a href="/99host-assets/handbook/design-template-spoke-works-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Spoke Works"><img src="/99host-assets/handbook/design-template-spoke-works-desktop.webp?v=uhd1" width="3840" height="2160" alt="Spoke Works in Studio’s Desktop Preview. A bicycle workshop site with repair services, pricing and opening hours." loading="lazy" decoding="async"></a></figure>
+                <h3>Spoke Works</h3>
+                <p class="design-template-type">Local services · 3 pages</p>
+                <p>A bicycle workshop site with repair services, pricing and opening hours.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/spoke-works.plot" download aria-label="Download Spoke Works as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-spoke-works-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Spoke Works"><img src="/99host-assets/handbook/design-template-spoke-works-phone.webp?v=uhd1" width="2160" height="3840" alt="Spoke Works rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-mara-vale">
+                <figure><a href="/99host-assets/handbook/design-template-mara-vale-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Mara Vale"><img src="/99host-assets/handbook/design-template-mara-vale-desktop.webp?v=uhd1" width="3840" height="2160" alt="Mara Vale in Studio’s Desktop Preview. A musician’s homepage, track listing, and a press page with reusable media." loading="lazy" decoding="async"></a></figure>
+                <h3>Mara Vale</h3>
+                <p class="design-template-type">Personal site · 3 pages</p>
+                <p>A musician’s homepage, track listing, and a press page with reusable media.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/mara-vale.plot" download aria-label="Download Mara Vale as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-mara-vale-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Mara Vale"><img src="/99host-assets/handbook/design-template-mara-vale-phone.webp?v=uhd1" width="2160" height="3840" alt="Mara Vale rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+              <article class="design-template" id="template-harbour-api">
+                <figure><a href="/99host-assets/handbook/design-template-harbour-api-desktop.webp?v=uhd1" aria-label="Open the full Desktop preview of Harbour API"><img src="/99host-assets/handbook/design-template-harbour-api-desktop.webp?v=uhd1" width="3840" height="2160" alt="Harbour API in Studio’s Desktop Preview. A reference site with an in-page index, example requests and an error table." loading="lazy" decoding="async"></a></figure>
+                <h3>Harbour API</h3>
+                <p class="design-template-type">Documentation · 3 pages</p>
+                <p>A reference site with an in-page index, example requests and an error table.</p>
+                <div class="design-template-actions">
+                  <a href="/docs/design/templates/harbour-api.plot" download aria-label="Download Harbour API as a .plot project">Download .plot</a>
+                </div>
+                <details class="design-template-phone">
+                  <summary>Show Phone preview</summary>
+                  <figure><a href="/99host-assets/handbook/design-template-harbour-api-phone.webp?v=uhd1" aria-label="Open the full Phone preview of Harbour API"><img src="/99host-assets/handbook/design-template-harbour-api-phone.webp?v=uhd1" width="2160" height="3840" alt="Harbour API rendered at Studio’s 390 px Phone width." loading="lazy" decoding="async"></a></figure>
+                </details>
+              </article>
+            </div>
+          </section>
+
+          <section class="design-topic" id="layout-recipes" aria-labelledby="layout-recipes-title">
+            <div class="design-prose">
+              <h2 id="layout-recipes-title">Three layouts to rebuild</h2>
+              <h3>An architecture project lead</h3>
+              <p>Open <a href="#template-quiet-forms-architecture">Quiet Forms</a> and start with its Desktop Preview. The page introduces the work with a tall photograph beside a short headline. To build your own version, make a Section with a Columns block, place the heading and action in one child, and set the Image in the other. Try a <code>minmax(0, 2fr) minmax(0, 3fr)</code> grid and a <code>40px</code> gap. Give the image a descriptive caption if the setting or material matters to the story. Set the grid to one track on Phone and check that the heading and contact path still come before the image.</p>
+              <h3>A masthead that can hold a publication</h3>
+              <p>In <a href="#template-margin-notes">Margin Notes</a>, the title and one sentence introduce the publication before readers reach the archive. Use a Heading for the masthead, a Text block for the introduction and a list of issues in reading order. Use size and a border to separate the masthead from the archive. Try <code>clamp(48px, 10vw, 140px)</code> for the main title, but test it using your actual publication name. Give the issue summaries a reading-width maximum and leave the wider section available for images and links.</p>
+              <h3>A restaurant menu with aligned prices</h3>
+              <p>Use <a href="#template-late-table-restaurant">Late Table</a> to see how a menu can sit below a large typographic opening. Add a Table with headings for dish, ingredients and price, and use one row per dish. Keep the names and prices as text so visitors can select or read them with assistive tools. Check the longest dish name on the phone artboard. Shorten labels, move long descriptions below the table if needed, then verify that the price still sits beside the right dish.</p>
+            </div>
+          </section>
+
+          <section class="design-topic" id="screenshots" aria-labelledby="screenshots-title">
+            <div class="design-prose">
+              <h2 id="screenshots-title">See the settings in Studio</h2>
+              <p>Open any screenshot at full size to read the field names and values. The Design and Preview controls show which device is selected.</p>
+            </div>
+            <div class="design-screen-grid">
+              <figure class="design-shot" id="screen-site-type">
+                <a href="/99host-assets/handbook/design-control-site-type.webp?v=uhd1" aria-label="Open full-size screenshot: Site type scale"><img src="/99host-assets/handbook/design-control-site-type.webp?v=uhd1" width="3840" height="2160" alt="The project inspector shows separate heading and body families and sizes for H1, H2, H3 and paragraphs." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Site type scale</strong> The project inspector shows separate heading and body families and sizes for H1, H2, H3 and paragraphs.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-font-samples">
+                <a href="/99host-assets/handbook/design-control-font-samples.webp?v=uhd1" aria-label="Open full-size screenshot: Font samples"><img src="/99host-assets/handbook/design-control-font-samples.webp?v=uhd1" width="3840" height="2160" alt="Searching for Instrument shows both families, with a sample next to each name." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Font samples</strong> Searching for Instrument shows both families, with a sample next to each name.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-accent-swatches">
+                <a href="/99host-assets/handbook/design-control-accent-swatches.webp?v=uhd1" aria-label="Open full-size screenshot: Site accent"><img src="/99host-assets/handbook/design-control-accent-swatches.webp?v=uhd1" width="3840" height="2160" alt="Open Swatches from Site colors. The hex field lets you enter an exact brand colour." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Site accent</strong> Open Swatches from Site colors. The hex field lets you enter an exact brand colour.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-site-themes">
+                <a href="/99host-assets/handbook/design-control-site-themes.webp?v=uhd1" aria-label="Open full-size screenshot: Theme library"><img src="/99host-assets/handbook/design-control-site-themes.webp?v=uhd1" width="3840" height="2160" alt="Each Site themes option pairs display and body type with an accent and background." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Theme library</strong> Each Site themes option pairs display and body type with an accent and background.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-hero-content">
+                <a href="/99host-assets/handbook/design-control-hero-content.webp?v=uhd1" aria-label="Open full-size screenshot: Hero content"><img src="/99host-assets/handbook/design-control-hero-content.webp?v=uhd1" width="3840" height="2160" alt="The Hero Content inspector contains the headline, action, image and layout controls." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Hero content</strong> The Hero Content inspector contains the headline, action, image and layout controls.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-hero-type">
+                <a href="/99host-assets/handbook/design-control-hero-type.webp?v=uhd1" aria-label="Open full-size screenshot: Headline size"><img src="/99host-assets/handbook/design-control-hero-type.webp?v=uhd1" width="3840" height="2160" alt="Use the Hero title size field for the opening headline without changing the site-wide H1." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Headline size</strong> Use the Hero title size field for the opening headline without changing the site-wide H1.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-section-spacing">
+                <a href="/99host-assets/handbook/design-control-section-spacing.webp?v=uhd1" aria-label="Open full-size screenshot: Section spacing"><img src="/99host-assets/handbook/design-control-section-spacing.webp?v=uhd1" width="3840" height="2160" alt="The selected Section sets its own top and bottom padding around the grid." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Section spacing</strong> The selected Section sets its own top and bottom padding around the grid.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-grid-desktop">
+                <a href="/99host-assets/handbook/design-control-grid-desktop.webp?v=uhd1" aria-label="Open full-size screenshot: Desktop grid"><img src="/99host-assets/handbook/design-control-grid-desktop.webp?v=uhd1" width="3840" height="2160" alt="Three equal minmax tracks and a 24 px gap keep comparable projects aligned." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Desktop grid</strong> Three equal minmax tracks and a 24 px gap keep comparable projects aligned.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-grid-tablet">
+                <a href="/99host-assets/handbook/design-control-grid-tablet.webp?v=uhd1" aria-label="Open full-size screenshot: Tablet override"><img src="/99host-assets/handbook/design-control-grid-tablet.webp?v=uhd1" width="3840" height="2160" alt="The same grid uses two equal tracks and a 20 px gap at the tablet width." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Tablet override</strong> The same grid uses two equal tracks and a 20 px gap at the tablet width.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-grid-phone">
+                <a href="/99host-assets/handbook/design-control-grid-phone.webp?v=uhd1" aria-label="Open full-size screenshot: Phone override"><img src="/99host-assets/handbook/design-control-grid-phone.webp?v=uhd1" width="3840" height="2160" alt="At 390 px, one track and a smaller gap give each card its own row." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Phone override</strong> At 390 px, one track and a smaller gap give each card its own row.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-image-url">
+                <a href="/99host-assets/handbook/design-control-image-url.webp?v=uhd1" aria-label="Open full-size screenshot: Image source and alt text"><img src="/99host-assets/handbook/design-control-image-url.webp?v=uhd1" width="3840" height="2160" alt="The Content tab separates the direct file URL, the alt description and the visible caption." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Image source and alt text</strong> The Content tab separates the direct file URL, the alt description and the visible caption.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-image-dimensions">
+                <a href="/99host-assets/handbook/design-control-image-dimensions.webp?v=uhd1" aria-label="Open full-size screenshot: Image dimensions"><img src="/99host-assets/handbook/design-control-image-dimensions.webp?v=uhd1" width="3840" height="2160" alt="Set width, aspect ratio and image fit together to make a predictable frame." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Image dimensions</strong> Set width, aspect ratio and image fit together to make a predictable frame.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-border-shadow">
+                <a href="/99host-assets/handbook/design-control-border-shadow.webp?v=uhd1" aria-label="Open full-size screenshot: Frame and shadow"><img src="/99host-assets/handbook/design-control-border-shadow.webp?v=uhd1" width="3840" height="2160" alt="The Image block uses a thin solid border, rounded corners and a soft shadow." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Frame and shadow</strong> The Image block uses a thin solid border, rounded corners and a soft shadow.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-form-layout">
+                <a href="/99host-assets/handbook/design-control-form-layout.webp?v=uhd1" aria-label="Open full-size screenshot: Form layout and labels"><img src="/99host-assets/handbook/design-control-form-layout.webp?v=uhd1" width="3840" height="2160" alt="The Form Content tab shows the heading, description, field presets and submit label." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Form layout and labels</strong> The Form Content tab shows the heading, description, field presets and submit label.</figcaption>
+              </figure>
+              <figure class="design-shot" id="screen-navigation">
+                <a href="/99host-assets/handbook/design-control-navigation.webp?v=uhd1" aria-label="Open full-size screenshot: Navigation destinations"><img src="/99host-assets/handbook/design-control-navigation.webp?v=uhd1" width="3840" height="2160" alt="The Navigation block defines its own labels and page targets." loading="lazy" decoding="async"></a>
+                <figcaption><strong>Navigation destinations</strong> The Navigation block defines its own labels and page targets.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="design-topic design-review" id="review" aria-labelledby="review-title">
+            <div class="design-prose">
+              <h2 id="review-title">Review the page before handoff</h2>
+              <ul>
+                <li>Open each page from its menu and follow the main action all the way through.</li>
+                <li>Compare Desktop, Tablet and Phone. Check headings, fixed widths, reading order and image crops with actual content.</li>
+                <li>Tab through the page. You should be able to locate your focus, operate navigation and reach all required inputs and actions.</li>
+                <li>Test a successful form request and a rejected one. Confirm that the visible messages and actual data changes agree.</li>
+                <li>Save a dated editable <code>.plot</code> checkpoint. For a delivered site, open the exported or published version to check its links and image URLs.</li>
+              </ul>
+              <div class="design-actions"><a class="design-button" href="/studio/">Open Studio</a><a href="/docs#export">Saving and exporting</a></div>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="plot-site-footer">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="27" height="27" alt="">PLOT.</a>
+        <nav class="plot-site-nav" aria-label="Footer navigation">
+          <a href="/docs">Handbook</a><a href="/docs/nodes">Node reference</a><a href="/certification">Certification</a><a href="/terms">Terms of service</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

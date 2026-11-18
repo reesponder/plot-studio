@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#101010">
+    <meta name="description" content="Build responsive websites and web apps with visual design, node-based logic, and a server backend. Learn with the Studio handbook or earn a PLOT Studio certification.">
+    <title>PLOT Studio</title>
+    <link rel="icon" type="image/webp" href="/99host-assets/plot-mark.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="/99host-assets/public.css?v=15">
+    <link rel="stylesheet" href="/99host-assets/site-chrome.css?v=5">
+    <script type="module" src="/99host-assets/site-chrome.mjs?v=1"></script>
+    <script type="module" src="/99host-assets/public.mjs?v=10"></script>
+    <script src="/99host-assets/cookie-notice.js?v=1" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="plot-site-header">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="32" height="32" alt="">PLOT.</a>
+        <button class="plot-menu-button" type="button" aria-expanded="false" aria-controls="plot-main-navigation" aria-label="Open navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav id="plot-main-navigation" class="plot-site-nav" aria-label="Main navigation">
+          <a href="/#overview">Overview</a>
+          <a href="/docs">Docs</a>
+          <a href="/certification">Certification</a>
+          <a href="/license">Licence</a>
+          <a class="plot-site-action" href="/studio/">Open Studio</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="entry" id="studio-login" aria-labelledby="entry-heading">
+        <div class="photographs" aria-hidden="true">
+          <img class="photo photo-current" src="/99host-assets/entry-ribs.webp?v=11" alt="" width="1480" height="740" fetchpriority="high" decoding="async">
+          <img class="photo photo-wide" src="/99host-assets/entry-glass.webp?v=11" alt="" width="1480" height="740" fetchpriority="low" decoding="async">
+          <img class="photo" src="/99host-assets/entry-night-palms.webp" alt="" width="1480" height="740" fetchpriority="low" decoding="async">
+          <img class="photo photo-wide" src="/99host-assets/entry-painter.webp" alt="" width="1480" height="740" fetchpriority="low" decoding="async">
+        </div>
+        <div class="access">
+          <h1 class="entry-title" id="entry-heading"><img src="/99host-assets/plot-mark.webp" width="232" height="219" alt="" decoding="async"><span>PLOT Studio</span></h1>
+          <p class="entry-intro">Build responsive websites and web apps with visual design, node-based logic, and a server backend.</p>
+          <div class="entry-links"><a class="submit" href="/sign-in">Sign in</a><a class="license-link" href="/register">Activate a licence</a></div>
+        </div>
+      </section>
+
+      <section class="overview wrap" id="overview" aria-labelledby="overview-heading">
+        <div class="overview-intro">
+          <div>
+            <h2 id="overview-heading">From page to working site.</h2>
+            <p class="overview-summary">Take a contact form from its first layout to a live page that checks submissions and saves them to a database.</p>
+            <a class="design-handbook-button" href="/docs/design">Open the Design Handbook</a>
+          </div>
+          <nav class="section-links" aria-label="Studio feature sections">
+            <a href="#design">Design</a>
+            <a href="#blueprint">Blueprint</a>
+            <a href="#backend">Backend</a>
+            <a href="#publishing">Publishing</a>
+          </nav>
+        </div>
+
+        <article class="feature feature-design" id="design" aria-labelledby="design-heading">
+          <div class="feature-copy">
+            <h3 id="design-heading">Design</h3>
+            <p>Lay out the form with reusable blocks. Adjust typography and spacing in the inspector, then check how the fields fit on desktop, tablet, and phone.</p>
+          </div>
+          <figure class="studio-shot" data-ui>
+            <a href="/99host-assets/overview-design.webp?v=uhd1" aria-label="Open full-size Design screenshot">
+              <img src="/99host-assets/overview-design.webp?v=uhd1" alt="The Design editor with a page canvas, block library, and style inspector" width="3840" height="2160" loading="lazy" decoding="async">
+            </a>
+            <figcaption>The page canvas and style inspector</figcaption>
+          </figure>
+        </article>
+
+        <div class="overview-workflows">
+          <article class="feature feature-blueprint" id="blueprint" aria-labelledby="blueprint-heading">
+            <div class="feature-copy">
+              <h3 id="blueprint-heading">Blueprint</h3>
+              <p>Connect the submit event to a request and show the result on the page. Follow the execution trace in Preview to see which nodes ran and what they received.</p>
+              <a class="detail-link" href="/docs/nodes">Node reference</a>
+            </div>
+            <figure class="studio-shot" data-ui>
+              <a href="/99host-assets/overview-blueprint.webp?v=uhd1" aria-label="Open full-size Blueprint screenshot">
+                <img src="/99host-assets/overview-blueprint.webp?v=uhd1" alt="A Blueprint graph with connected event and action nodes for a contact form" width="3840" height="2160" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Events and typed connections on the Blueprint canvas</figcaption>
+            </figure>
+          </article>
+
+          <article class="feature feature-backend" id="backend" aria-labelledby="backend-heading">
+            <div class="feature-copy">
+              <h3 id="backend-heading">Backend</h3>
+              <p>Set up an HTTP route that validates the fields and writes to SQLite. Send valid and incomplete submissions from Studio and inspect each test response.</p>
+              <a class="detail-link" href="/docs#backend">Server workflow guide</a>
+            </div>
+            <figure class="studio-shot" data-ui>
+              <a href="/99host-assets/overview-backend.webp?v=uhd1" aria-label="Open full-size Backend screenshot">
+                <img src="/99host-assets/overview-backend.webp?v=uhd1" alt="The Backend editor with a route, workflow, and test response" width="3840" height="2160" loading="lazy" decoding="async">
+              </a>
+              <figcaption>A server route with its workflow and test response</figcaption>
+            </figure>
+          </article>
+        </div>
+        <a class="detail-link overview-handbook" href="/docs">Read the Studio handbook</a>
+      </section>
+
+      <section class="publishing" id="publishing" aria-labelledby="publishing-heading">
+        <div class="wrap publishing-grid">
+          <div class="publish-options">
+            <h2 id="publishing-heading">Publish or export</h2>
+            <div>
+              <h3>Publish to your own address</h3>
+              <p>Share a public link or require Studio sign-in. Each release keeps its address and SQLite database when you publish updates.</p>
+            </div>
+            <div>
+              <h3>Save an editable .plot project</h3>
+              <p>Keep pages, styles, graphs, workflows, and schema in an encrypted file you can reopen in Studio.</p>
+            </div>
+            <div>
+              <h3>Download the code</h3>
+              <p>Export HTML, CSS, and JavaScript as a ZIP. Data-backed projects can include a Python runtime and schema.</p>
+            </div>
+            <div class="publish-links">
+              <a class="detail-link" href="/docs#plot-project-files">The .plot format</a>
+              <a class="detail-link" href="/docs#export">Publishing and export guide</a>
+            </div>
+          </div>
+          <figure class="studio-shot" data-ui>
+            <a href="/99host-assets/overview-publish.webp?v=uhd1" aria-label="Open full-size Publishing screenshot">
+              <img src="/99host-assets/overview-publish.webp?v=uhd1" alt="The Hosting panel with a private demo site, its address, and release controls" width="3840" height="2160" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Hosting controls for a private demo site</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="home-certification" id="certification" aria-labelledby="certification-heading">
+        <div class="wrap home-certification-grid">
+          <div class="home-certification-copy">
+            <h2 id="certification-heading">PLOT Studio certification</h2>
+            <p>Complete a practical build in Studio and submit the editable .plot project for assessment. A passing result earns a downloadable credential issued by CONVRO LTD.</p>
+            <div class="home-certification-exams">
+              <a href="/certification/builder">Certified Builder</a>
+              <a href="/certification/workflow-architect">Certified Workflow Architect</a>
+            </div>
+            <a class="detail-link" href="/certification">Compare the exams and verify credentials</a>
+          </div>
+          <figure class="home-certificate-preview">
+            <a href="/certification/sample-certificate.pdf" aria-label="View the sample PLOT Studio certificate as a PDF">
+              <img src="/99host-assets/certificate-preview.webp?v=3" width="1320" height="1020" alt="Landscape PLOT Studio sample certificate with the PLOT logo, a fine-line engraving and a verification QR code" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Sample certificate</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <footer class="plot-site-footer">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="32" height="32" alt="">PLOT.</a>
+        <nav class="plot-site-nav" aria-label="Footer navigation">
+          <a href="/docs">Docs</a>
+          <a href="/certification">Certification</a>
+          <a href="/license">Licence</a>
+          <a href="/terms">Terms of service</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

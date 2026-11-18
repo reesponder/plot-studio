@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#181817">
+    <meta name="description" content="Four foundational PLOT Studio Workflow Architect practice drills with worked solutions, Studio screenshots and expected test results.">
+    <title>Workflow Architect practice · PLOT Studio</title>
+    <link rel="canonical" href="https://plotstudio.pro/certification/workflow-architect/practice">
+    <link rel="icon" type="image/webp" href="/99host-assets/plot-mark.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="/99host-assets/site-chrome.css?v=5">
+    <script type="module" src="/99host-assets/site-chrome.mjs?v=1"></script>
+    <link rel="stylesheet" href="/99host-assets/certification.css?v=9">
+    <link rel="stylesheet" href="/99host-assets/certification-practice.css?v=3">
+    <script src="/99host-assets/cookie-notice.js?v=1" defer></script>
+  </head>
+  <body class="cert-page cert-practice-page">
+    <a class="plot-skip" href="#main">Skip to content</a>
+    <header class="plot-site-header">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="34" height="34" alt="">PLOT.</a>
+        <button class="plot-menu-button" type="button" aria-expanded="false" aria-controls="plot-main-navigation" aria-label="Open navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav id="plot-main-navigation" class="plot-site-nav" aria-label="Main navigation">
+          <a href="/#overview">Overview</a>
+          <a href="/docs">Docs</a>
+          <a href="/certification" aria-current="location">Certification</a>
+          <a href="/license">Licence</a>
+          <a class="plot-site-action" href="/studio/">Open Studio</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <nav class="cert-shell cert-local-nav" aria-label="Certification navigation"><a href="/certification/workflow-architect">Back to the exam</a><a href="/certification">All certifications</a></nav>
+      <header class="cert-shell cert-practice-hero">
+        <div class="cert-hero-copy">
+          <h1>Workflow Architect practice</h1>
+          <p>Four foundational drills from the earlier Workshop Requests scenario. Practise intake, authenticated lookups, signed updates and browser forms.</p>
+          <div class="cert-actions"><a class="cert-button" href="#typed-intake">Read the drills</a><a class="cert-text-action" href="/studio/">Open Studio</a></div>
+        </div>
+      </header>
+      <div class="cert-shell cert-practice-layout">
+        <nav class="cert-practice-index" aria-label="Practice drills">
+          <h2>On this page</h2>
+          <ol><li><a href="#typed-intake">Build the intake endpoint</a></li><li><a href="#protected-lookup">Protect the lookup endpoint</a></li><li><a href="#signed-event">Verify the partner callback</a></li><li><a href="#browser-form">Connect the browser form</a></li></ol>
+        </nav>
+        <div class="cert-practice-content">
+          <article class="cert-practice-task" id="typed-intake" aria-labelledby="typed-intake-title">
+            <header class="cert-practice-task-head">
+              <h2 id="typed-intake-title">Build the intake endpoint.</h2>
+              <div class="cert-practice-prompt">
+                <p>Task instructions</p>
+                <blockquote><p>Expose POST /api/workshop-requests to site visitors. Accept a valid email and an integer seat count from 1 through 6. Convert numeric form text, such as “2”, to a number before validating. Reject missing or invalid inputs without inserting a row. Create valid rows with status new and return HTTP 201 with {id, status}. Leave email out of the response.</p></blockquote>
+              </div>
+              <figure class="cert-practice-image cert-practice-exam-shot">
+                <a href="/99host-assets/handbook/screen-exam-typed-intake.webp" aria-label="Open the full-size candidate portal screenshot for “Build the intake endpoint”"><img src="/99host-assets/handbook/screen-exam-typed-intake.webp" width="1702" height="292" alt="Candidate portal showing the task “Build the intake endpoint”." loading="lazy" decoding="async"></a>
+                <figcaption>Candidate portal</figcaption>
+              </figure>
+            </header>
+            <div class="cert-practice-work">
+              <div>
+                <h3>How I solve it</h3>
+                <ol class="cert-practice-steps">
+                  <li><strong>Create the route and verify the table</strong><p>I make Email, Seats and Status required in Workshop requests. I use the Email, Integer and Text types respectively. I copy their actual field IDs from Data and leave visitor access to the table off. In Backend I add <code>POST /api/workshop-requests</code> with <strong>Site visitors</strong> access.</p></li>
+                  <li><strong>Validate on the server</strong><p>I bind <code>request.body.email</code> to <strong>Require email address</strong>. I check <code>request.body.seats</code> with <strong>Require comparison</strong> set to <code>exists</code>, then use <strong>To number</strong>. I feed the converted value to <strong>Require integer</strong> and <strong>Require number range</strong>, with bounds 1 and 6. I send validation errors to HTTP 400 before the create action can run.</p></li>
+                  <li><strong>Write one row and choose the public fields</strong><p>In <strong>Create record</strong> I map the actual table field IDs to the validated email, integer seats and literal status <code>new</code>. In the 201 response I use <strong>Object fields</strong> to select just <code>id</code> and <code>status</code> from the create output. For a create node named <code>create-request</code>, the ID reference is <code>steps.create-request.value.id</code>. I handle write errors separately from validation errors.</p></li>
+                  <li><strong>Verify the response and the write</strong><p>I check the response and trace in Request test. In a rehearsal database, I compare the rows before and after each request to confirm that rejected requests leave the table unchanged.</p></li>
+                </ol>
+              </div>
+              <aside aria-label="Expected results">
+                <h3>How I check it</h3>
+                <dl class="cert-practice-checks">
+                  <div><dt>sample@example.com and seats &quot;2&quot;</dt><dd>HTTP 201 with an ID and status new. There is one new row with integer seats 2. The response has no email field.</dd></div>
+                  <div><dt>Seats 1 and 6</dt><dd>Both boundary values produce HTTP 201 and their numeric values are stored.</dd></div>
+                  <div><dt>Seats 0, 7, 2.5, or missing</dt><dd>Client error. The request never reaches Create record and the row count is unchanged. An invalid email produces the same no-write result.</dd></div>
+                </dl>
+                <a class="cert-text-action" href="/docs#backend-release-check">Test the HTTP contract in the handbook</a>
+              </aside>
+            </div>
+            <div class="cert-practice-shots" aria-label="Studio screenshots for this task">
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-exam-architect-studio.webp"><img src="/99host-assets/handbook/screen-exam-architect-studio.webp" width="1440" height="1180" alt="Studio Backend editor showing the Workshop Requests validation steps and HTTP 201 with only the generated ID and new status." loading="lazy" decoding="async"></a><figcaption>I submit seats as the string “2”. The range check accepts it after conversion. The response contains the ID and status, with no email.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-exam-architect-studio-fractional.webp"><img src="/99host-assets/handbook/screen-exam-architect-studio-fractional.webp" width="1235" height="620" alt="Studio Request test returns HTTP 400 for 2.5 seats. The trace ends before Create record." loading="lazy" decoding="async"></a><figcaption>With 2.5 seats, Require integer takes the error branch and the workflow returns HTTP 400 before Create record.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-data-field-ids.webp"><img src="/99host-assets/handbook/screen-data-field-ids.webp" width="1218" height="342" alt="The Fields tab lists the displayed name, identifier, type and required status." loading="lazy" decoding="async"></a><figcaption>Use the table’s actual field IDs when binding values.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-data-public-access.webp"><img src="/99host-assets/handbook/screen-data-public-access.webp" width="1218" height="594" alt="The API access tab displays operation permissions and the query endpoint." loading="lazy" decoding="async"></a><figcaption>These switches configure the separate table API. For this exercise leave all off.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-backend-new-endpoint.webp"><img src="/99host-assets/handbook/screen-backend-new-endpoint.webp" width="1236" height="84" alt="Backend controls show the method, route, access and name." loading="lazy" decoding="async"></a><figcaption>Set the route method and path before building the workflow.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-practice-typed-loan-created.webp"><img src="/99host-assets/handbook/screen-practice-typed-loan-created.webp" width="1235" height="626" alt="Request test returns HTTP 201 and quantity 3 for a Tripod request. Trace includes Create record." loading="lazy" decoding="async"></a><figcaption>A loan demo shows the successful numeric conversion and write in Request test.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-practice-fractional-loan-rejected.webp"><img src="/99host-assets/handbook/screen-practice-fractional-loan-rejected.webp" width="1235" height="578" alt="Request test returns HTTP 400 for quantity 2.5. The trace records the integer check error." loading="lazy" decoding="async"></a><figcaption>A separate loan demo shows how a fractional value is rejected before the database write.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="cert-practice-task" id="protected-lookup" aria-labelledby="protected-lookup-title">
+            <header class="cert-practice-task-head">
+              <h2 id="protected-lookup-title">Protect the lookup endpoint.</h2>
+              <div class="cert-practice-prompt">
+                <p>Task instructions</p>
+                <blockquote><p>Build GET /api/workshop-requests/:id with API key required and the PLOT_API_KEY secret alias. A valid key and existing ID return HTTP 200 with {id, status, seats}. Missing or invalid keys return 401 and an unknown row returns 404.</p></blockquote>
+              </div>
+              <figure class="cert-practice-image cert-practice-exam-shot">
+                <a href="/99host-assets/handbook/screen-exam-protected-lookup.webp" aria-label="Open the full-size candidate portal screenshot for “Protect the lookup endpoint”"><img src="/99host-assets/handbook/screen-exam-protected-lookup.webp" width="1702" height="242" alt="Candidate portal showing the task “Protect the lookup endpoint”." loading="lazy" decoding="async"></a>
+                <figcaption>Candidate portal</figcaption>
+              </figure>
+            </header>
+            <div class="cert-practice-work">
+              <div>
+                <h3>How I solve it</h3>
+                <ol class="cert-practice-steps">
+                  <li><strong>Configure access on the endpoint</strong><p>I set the method to GET and the path to <code>/api/workshop-requests/:id</code>. Under <strong>Access</strong> I choose <strong>API key required</strong> and set the secret alias to <code>PLOT_API_KEY</code>. I make the test key available only to the test server and the request client.</p></li>
+                  <li><strong>Read the requested row</strong><p>I choose Workshop requests in <strong>Read record</strong> and map Record ID from <code>request.params.id</code>. I leave <strong>On error</strong> set to <strong>Stop with error</strong>. The node already returns 404 for an unknown ID and preserves the different status for a storage error.</p></li>
+                  <li><strong>Build an allowlisted response</strong><p>I use <strong>Object fields</strong> in the 200 JSON response to return exactly <code>id</code>, <code>status</code> and <code>seats</code>. If I call the lookup step <code>read-request</code>, I bind the ID to <code>steps.read-request.value.id</code> and use the actual Status and Seats field IDs on that same <code>value</code>. Selecting those three fields also keeps future table columns out of the response.</p></li>
+                  <li><strong>Test authentication on the running service</strong><p>I publish to an isolated rehearsal site with a temporary key. On that same site I create a synthetic row through the intake route and copy its generated ID. I call the lookup route with <code>Authorization: Bearer &lt;test-key&gt;</code>, then repeat with a wrong key and with the header removed. Finally I keep the valid key and change the ID to one I know does not exist.</p><p>I use Request test for the workflow trace. It bypasses the endpoint’s API-key check and uses a fresh copy of the draft data, so I use the running service for proof of authentication and for tests that span two requests.</p></li>
+                </ol>
+              </div>
+              <aside aria-label="Expected results">
+                <h3>How I check it</h3>
+                <dl class="cert-practice-checks">
+                  <div><dt>Valid Bearer key and existing ID</dt><dd>HTTP 200 with exactly id, status and seats. The row’s email never appears.</dd></div>
+                  <div><dt>Missing or wrong Bearer key</dt><dd>HTTP 401. No record details are returned.</dd></div>
+                  <div><dt>Valid key and unknown ID</dt><dd>HTTP 404 from the configured lookup route.</dd></div>
+                </dl>
+                <a class="cert-text-action" href="/docs#backend-release-check">Verify access on a rehearsal release in the handbook</a>
+              </aside>
+            </div>
+            <div class="cert-practice-shots" aria-label="Studio screenshots for this task">
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-data-records.webp"><img src="/99host-assets/handbook/screen-data-records.webp" width="1440" height="392" alt="Inbox shows a sample row and a second record from Preview." loading="lazy" decoding="async"></a><figcaption>Check which sample record you expect the workflow to find.</figcaption></figure>
+              <figure class="cert-practice-image"><a href="/99host-assets/handbook/screen-advanced-respond-with-node-value.webp"><img src="/99host-assets/handbook/screen-advanced-respond-with-node-value.webp" width="360" height="460" alt="A JSON response references steps.convert-quote.value as its response body." loading="lazy" decoding="async"></a><figcaption>Use a prior node result as a response source. In this task select specific fields.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-backend-request-result.webp"><img src="/99host-assets/handbook/screen-backend-request-result.webp" width="1236" height="300" alt="Request test returns a 200 status with two trace entries." loading="lazy" decoding="async"></a><figcaption>Request test shows the flow of execution. Check endpoint authentication on the running service.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="cert-practice-task" id="signed-event" aria-labelledby="signed-event-title">
+            <header class="cert-practice-task-head">
+              <h2 id="signed-event-title">Verify the partner callback.</h2>
+              <div class="cert-practice-prompt">
+                <p>Task instructions</p>
+                <blockquote><p>Build POST /api/workshop-events. Verify HMAC SHA-256 against request.raw and request.headers.x-workshop-signature using secret alias PLOT_SECRET_WEBHOOK. The signature can be lowercase hex, with or without a sha256= prefix. An authorised event can update an existing row to approved or rejected and returns HTTP 200 with {id, status}. Reject absent or invalid signatures and invalid statuses without writing. Return 404 for an unknown record.</p></blockquote>
+              </div>
+              <figure class="cert-practice-image cert-practice-exam-shot">
+                <a href="/99host-assets/handbook/screen-exam-signed-event.webp" aria-label="Open the full-size candidate portal screenshot for “Verify the partner callback”"><img src="/99host-assets/handbook/screen-exam-signed-event.webp" width="1702" height="342" alt="Candidate portal showing the task “Verify the partner callback”." loading="lazy" decoding="async"></a>
+                <figcaption>Candidate portal</figcaption>
+              </figure>
+            </header>
+            <div class="cert-practice-work">
+              <div>
+                <h3>How I solve it</h3>
+                <ol class="cert-practice-steps">
+                  <li><strong>Verify the raw request before any database action</strong><p>I add <code>POST /api/workshop-events</code> with <strong>Site visitors</strong> access. The first action is <strong>Verify HMAC signature</strong>. I bind Signed text to <code>request.raw</code>, Signature to <code>request.headers.x-workshop-signature</code> and Server key alias to <code>PLOT_SECRET_WEBHOOK</code>. I connect <strong>On error</strong> to <strong>Error response</strong> with status <code>401</code> and a generic message. The only wire leading to the database goes through <strong>On success</strong>.</p></li>
+                  <li><strong>Validate the action from the verified sender</strong><p>On the verifier’s success output I validate <code>request.body.id</code> and pass <code>request.body.status</code> to <strong>Require allowed value</strong> with <code>["approved","rejected"]</code>. I use <strong>Update record</strong> with that ID and bind just the Status field. Its default error path returns 404 for an unknown ID. On success I return HTTP 200 with the same ID and the updated status.</p></li>
+                  <li><strong>Make a disposable fixture</strong><p>I prepare a raw JSON body with a sample record’s ID and status <code>approved</code>. I compute the HMAC-SHA256 hex digest for those exact bytes with a test-only secret. I set the corresponding alias in Request test, use a row already saved in draft Data and compare results with and without the <code>sha256=</code> prefix. Even a change to whitespace changes the bytes the verifier sees.</p></li>
+                  <li><strong>Repeat the callback against persistent data</strong><p>In a single isolated rehearsal release I set the server secret, create a sample row, then send the same signed event twice. I read the row after each delivery and compare its ID, status and the total row count. Then I keep the signature but edit the body, and try again with the signature header missing. I also sign a body with an invalid status to confirm that a valid signature doesn’t authorise an invalid change.</p></li>
+                </ol>
+              </div>
+              <aside aria-label="Expected results">
+                <h3>How I check it</h3>
+                <dl class="cert-practice-checks">
+                  <div><dt>Correct signature, either prefix format</dt><dd>HTTP 200 with the original record ID and status approved. Replaying the same event leaves one row with that same state.</dd></div>
+                  <div><dt>Missing signature or altered body</dt><dd>HTTP 401. The stored status and row count stay as they were.</dd></div>
+                  <div><dt>Correct signature with invalid status or unknown ID</dt><dd>Invalid status returns a client error and writes nothing. An unknown ID returns HTTP 404.</dd></div>
+                </dl>
+                <a class="cert-text-action" href="/docs#backend-release-check">Test backend requests in the handbook</a>
+              </aside>
+            </div>
+            <div class="cert-practice-shots" aria-label="Studio screenshots for this task">
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-advanced-signed-request-test-context.webp"><img src="/99host-assets/handbook/screen-advanced-signed-request-test-context.webp" width="1235" height="282" alt="The Request test header and secret fields contain a synthetic timestamp, signature and alias value." loading="lazy" decoding="async"></a><figcaption>The request tester has separate inputs for the body, signature header and a temporary server alias. This screenshot uses a timestamped demo.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-advanced-changed-signature-rejected.webp"><img src="/99host-assets/handbook/screen-advanced-changed-signature-rejected.webp" width="1203" height="264" alt="The request checker returns HTTP 401 and the timestamped HMAC step records an error." loading="lazy" decoding="async"></a><figcaption>The trace in this timestamped demo shows where altered signed bytes are rejected. The walkthrough uses the plain HMAC node.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="cert-practice-task" id="browser-form" aria-labelledby="browser-form-title">
+            <header class="cert-practice-task-head">
+              <h2 id="browser-form-title">Connect the browser form.</h2>
+              <div class="cert-practice-prompt">
+                <p>Task instructions</p>
+                <blockquote><p>Use required email and number fields with names email and seats. Prevent the native submission. Wire Form submission to Call backend route for POST /api/workshop-requests, with the Fields output connected to the request body. Route success and error to separate Set text nodes with distinct messages visible to the visitor.</p></blockquote>
+              </div>
+              <figure class="cert-practice-image cert-practice-exam-shot">
+                <a href="/99host-assets/handbook/screen-exam-browser-form.webp" aria-label="Open the full-size candidate portal screenshot for “Connect the browser form”"><img src="/99host-assets/handbook/screen-exam-browser-form.webp" width="1702" height="294" alt="Candidate portal showing the task “Connect the browser form”." loading="lazy" decoding="async"></a>
+                <figcaption>Candidate portal</figcaption>
+              </figure>
+            </header>
+            <div class="cert-practice-work">
+              <div>
+                <h3>How I solve it</h3>
+                <ol class="cert-practice-steps">
+                  <li><strong>Use the same names as the request contract</strong><p>I add Email and Seats to the workshop form, with field names <code>email</code> and <code>seats</code>, types Email and Number, and Required enabled. I place a status paragraph below the submit button so users can see the result on a phone.</p></li>
+                  <li><strong>Bind execution and submitted values</strong><p>In Logic I point <strong>Form submission</strong> at this form and prevent the native submission. I add <strong>Call backend route</strong>, select POST and enter <code>/api/workshop-requests</code>. I connect the event’s execution port to the action and its typed <strong>Fields</strong> output to the request body.</p></li>
+                  <li><strong>Show both server outcomes</strong><p>I connect <strong>Success</strong> and <strong>Error</strong> to separate Set text nodes targeting the status paragraph. I use “Your request was received.” for Success and “We couldn’t submit your request. Check the details and try again.” for Error.</p></li>
+                  <li><strong>Run the graph through the browser</strong><p>I test on an isolated rehearsal site where the backend route is available. I submit a valid sample email with two seats, then try seven seats. If the browser’s own maximum blocks that second input, I exercise the server rejection in a disposable copy without the field maximum while keeping the backend rules intact.</p></li>
+                </ol>
+              </div>
+              <aside aria-label="Expected results">
+                <h3>How I check it</h3>
+                <dl class="cert-practice-checks">
+                  <div><dt>Sample email and seats 2</dt><dd>The form stays on the page, shows the success message and results in a single new row.</dd></div>
+                  <div><dt>Email missing</dt><dd>The required-field check blocks submission. No request is sent and there is no new row.</dd></div>
+                  <div><dt>Seats 7 submitted to the backend</dt><dd>The server rejects the request. The Blueprint follows Error, changes the visible text, and creates no row.</dd></div>
+                </dl>
+                <a class="cert-text-action" href="/docs#blueprint">The Blueprint workspace in the handbook</a>
+              </aside>
+            </div>
+            <div class="cert-practice-shots" aria-label="Studio screenshots for this task">
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-value-wire-on-canvas.webp"><img src="/99host-assets/handbook/screen-value-wire-on-canvas.webp" width="1440" height="880" alt="Blueprint displays typed form wires and highlights compatible execution inputs." loading="lazy" decoding="async"></a><figcaption>A form event’s typed Fields port carries submitted values separately from the execution wire.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-automation-form-contract.webp"><img src="/99host-assets/handbook/screen-automation-form-contract.webp" width="276" height="602" alt="The Fieldwork Form inspector contains the form field labels and submit label." loading="lazy" decoding="async"></a><figcaption>Check the input names in the form inspector against the request body contract.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-recipe-database-overview.webp"><img src="/99host-assets/handbook/screen-recipe-database-overview.webp" width="1440" height="880" alt="A five-node form graph has a mapper, write node and separate success and error outcomes." loading="lazy" decoding="async"></a><figcaption>A database demo shows separate execution branches for success and error feedback.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-preview-form-success.webp"><img src="/99host-assets/handbook/screen-preview-form-success.webp" width="1282" height="832" alt="The filled Fieldwork form in Preview shows a successful submission." loading="lazy" decoding="async"></a><figcaption>A Studio demo shows how visible feedback appears in the interactive browser preview.</figcaption></figure>
+            </div>
+          </article>
+
+          <p class="cert-practice-closing"><a class="cert-text-action" href="/certification/workflow-architect#prepare">Return to the exam study plan</a></p>
+        </div>
+      </div>
+    </main>
+    <footer class="plot-site-footer">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="27" height="27" alt="">PLOT.</a>
+        <nav class="plot-site-nav" aria-label="Footer navigation">
+          <a href="/docs">Docs</a><a href="/certification">Certification</a><a href="/license">Licence</a><a href="/terms">Terms of service</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

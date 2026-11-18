@@ -1,0 +1,94 @@
+#design-workspace {
+  --dock-library-track: 230px;
+  --dock-inspector-track: 290px;
+  --dock-grip: #8b9381;
+  --dock-grip-active: #52673a;
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--dock-library-track) minmax(0, 1fr) var(--dock-inspector-track);
+}
+
+#design-workspace .library { grid-column: 1; grid-row: 1; }
+#design-workspace .canvas-panel { grid-column: 2; grid-row: 1; }
+#design-workspace .inspector-panel { grid-column: 3; grid-row: 1; }
+
+.dock-resizer {
+  position: absolute;
+  z-index: 4;
+  inset-block: 0;
+  width: 11px;
+  transform: translateX(-50%);
+  cursor: col-resize;
+  touch-action: none;
+  user-select: none;
+  outline: none;
+}
+
+.dock-resizer[data-dock-handle="library"] { left: var(--dock-library-track); }
+.dock-resizer[data-dock-handle="inspector"] { left: calc(100% - var(--dock-inspector-track)); }
+
+.dock-resizer::before,
+.dock-resizer::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.dock-resizer::before {
+  inset-block: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+}
+
+.dock-resizer::after {
+  top: 50%;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 30px;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  background: var(--dock-grip);
+}
+
+.dock-resizer:is(:hover, :focus-visible)::before,
+#design-workspace[data-dock-dragging="library"] [data-dock-handle="library"]::before,
+#design-workspace[data-dock-dragging="inspector"] [data-dock-handle="inspector"]::before {
+  background: var(--dock-grip-active);
+}
+
+.dock-resizer:is(:hover, :focus-visible)::after { background: var(--dock-grip-active); }
+.dock-resizer:focus-visible::after { outline: 2px solid var(--dock-grip-active); outline-offset: 2px; }
+
+#design-workspace[data-dock-dragging],
+#design-workspace[data-dock-dragging] * { cursor: col-resize !important; user-select: none; }
+#design-workspace[data-dock-dragging] iframe { pointer-events: none; }
+
+.dock-toggle[aria-expanded="true"],
+.dock-focus-toggle[aria-pressed="true"] { background: var(--studio-active); }
+
+.dock-backdrop { display: none; }
+
+@media (max-width: 879px) {
+  #design-workspace { display: block; }
+  #design-workspace .canvas-panel { height: 100%; }
+  #design-workspace .library,
+  #design-workspace .inspector-panel {
+    position: absolute;
+    z-index: 4;
+    inset-block: var(--canvas-toolbar-height, 47px) var(--canvas-footer-height, 32px);
+    width: min(310px, calc(100% - 46px));
+    box-shadow: 0 8px 30px #18181742;
+  }
+  #design-workspace .library { display: flex; inset-inline: 0 auto; }
+  #design-workspace .inspector-panel { display: block; inset-inline: auto 0; }
+  .dock-focus-toggle, .dock-resizer { display: none; }
+  .dock-backdrop {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    inset: var(--canvas-toolbar-height, 47px) 0 var(--canvas-footer-height, 32px);
+    border: 0;
+    background: #18181738;
+    cursor: default;
+  }
+}

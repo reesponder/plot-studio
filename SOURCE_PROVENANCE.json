@@ -1,0 +1,13 @@
+{
+  "application": "PLOT Studio",
+  "production_release": "alias-names-20261118T214936Z",
+  "source_directory": "outputs/plot-studio",
+  "test_directory": "work",
+  "tests_included": 76,
+  "publication_changes": [
+    "Certificate signature is optional and supports PLOT_CERTIFICATE_SIGNATURE.",
+    "Browser test imports use the package-managed Playwright dependency.",
+    "Browser test executable paths are configurable with PLOT_BROWSER_PATH.",
+    "Added MIT license, setup scripts, environment example and publication documentation."
+  ]
+}

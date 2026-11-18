@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#181817">
+    <meta name="description" content="Open your PLOT Studio exam, submit your project and retrieve your result.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <title>Exam workspace · PLOT Studio</title>
+    <link rel="canonical" href="https://plotstudio.pro/certification/attempt">
+    <link rel="icon" type="image/webp" href="/99host-assets/plot-mark.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="/99host-assets/site-chrome.css?v=5">
+    <script type="module" src="/99host-assets/site-chrome.mjs?v=1"></script>
+    <link rel="stylesheet" href="/99host-assets/certification.css?v=11">
+    <script type="module" src="/99host-assets/certification.mjs?v=12"></script>
+    <script src="/99host-assets/cookie-notice.js?v=1" defer></script>
+  </head>
+  <body class="cert-page">
+    <a class="plot-skip" href="#main">Skip to content</a>
+    <header class="plot-site-header">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="34" height="34" alt="">PLOT.</a>
+        <button class="plot-menu-button" type="button" aria-expanded="false" aria-controls="plot-main-navigation" aria-label="Open navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav id="plot-main-navigation" class="plot-site-nav" aria-label="Main navigation">
+          <a href="/#overview">Overview</a>
+          <a href="/docs">Docs</a>
+          <a href="/certification" aria-current="location">Certification</a>
+          <a href="/license">Licence</a>
+          <a class="plot-site-action" href="/studio/">Open Studio</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="cert-shell cert-workspace" tabindex="-1" data-cert-attempt>
+      <nav class="cert-local-nav" aria-label="Certification navigation"><a href="/certification">All certifications</a><a href="/certification/verify">Verify a certificate</a></nav>
+      <div class="cert-workspace-title">
+        <h1>Exam workspace</h1>
+        <p>Use the one-time access link from your enrolment email. Once you have opened an enrolment, return here to resume your work or retrieve your result.</p>
+      </div>
+      <section class="cert-workspace-box" id="cert-access-panel" aria-labelledby="access-title" hidden>
+        <h2 id="access-title">Open your exam workspace</h2>
+        <p>Activate the one-time link from your email in this browser. For a timed exam, the clock begins when you select <strong>Start exam</strong>.</p>
+        <button class="cert-button" id="cert-access-redeem" type="button">Open exam workspace</button>
+        <p id="cert-access-status" class="cert-status" role="status"></p>
+      </section>
+      <section class="cert-workspace-box" id="cert-recover" aria-labelledby="recover-title">
+        <h2 id="recover-title">Find your enrolment</h2>
+        <p id="cert-attempt-status" class="cert-status" role="status">Our team emails a one-time exam link after confirming payment. If you already opened the workspace, select a saved enrolment or enter the recovery code you saved there.</p>
+        <div id="cert-saved-enrolments" class="cert-actions" hidden></div>
+        <form class="cert-inline-form" id="cert-recovery-form" method="post">
+          <label class="cert-field">Recovery code<input name="token" type="password" spellcheck="false" autocomplete="off" maxlength="240" required></label>
+          <button class="cert-button" type="submit">Open enrolment</button>
+        </form>
+        <noscript><p>Enable JavaScript to open your exam workspace.</p></noscript>
+      </section>
+
+      <section class="cert-workspace-box" id="cert-current" hidden aria-labelledby="current-title">
+        <header class="cert-workspace-box-head">
+          <div><p class="cert-small" id="cert-candidate"></p><h2 id="current-title" tabindex="-1"></h2><p class="cert-small" id="cert-task-count" hidden></p><p class="cert-small" id="cert-test-attempt" hidden>Private test attempt</p></div>
+          <p class="cert-state" id="cert-state"></p>
+        </header>
+        <div id="cert-pending" class="cert-state-panel" hidden>
+          <h3 id="cert-pending-title">Waiting for payment confirmation</h3>
+          <p id="cert-pending-copy">Our team will email your one-time exam link once payment is confirmed.</p>
+          <button class="cert-button cert-button-outline" id="cert-refresh-enrolment" type="button">Refresh enrolment status</button>
+        </div>
+        <div id="cert-refunded" class="cert-state-panel" hidden>
+          <h3>This enrolment was refunded</h3>
+          <p>Contact <a href="mailto:peter@usereesponder.com">PLOT Studio support</a> if you need help with your order.</p>
+        </div>
+        <section id="cert-timer" class="cert-state-panel cert-timer" aria-labelledby="cert-timer-title" hidden>
+          <div class="cert-timer-heading">
+            <h3 id="cert-timer-title" tabindex="-1">Exam clock</h3>
+            <p class="cert-timer-state" id="cert-timer-state" aria-live="polite"></p>
+          </div>
+          <dl class="cert-timer-values">
+            <div><dt>Active time remaining</dt><dd id="cert-active-time"></dd></div>
+            <div><dt>Breaks remaining</dt><dd id="cert-breaks-remaining"></dd></div>
+            <div id="cert-break-time-value" hidden><dt>Break time remaining</dt><dd id="cert-break-time"></dd></div>
+          </dl>
+          <p id="cert-timer-copy"></p>
+          <div class="cert-actions cert-timer-actions">
+            <button class="cert-button" id="cert-timer-start" type="button" hidden>Start exam</button>
+            <button class="cert-button cert-button-outline" id="cert-timer-pause" type="button" hidden>Take a break</button>
+            <button class="cert-button" id="cert-timer-resume" type="button" hidden>Resume exam</button>
+            <button class="cert-button cert-button-outline" id="cert-timer-refresh" type="button">Sync clock</button>
+          </div>
+          <p id="cert-timer-message" class="cert-status" role="status"></p>
+        </section>
+        <div id="cert-exam-content" hidden></div>
+        <section id="cert-result" class="cert-result" hidden aria-labelledby="cert-result-title">
+          <h3 id="cert-result-title" tabindex="-1">Assessment result</h3>
+          <p id="cert-result-summary"></p>
+          <p class="cert-small" id="cert-result-tally"></p>
+          <button class="cert-button cert-button-outline cert-result-filter" id="cert-result-filter" type="button" aria-controls="cert-result-checks" aria-pressed="false" hidden>Only checks that need work</button>
+          <ul id="cert-result-checks" class="cert-result-checks"></ul>
+          <div id="cert-issued" class="cert-state-panel" hidden>
+            <h4>Your certificate</h4>
+            <p id="cert-issued-id"></p>
+            <div class="cert-actions">
+              <button class="cert-button" id="cert-download" type="button">Download certificate PDF</button>
+              <a class="cert-text-action" id="cert-verification-link">Open verification page</a>
+            </div>
+          </div>
+          <form id="cert-issue-form" class="cert-state-panel" method="post" hidden>
+            <h4>Issue your certificate</h4>
+            <p>Anyone with your certificate ID can verify your name, credential and issue date.</p>
+            <label class="cert-choice">
+              <input name="publishCertificate" type="checkbox" required autocomplete="off">
+              <span>I agree to make my certificate verifiable.</span>
+            </label>
+            <button class="cert-button" type="submit">Issue certificate</button>
+          </form>
+        </section>
+        <form class="cert-submission" id="cert-submission-form" method="post" hidden>
+          <h3>Submit your editable project</h3>
+          <p>In Studio, choose <strong>Download .plot project</strong> in the project menu and upload the file. Use sample data and remove secrets before submitting.</p>
+          <label class="cert-field">Project file<input name="project" type="file" accept=".plot" required></label>
+          <label class="cert-choice" id="cert-submit-certificate">
+            <input name="publishCertificate" type="checkbox" autocomplete="off">
+            <span>Issue my certificate if I pass. Anyone with my certificate ID can verify my name, credential and issue date.</span>
+          </label>
+          <button class="cert-button" type="submit">Submit for grading</button>
+        </form>
+        <p id="cert-submit-status" class="cert-status" role="status"></p>
+        <details class="cert-recovery-detail" id="cert-access-recovery" hidden>
+          <summary>Save your recovery code</summary>
+          <p>Use this code to reopen the enrolment on another device. It grants access to your exam workspace and result, so keep it private.</p>
+          <code id="cert-recovery-code" class="cert-recovery-code"></code>
+          <button class="cert-button cert-button-outline" id="cert-copy-code" type="button">Copy recovery code</button>
+          <p class="cert-small" id="cert-copy-status" role="status"></p>
+        </details>
+      </section>
+    </main>
+    <footer class="plot-site-footer">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="27" height="27" alt="">PLOT.</a>
+        <nav class="plot-site-nav" aria-label="Footer navigation">
+          <a href="/docs">Docs</a>
+          <a href="/certification">Certification</a>
+          <a href="/license">Licence</a>
+          <a href="/terms">Terms of service</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#181817">
+    <meta name="description" content="Learn PLOT Studio with screenshots from the editor. Draw in Paint, place image assets, publish a site, restore a project and build visual workflows.">
+    <link rel="canonical" href="https://plotstudio.pro/docs">
+    <link rel="icon" href="/99host-assets/plot-mark.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="/99host-assets/docs.css?v=10">
+    <link rel="stylesheet" href="/99host-assets/site-chrome.css?v=5">
+    <script type="module" src="/99host-assets/site-chrome.mjs?v=1"></script>
+    <title>PLOT Studio Handbook</title>
+    <script src="/99host-assets/cookie-notice.js?v=1" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#start">Skip to instructions</a>
+    <header class="plot-site-header">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="32" height="32" alt="">PLOT.</a>
+        <button class="plot-menu-button" type="button" aria-expanded="false" aria-controls="plot-main-navigation" aria-label="Open navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav id="plot-main-navigation" class="plot-site-nav" aria-label="Main navigation">
+          <a href="/#overview">Overview</a>
+          <a href="/docs">Docs</a>
+          <a href="/certification">Certification</a>
+          <a href="/license">Licence</a>
+          <a class="plot-site-action" href="/studio/">Open Studio</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <header class="intro">
+        <div class="shell intro-inner">
+          <div class="intro-copy">
+            <h1>PLOT Studio handbook</h1>
+            <p class="lead">Build pages, connect browser and server logic, and test the project before publishing or exporting. Follow the steps in Studio with real screenshots and repeatable checks.</p>
+            <nav class="intro-destinations" aria-label="More documentation">
+              <a class="intro-design-link" href="/docs/design">Open the Design Handbook</a>
+              <a class="intro-reference-link" href="/docs/nodes">Node reference</a>
+            </nav>
+          </div>
+          <figure class="intro-meme">
+            <img src="/99host-assets/handbook/handbook-books.webp" alt="A doodle of an enormous book labelled PLOT Studio handbook next to a tiny one labelled Bible." width="800" height="600" decoding="async">
+          </figure>
+        </div>
+      </header>
+
+      <div class="shell layout">
+      <nav class="contents" aria-labelledby="contents-title">
+        <h2 id="contents-title">On this page</h2>
+        <ol>
+          <li><a href="#start">Start a project</a></li>
+          <li><a href="#pages">Pages and navigation</a></li>
+          <li><a href="#design">Design with blocks</a></li>
+          <li class="catalogue-link"><a href="/docs/design">Design Handbook and templates</a></li>
+          <li><a href="#responsive">Responsive layouts</a></li>
+          <li><a href="#images">Image assets</a></li>
+          <li><a href="#paint">Paint and pixel editing</a></li>
+          <li><a href="#blueprint">The Blueprint workspace</a></li>
+          <li><a href="#wiring">Events, wires, and values</a></li>
+          <li><a href="#recipes">No-code recipes</a></li>
+          <li><a href="#data">Data and API access</a></li>
+          <li><a href="#backend">Backend workflows</a></li>
+          <li><a href="#project-secrets">Project secrets and .env</a></li>
+          <li><a href="#publishing">Public and private hosting</a></li>
+          <li><a href="#advanced-workflows">Advanced workflows and packages</a></li>
+          <li><a href="#preview">Test in Preview</a></li>
+          <li><a href="#plot-project-files">Protected .plot files</a></li>
+          <li><a href="#server-project-history">Server project history</a></li>
+          <li><a href="#export">Save and export</a></li>
+          <li><a href="#automation">Guide for AI operators</a></li>
+          <li><a href="#reference">Troubleshooting</a></li>
+          <li class="catalogue-link"><a href="/docs/nodes">Complete node reference</a></li>
+        </ol>
+      </nav>
+
+      <article class="handbook" aria-label="PLOT Studio instructions">
+        <section id="start" aria-labelledby="start-heading" tabindex="-1">
+          <h2 id="start-heading">Start a project</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/new-project.webp" alt="The project menu creates a blank draft, ready for a first heading and button." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Use <strong>Open Studio</strong> in the header and sign in with the password you received. If you need access, <a href="https://plotstudio.pro/license">get a Studio licence</a>. The editor opens the active draft for the current browser. Use the menu beside the PLOT logo to rename, create, import, or open a different project.</p>
+          <ol>
+            <li>Open the project menu and choose <strong>New blank project</strong> if you are building a separate site. Use <strong>Download .plot project</strong> first if you want a checkpoint of the current work.</li>
+            <li>Choose <strong>Rename project</strong> and give the new site a name you will recognize in the browser and on the server.</li>
+            <li>Open <strong>Design</strong>, then <strong>Pages</strong>. List the pages visitors will need and decide where each primary button should take them.</li>
+            <li>Make one working page before styling the entire site. Add a heading, a paragraph, and one button, then verify the page in <strong>Preview</strong>.</li>
+          </ol>
+          <p>The editor views have different jobs. In <strong>Design</strong>, arrange page blocks and edit their content and appearance. In <strong>Logic</strong>, connect triggers and actions. In <strong>Data</strong>, define fields, add records, and decide which operations visitors may call. In <strong>Backend</strong>, build and test server workflows and publish a private site. In <strong>Code</strong>, inspect the generated site files and optionally add site-wide CSS or JavaScript. The built-in blocks and nodes are enough to complete the standard recipes in this guide.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/editor-views.webp" alt="The Design canvas, Logic graph, Data table, Backend workflows and Code view set side by side." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>To learn from a finished layout, choose <strong>Open Lindenbank House demo</strong>. The project includes a hotel home page, rooms, dining, a local guide and a booking enquiry. To inspect a graph that writes records, choose <strong>Open form + database demo</strong>. Both commands ask before replacing the active draft.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/demo-projects.webp" alt="A demo project can show a finished page or a form connected to a table." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <h3 id="first-work-session">Set up your first work session</h3>
+          <p>Decide whether you're beginning a new site or revising an existing one. If you are revising, download a <code>.plot</code> checkpoint before changing anything and name it with the date. Use <strong>Import project</strong> in the project menu to resume from a checkpoint. Use a separate draft for practice.</p>
+          <p>Build one working page first. Add a heading, a paragraph and a button, then test the button in Desktop and Phone Preview. In the hotel demo, find a room photo in the canvas, Layers and the inspector. Drag either panel divider to resize it, double-click a divider to reset it, or use <strong>Canvas only</strong> to make space temporarily. Use <strong>Canvas zoom</strong> in the bottom bar to return to <strong>Fit</strong> or inspect a larger view.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-workspace-lindenbank.webp" aria-label="Open full-size screenshot: Design workspace"><img src="/99host-assets/handbook/screen-workspace-lindenbank.webp" width="3840" height="2160" alt="The Lindenbank House demo in Studio with the Elements library, canvas and inspector." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Design workspace</strong> Select a block in the canvas or Layers to inspect its settings.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-project-menu.webp" aria-label="Open full-size screenshot: Project actions"><img src="/99host-assets/handbook/screen-project-menu.webp" width="212" height="410" alt="The project menu shows rename, download, import, server and demo actions." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Project actions</strong> Download an editable <code>.plot</code> file from this menu before replacing a draft.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-replace-draft.webp" aria-label="Open full-size screenshot: Replace confirmation"><img src="/99host-assets/handbook/screen-replace-draft.webp" width="402" height="171" alt="Studio asks for confirmation before replacing the active project." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Replace confirmation</strong> Cancel until the current draft has a checkpoint.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-rename-project.webp" aria-label="Open full-size screenshot: Rename a draft"><img src="/99host-assets/handbook/screen-rename-project.webp" width="402" height="189" alt="Rename project dialog with the PRÓG draft name being edited." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Rename a draft</strong> Pick a name you’ll recognize in the server project list.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="pages" aria-labelledby="pages-heading">
+          <h2 id="pages-heading">Pages and navigation</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/page-routes.webp" alt="A sequence of linked browser pages leads from Home through Services to Contact." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Choose <strong>Pages</strong> in the Design library and select <strong>Add page</strong>. Enter the page name and check the URL slug. Start with a blank page or select a Product landing page, Portfolio, Documentation, or Contact template. Templates give you editable blocks and placeholder content. Replace every example heading, link, email address, and form instruction before exporting.</p>
+          <p>The home page exports as <code>index.html</code>. A page with the slug <code>services</code> exports as <code>services.html</code>. Keep slugs short and unique. Changing a slug after you distribute the site changes its exported filename. Update any manually entered links to the old path and any external links under your control.</p>
+          <h3>Make routes easy to test</h3>
+          <p>Add a <strong>Navigation</strong> block near the top of the page. Its Content tab includes a brand name, links, and an optional button. Turn on <strong>Add pages automatically</strong> to include project pages in menus that should follow the page list. Use the manual list when you want a specific order, an external destination, or shorter menu labels. Each line uses a label and URL separated by a vertical bar.</p>
+          <pre><code>Home | index.html
+Services | services.html
+Contact | contact.html</code></pre>
+<figure class="doc-sketch">
+  <img src="/99host-assets/handbook/navigation-menus.webp" alt="A navigation bar can take its links from project pages or a manual list." width="1050" height="300" loading="lazy" decoding="async">
+</figure>
+          <p>For a link within the same page, select the destination section or heading and set its <strong>Anchor ID</strong> to a simple value such as <code>pricing</code>. Enter <code>#pricing</code> in the button or link URL field. Add a <strong>Footer</strong> for links people may look for after reading. In Preview, follow the same routes a visitor would take, including your return path to Home.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/section-anchor.webp" alt="A button with the destination #pricing jumps to the Pricing section." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Use normal links for navigation. A button that changes something on the current page can keep the default <code>#</code> destination and use a Click node. Give it a label that describes the action, such as “Show pricing details” or “Copy reference number.”</p>
+          <h3 id="route-check">Check routes from both directions</h3>
+          <p>Make a short route list with the menu label, its destination and a second way to reach each important page. Start with Home, a useful internal page and a Contact path. Add anchors after sections have stable names. The Studio page name identifies the destination in the editor. Its slug determines the exported filename.</p>
+          <p>Studio's page links can refer to the destination's identity internally. Check every URL typed by hand after changing a slug. In Preview, follow each destination from Home, confirm the page title, and return to Home using the site's own menu. Test footer links and in-page jumps separately. If a page came from a template, check its example links and form fields before the first export.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-pages-list.webp" aria-label="Open full-size screenshot: Pages and paths"><img src="/99host-assets/handbook/screen-pages-list.webp" width="212" height="490" alt="The PRÓG Pages library lists Home, Projects, Studio and Contact with their paths." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Pages and paths</strong> Find the exported path under each internal page name.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-add-page-template.webp" aria-label="Open full-size screenshot: Add a page"><img src="/99host-assets/handbook/screen-add-page-template.webp" width="402" height="321" alt="The Add a page dialog shows its name, slug and template fields." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Add a page</strong> Choose a template while creating the route.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-edit-slug.webp" aria-label="Open full-size screenshot: Edit a page"><img src="/99host-assets/handbook/screen-edit-slug.webp" width="402" height="254" alt="Contact’s label and slug in the Edit page dialog." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Edit a page</strong> Check old links after changing the URL slug.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-navigation-settings.webp" aria-label="Open full-size screenshot: Navigation content"><img src="/99host-assets/handbook/screen-navigation-settings.webp" width="276" height="640" alt="Navigation inspector with the brand, links and automatic page controls." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Navigation content</strong> Choose whether this navigation follows the page list.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-section-anchor.webp" aria-label="Open full-size screenshot: Set an anchor"><img src="/99host-assets/handbook/screen-section-anchor.webp" width="276" height="298" alt="The Section inspector shows its work anchor." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Set an anchor</strong> Point a same-page link to #work.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="design" aria-labelledby="design-heading">
+          <h2 id="design-heading">Design with blocks</h2>
+          <p>For complete layouts, styling walkthroughs and editable project downloads, open the <a href="/docs/design">Design handbook</a>.</p>
+          <p>In Design you can <a href="/docs/design#element-variants">pick built-in element variants</a>, <a href="/docs/design#canvas-transforms">move and resize blocks on the canvas</a>, and <a href="/docs/design#stock-of-freedom">place photos from The Stock of Freedom</a>.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/block-nesting.webp" alt="A block is dragged from the element library into a container with two columns." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Open <strong>Elements</strong> in the Design library. Click an element to add it or drag it onto the canvas. Use <strong>Section</strong> to group a region of the page and <strong>Columns</strong> for content that belongs side by side. Use Layers to see the hierarchy. A block nested inside a container moves with that container. Shift-drag a block into a supported container when you want it to become a child.</p>
+          <p>Click a block on the canvas or choose it in <strong>Layers</strong> to inspect it. Double-click supported rendered text to edit it on the canvas. Use <strong>Content</strong> to change a block's written copy, labels, links, and other settings. Use <strong>Style</strong> for layout, dimensions, spacing, colors, typography, borders, and shadow. The available Content controls depend on the type of block.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/content-and-style.webp" alt="A selected heading connects to its Content and Style inspector controls." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <ul>
+            <li><strong>Hero, Heading, Text, Link, Button.</strong> Use a single clear opening heading. Give later sections heading levels in reading order. Write button labels that describe the destination or action.</li>
+            <li><strong>Feature, Card, Quote, FAQ, Table, Callout.</strong> Match the block to what the reader needs. A FAQ suits short questions, while a Table makes rows with the same attributes easier to compare.</li>
+            <li><strong>Form, Input, Select, Toggle.</strong> A Form can show preset fields and contain child controls. Give controls stable field names before connecting them to logic or data.</li>
+            <li><strong>Image, Gallery, Video, Audio.</strong> Use direct media URLs, meaningful text alternatives, and captions where they help readers understand the material.</li>
+          </ul>
+          <p>Use <strong>Site themes</strong> in the project menu to set a coordinated baseline. For a specific block, adjust its width, padding, or type only when the design calls for a local variation. A width of <code>100%</code> lets a block follow its container. A max width can keep reading text comfortable on wider screens. Padding controls space inside the block, while margin controls distance from neighboring content.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/margin-and-padding.webp" alt="Padding separates content from its container, while margin separates neighboring blocks." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>When an edit lands in the wrong place, use Undo in the Design toolbar. Before larger changes, download a project file. A known working copy makes it easy to compare which change affected the page.</p>
+          <h3 id="block-inspector-practice">Work from structure to appearance</h3>
+          <p>Inspect the parent and child relationship before changing a block's width. A card at 100% fills its cell, while Columns determines the space each cell receives. Move a section to change page order. Select one child when the change only belongs to that block.</p>
+          <p>Check Content first. A heading's tag establishes its place in the page outline. Its font, size and weight live in Style. Give each page a clear top heading and use a consistent level for peer sections. Pick a site theme early, then test the chosen fonts with real headings and the longest paragraph in the project copy. Expand one Style group at a time when diagnosing layout, spacing or type.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-theme-library.webp" aria-label="Open full-size screenshot: Site themes"><img src="/99host-assets/handbook/screen-theme-library.webp" width="632" height="369" alt="The six site theme cards include matching display and body samples." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Site themes</strong> Set a coordinated baseline before editing individual blocks.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-block-search.webp" aria-label="Open full-size screenshot: Find an element"><img src="/99host-assets/handbook/screen-block-search.webp" width="212" height="400" alt="The Elements library filtered to Gallery." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Find an element</strong> Find a block by its label and click or drag it into the page.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-nested-layers.webp" aria-label="Open full-size screenshot: Read the hierarchy"><img src="/99host-assets/handbook/screen-nested-layers.webp" width="212" height="566" alt="A section’s headings, columns and descendant blocks are visibly indented." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Read the hierarchy</strong> Inspect the parent before changing a child’s width or position.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-heading-content.webp" aria-label="Open full-size screenshot: Heading structure"><img src="/99host-assets/handbook/screen-heading-content.webp" width="276" height="290" alt="The heading’s text and element level in the Content inspector." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Heading structure</strong> Connect its tag to the page’s reading structure.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-heading-style.webp" aria-label="Open full-size screenshot: Desktop base style"><img src="/99host-assets/handbook/screen-heading-style.webp" width="276" height="484" alt="The heading Style inspector shows groups of settings and the desktop base." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Desktop base style</strong> Adjust one group at a time to isolate an effect.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-font-picker.webp" aria-label="Open full-size screenshot: Search fonts"><img src="/99host-assets/handbook/screen-font-picker.webp" width="276" height="790" alt="The type picker returns Inter while showing a sample of the font." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Search fonts</strong> Test the selected family with the project’s longest heading.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="responsive" aria-labelledby="responsive-heading">
+          <h2 id="responsive-heading">Responsive layouts</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/desktop-tablet-phone.webp" alt="The same blocks change from three columns to two columns and then stack on a phone." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Use <strong>Desktop</strong>, <strong>Tablet</strong>, and <strong>Phone</strong> in Design to work at different widths. Start by getting the order and content of the page right. Then set overrides for layout changes that are specific to smaller screens. The inspector distinguishes inherited values and local changes. A phone override is useful for stacking content, reducing a large heading, or changing spacing on a crowded call to action.</p>
+          <ol>
+            <li>Check Desktop first. Review the overall hierarchy, the width of long paragraphs, and the placement of the primary action.</li>
+            <li>Check Tablet. Look for a navigation label breaking onto a second line, a narrow sidebar, or a three-column section that needs more room.</li>
+            <li>Check Phone. Verify that body text can be read without zoom, buttons fit ordinary labels, and the page can be navigated by touch.</li>
+            <li>Open the interactive Preview at the same widths. Test the navigation, menu, form controls, and logic with real clicks and keyboard actions.</li>
+          </ol>
+          <p>Fix an overflowing item at its source. Check the child width and minimum width, then inspect its parent's layout, wrap, or column settings. Reduce unnecessary fixed dimensions before hiding the overflowing area. If an image crop cuts off important content, adjust its fit or change the aspect ratio. Test a long label and a realistic paragraph, because placeholder content often hides wrapping problems.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/fix-overflow.webp" alt="A heading that extends past a phone frame is corrected by allowing it to wrap." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <h3 id="breakpoint-check">Make one deliberate breakpoint change</h3>
+          <p>Select a heading inside a narrow column and note its desktop font size. Switch to Phone and reduce the size until the full heading fits. Return to Desktop to confirm the base value. A Phone style can also inherit a Tablet override, so change one device at a time when diagnosing a mismatch. Use <strong>Clear overrides</strong> on the selected block and device to restore inherited values.</p>
+          <p>If several children collide, inspect the containing column group. It may need fewer columns, a smaller gap or room to wrap. Account for the space padding takes inside the container. Recheck the actual Phone Preview with long labels, images and populated form fields, then test the keyboard order and touch targets.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-tablet-design.webp" aria-label="Open full-size screenshot: Tablet design"><img src="/99host-assets/handbook/screen-tablet-design.webp" width="957" height="818" alt="PRÓG in Studio’s 820px Tablet frame." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Tablet design</strong> Check tightly packed areas at the intermediate size.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-phone-design.webp" aria-label="Open full-size screenshot: Phone design"><img src="/99host-assets/handbook/screen-phone-design.webp" width="957" height="818" alt="PRÓG in Studio’s 390px Phone frame." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Phone design</strong> Check the stacked content and the primary action.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-phone-style-overrides.webp" aria-label="Open full-size screenshot: Local Phone overrides"><img src="/99host-assets/handbook/screen-phone-style-overrides.webp" width="276" height="460" alt="The Phone Style inspector has a Clear overrides control." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Local Phone overrides</strong> Review device-specific styles without disturbing the Desktop base.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="images" aria-labelledby="images-heading">
+          <h2 id="images-heading">Upload and use image assets</h2>
+          <p>Upload an image in Studio to get a direct address you can use in a project or share. From the Assets library you can also place the image on a page, fill an existing image field or open a copy in Paint.</p>
+          <nav class="recipe-index" aria-label="Image and Paint instructions">
+            <a href="#asset-placement">Place a saved image</a>
+            <a href="#direct-images">Use an external URL</a>
+            <a href="#paint">Draw in Paint</a>
+            <a href="#paint-export">Save a drawing</a>
+          </nav>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-asset-publish-diagram.webp" alt="An image file is uploaded to Studio Assets and receives a public URL." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <h3>Upload images to Studio</h3>
+          <ol>
+            <li>Open <strong>Assets</strong> in the Studio toolbar. On a phone, look for the picture icon. Choose <strong>Upload images</strong> or drop files into the library.</li>
+            <li>Select files with a supported extension. Studio accepts <code>.png</code>, <code>.jpg</code>, <code>.jpeg</code> and <code>.webp</code> up to 12 MB and 16 megapixels each, with a maximum of 8192 pixels on either side.</li>
+            <li>Select the thumbnail. The detail panel shows the name, dimensions and <strong>Public image URL</strong>. Select <strong>Copy link</strong> to reuse the address in another block, project or site.</li>
+            <li>Open the link in a private browser window. Anyone with the URL can view the image. Keep files that should stay private in your local drawing workspace.</li>
+          </ol>
+          <p>Studio checks the actual image type and removes embedded metadata. Renaming an SVG or a damaged file to <code>.png</code> will still produce an upload error. If you reach a limit, resize the image or export a smaller copy before uploading again.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-assets-library.webp" aria-label="Open full-size screenshot of The Assets library"><img src="/99host-assets/handbook/current-assets-library.webp" width="1440" height="900" alt="The open library shows image thumbnails and the selected file’s dimensions and URL." loading="lazy" decoding="async"></a>
+              <figcaption><strong>The Assets library</strong> Upload files, search the loaded results or select a saved image.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-assets-copy-link.webp" aria-label="Open full-size screenshot of Copy a public image URL"><img src="/99host-assets/handbook/current-assets-copy-link.webp" width="1440" height="900" alt="A selected asset shows its public address and the Copy link control." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Copy a public image URL</strong> Use the image address in Studio or on another site.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-phone">
+              <a href="/99host-assets/handbook/current-assets-phone.webp" aria-label="Open full-size screenshot of Assets on a phone"><img src="/99host-assets/handbook/current-assets-phone.webp" width="390" height="844" alt="The mobile Assets panel displays thumbnails, the selected image and its actions." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Assets on a phone</strong> Upload and apply files from the same library on mobile.</figcaption>
+            </figure>
+          </div>
+          <h3 id="asset-placement">Add an image or fill an existing field</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-asset-placement-diagram.webp" alt="A saved image is chosen in Assets and applied to the image field of an existing block." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Open the page you want to change in <strong>Design</strong>. Use <strong>Assets → Use on page</strong> to add an Image block. To replace an existing picture, select its block, open the <strong>Content</strong> tab, and choose <strong>Choose from assets</strong>. Select the asset and use <strong>Apply to field</strong>. A Gallery gets a new entry. An individual image field takes the selected URL.</p>
+          <p>Select <strong>Edit in Paint</strong> in the library to open a copy on a new sheet. Save the result to get a new URL. To update a block that still uses the original image, apply the new asset to that field. Other pages can keep using the original address.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-assets-field-picker.webp" aria-label="Open full-size screenshot of Choose an image for a field"><img src="/99host-assets/handbook/current-assets-field-picker.webp" width="1440" height="900" alt="The library opens from a block’s image field with Apply to field available." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Choose an image for a field</strong> Open the picker from the inspector when you want to keep the block and change its source.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-assets-applied.webp" aria-label="Open full-size screenshot of Verify the placed image"><img src="/99host-assets/handbook/current-assets-applied.webp" width="1440" height="900" alt="The updated picture is visible in the Design canvas beside its selected Image block inspector." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Verify the placed image</strong> Check the crop in Preview and describe the image in the alt text field.</figcaption>
+            </figure>
+          </div>
+          <h3 id="direct-images">Use an external file URL</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/direct-image-url.webp" alt="A direct image address opens as a picture in a browser." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Images in Image, Hero, Card and Gallery blocks and video posters also accept direct HTTP or HTTPS addresses. External files continue to be served by their original hosts when someone visits your published or exported site.</p>
+          <ol>
+            <li>Open the image on the source site and copy its actual image address. A sharing page, a search results page, and the URL from a private dashboard often point to HTML rather than the image file.</li>
+            <li>Open the copied address in a fresh browser tab. If access depends on your account, test it in a private window that has no active session for that host.</li>
+            <li>Open the block's <strong>Content</strong> tab and paste the full address into the image field. Use HTTPS for an HTTPS site so the browser can load it securely.</li>
+            <li>Add concise alt text for an image with information. Describe the part that matters to the reader. Put credits, dates, and extra context in the caption where useful.</li>
+            <li>Verify the image in <strong>Preview</strong> at Desktop and Phone widths. If the file disappears, test the exact address again. Some hosts expire links or restrict use from other websites.</li>
+          </ol>
+          <p>Gallery entries use one image per line. Put the direct image URL first, then optional alt text and a caption separated by vertical bars. The addresses below are placeholders. Replace each one with a real URL before testing.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/gallery-lines.webp" alt="URL, alt text, and caption fields on separate lines become three gallery images." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <pre><code>https://images.example.com/lobby.webp | Lobby with oak benches | Main entrance
+https://images.example.com/stair.webp | Daylight on a brick stair | Stair detail</code></pre>
+          <p>Prefer stable addresses over temporary signed links. The ZIP preserves remote image references, so the same host must serve them after launch. For an image that changes in response to a visitor's choice, give the Image block a working default URL first, connect the behavior in Logic, and verify both sources separately.</p>
+          <h3 id="media-check">Replace and verify media</h3>
+          <p>Choose the block that matches the content. A Hero image frames the opening, an Image block can carry an individual caption, and a Gallery groups related images. Write alternatives that explain what readers would miss if the image were skipped. Leave decorative alternatives empty when the surrounding words already explain the subject.</p>
+          <p>Keep the original working address before replacing an image. Paste the replacement, tab away and check the rendered crop. Check each gallery caption after reordering the lines. If the image stays empty, open the exact URL privately to see whether it requires a login, has expired, or depends on a site that prevents embedding. A well-formed gallery line still needs a host that serves its image.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-hero-image-source.webp" aria-label="Open full-size screenshot: Hero image settings"><img src="/99host-assets/handbook/screen-hero-image-source.webp" width="276" height="725" alt="The Hero inspector displays its image URL and alt text fields." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Hero image settings</strong> Paste the replacement address in the Hero’s image field.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-image-content.webp" aria-label="Open full-size screenshot: Image block"><img src="/99host-assets/handbook/screen-image-content.webp" width="276" height="440" alt="An Image block with a direct WebP address and descriptive alt text." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Image block</strong> Use a file URL and describe what the image contributes.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-gallery-content.webp" aria-label="Open full-size screenshot: Gallery entry"><img src="/99host-assets/handbook/screen-gallery-content.webp" width="276" height="604" alt="The Gallery field contains a URL, alt text and caption in one line." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Gallery entry</strong> Separate the parts using vertical bars.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="paint" aria-labelledby="paint-heading">
+          <h2 id="paint-heading">Draw and edit in Paint</h2>
+          <p>Open <strong>Paint</strong> from the Studio toolbar. The drawing surface sits between the tools and their settings on desktop. On a phone, swipe the tool row to see more tools and open <strong>Tool settings</strong> below the canvas. Select <strong>Open image</strong> to start with a local file, or choose <strong>Edit in Paint</strong> on an asset.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-paint-workspace-diagram.webp" alt="The Paint tools and settings sit on either side of the drawing surface on desktop." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <nav class="recipe-index" aria-label="Paint controls">
+            <a href="#paint-sheets">Drawing sheets</a>
+            <a href="#paint-pixels">Pixel sizing and selection</a>
+            <a href="#paint-background">Remove a background</a>
+            <a href="#paint-export">Export and upload</a>
+          </nav>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-workspace.webp" aria-label="Open full-size screenshot of Paint workspace"><img src="/99host-assets/handbook/current-paint-workspace.webp" width="1440" height="900" alt="Paint shows the tools, sheet tabs, canvas and settings beside a sample drawing." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Paint workspace</strong> Choose a tool and draw on the active sheet.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-brush.webp" aria-label="Open full-size screenshot of Brush settings"><img src="/99host-assets/handbook/current-paint-brush.webp" width="1440" height="900" alt="The Brush tool displays width, opacity, brush tip and color settings." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Brush settings</strong> Use the numeric width for repeatable strokes or the slider to try different sizes.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-phone">
+              <a href="/99host-assets/handbook/current-paint-phone.webp" aria-label="Open full-size screenshot of Draw on a phone"><img src="/99host-assets/handbook/current-paint-phone.webp" width="390" height="844" alt="The portrait workspace displays a scrollable drawing toolbar above the canvas." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Draw on a phone</strong> Swipe the tool row and open Image or Tool settings when you need more controls.</figcaption>
+            </figure>
+          </div>
+          <h3>Work with brushes, shapes and text</h3>
+          <p>Set a primary and secondary color in <strong>Tool settings</strong>. Use <strong>Swap</strong> to exchange them. Pick <strong>Pencil</strong> for crisp marks, or <strong>Brush</strong> for a wider stroke. Width sets the number of pixels across the stroke. Opacity controls how much color you apply. Try round, flat, marker, watercolor or pixel tips on a spare sheet. Enable <strong>Pen pressure</strong> if your stylus provides pressure input.</p>
+          <p>Drag a rectangle, ellipse or another shape on the canvas. Set its outline and fill before placing it. To add a label, select <strong>Text</strong>, enter the words in Tool settings, set the font and pixel size, then click on the canvas. Paint places the text as pixels, so use <strong>Undo</strong> and place it again if you want to change the wording. Use <strong>Eyedropper</strong> to sample colors, <strong>Fill</strong> to color a connected area and <strong>Eraser</strong> to clear pixels.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-shape.webp" aria-label="Open full-size screenshot of Draw a shape"><img src="/99host-assets/handbook/current-paint-shape.webp" width="1440" height="900" alt="The selected shape tool shows its outline and fill controls." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Draw a shape</strong> Choose the geometry and colors before dragging the shape into place.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-text.webp" aria-label="Open full-size screenshot of Place raster text"><img src="/99host-assets/handbook/current-paint-text.webp" width="1440" height="900" alt="The Text tool shows text, font and pixel-size settings." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Place raster text</strong> Enter the label, then click the part of the canvas where it belongs.</figcaption>
+            </figure>
+          </div>
+          <h3 id="paint-sheets">Keep alternatives on drawing sheets</h3>
+          <p>Select <strong>Add sheet</strong> next to the tabs, name the sheet and enter its width and height. Choose a transparent, white or primary-color background. To compare two versions, choose <strong>Sheet actions → Duplicate sheet</strong> before editing. Rename each version for its purpose, such as <em>Header badge</em> and <em>Dark background badge</em>. You can keep up to 24 sheets, subject to the total pixel limit.</p>
+          <p>Paint saves its sheets in this browser. Download a sheet or the entire set to keep a copy on another device. Deleting a local sheet removes the drawing and its history from Paint. Images already saved to Assets keep their URLs.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-sheets.webp" aria-label="Open full-size screenshot of Keep several drawing sheets"><img src="/99host-assets/handbook/current-paint-sheets.webp" width="1440" height="900" alt="Several named tabs appear above the drawing canvas." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Keep several drawing sheets</strong> Duplicate a sheet before trying a different style or background.</figcaption>
+            </figure>
+          </div>
+          <h3 id="paint-pixels">Edit pixels, resize and crop</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-paint-pixels-diagram.webp" alt="A small stepped drawing is enlarged using nearest-neighbor scaling so its edges stay crisp." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <ol>
+            <li>For a small icon, make a sheet at the target size, such as 32 × 32 pixels. Increase the zoom percentage and turn on <strong>Pixel grid</strong>. A 1 px pencil helps you correct individual pixels.</li>
+            <li>Choose <strong>Select</strong> and drag around the part you need. Move the selection or choose <strong>Crop selection</strong> to keep only that area. Use Copy or Cut in <strong>Selection &amp; clipboard</strong> to reuse a patch.</li>
+            <li>In <strong>Image → Resize</strong>, enter the target dimensions. Turn off <strong>Keep aspect ratio</strong> if the width and height need to change independently. Choose <strong>Scale using nearest neighbor</strong> for hard pixel edges, <strong>Scale image to fit</strong> for smooth illustration or photography, or <strong>Change canvas only</strong> to adjust the available space without resampling the drawing.</li>
+            <li>Choose <strong>Fit</strong> to bring the whole drawing into view. Check the finished asset at its intended size on the page.</li>
+          </ol>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-selection.webp" aria-label="Open full-size screenshot of Select and crop"><img src="/99host-assets/handbook/current-paint-selection.webp" width="1440" height="900" alt="A visible outline surrounds a selected area of the drawing." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Select and crop</strong> Bound the part you want to move, crop or copy.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-resize.webp" aria-label="Open full-size screenshot of Resize the image or canvas"><img src="/99host-assets/handbook/current-paint-resize.webp" width="1440" height="900" alt="The resize dialog shows pixel dimensions, scaling mode and aspect ratio." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Resize the image or canvas</strong> Set the output dimensions here. Canvas zoom changes the view.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-pixel-grid.webp" aria-label="Open full-size screenshot of Zoom into individual pixels"><img src="/99host-assets/handbook/current-paint-pixel-grid.webp" width="1440" height="900" alt="The zoomed drawing shows its pixel grid and coordinates." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Zoom into individual pixels</strong> Choose a small Pencil width to touch up the outline one pixel at a time.</figcaption>
+            </figure>
+          </div>
+          <h3 id="paint-background">Remove a solid or simple gradient background</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-paint-background-diagram.webp" alt="A matching border is cleared to transparency while the shape inside stays visible." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <ol>
+            <li>Open the image and duplicate its sheet so you can compare the result with the original.</li>
+            <li>In <strong>Image → Remove background</strong>, start with the default tolerance. Studio samples the corners and clears matching pixels connected to the edge.</li>
+            <li>Look for the transparency checkerboard. If the border has a fringe, undo and try a little more tolerance. If part of the subject disappears, undo and lower it. Use <strong>Include matching pixels inside the drawing</strong> only when those interior areas should also become transparent.</li>
+            <li>Check the silhouette against a light and a dark page background. Busy photographs and subjects that touch the edge or share the background color can need manual cleanup. Export as PNG or WebP to keep transparency.</li>
+          </ol>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-background-before.webp" aria-label="Open full-size screenshot of Before removing the background"><img src="/99host-assets/handbook/current-paint-background-before.webp" width="1440" height="900" alt="The source drawing still has a visible background around the subject." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Before removing the background</strong> Keep the original sheet available while you try the removal settings.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-background-tolerance.webp" aria-label="Open full-size screenshot of Adjust background tolerance"><img src="/99host-assets/handbook/current-paint-background-tolerance.webp" width="1440" height="900" alt="The Remove background dialog shows the tolerance slider and the interior-match checkbox." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Adjust background tolerance</strong> Change tolerance in small steps, then review what was removed.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-background-after.webp" aria-label="Open full-size screenshot of Check the transparent result"><img src="/99host-assets/handbook/current-paint-background-after.webp" width="1440" height="900" alt="A checkerboard appears where Paint cleared the background." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Check the transparent result</strong> Inspect the silhouette before exporting with transparency.</figcaption>
+            </figure>
+          </div>
+          <h3 id="paint-export">Export a drawing or save it as an asset</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-paint-output-diagram.webp" alt="Drawing sheets can be downloaded as files or saved to Studio Assets for a public URL." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Choose <strong>Export</strong> inside Paint to download a file. Use PNG for crisp edges and transparency, WebP when you want a smaller image that can retain transparency, or JPEG for a flattened image. For JPEG, select a background color for the transparent areas. Select <strong>All sheets · PNG ZIP</strong> to download every sheet together.</p>
+          <p>To trace an image, open <strong>Reference</strong> at the top of Paint and choose a PNG, JPEG or WebP from your device or <strong>Assets</strong>. Set the opacity and layout, then draw on the sheet. Use <strong>Show through white</strong> if the sheet already has a white background. Turn off <strong>Show reference</strong> to inspect your strokes on their own. Each sheet keeps its own reference in this browser; downloads and saved assets contain only the drawing.</p>
+          <p>Choose <strong>Save asset</strong> to upload the current drawing and get a public image URL. <strong>Use on page</strong> saves the latest version if needed and inserts it in the active page. Choose <strong>Copy link</strong> when you want to place the drawing in an existing field or use it outside Studio.</p>
+          <p>Turn on <strong>Upload changes automatically</strong> when you want Paint to upload revisions after you pause. A changed drawing can receive a new URL. Pages with the prior URL keep showing that version, so apply the new asset when you want them to show the latest artwork.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-export.webp" aria-label="Open full-size screenshot of Export the current sheet or all sheets"><img src="/99host-assets/handbook/current-paint-export.webp" width="1440" height="900" alt="Paint lists PNG, JPEG, WebP and the ZIP option in its Export dialog." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Export the current sheet or all sheets</strong> Choose the format and whether you need one drawing or the complete set.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-paint-autosave.webp" aria-label="Open full-size screenshot of Upload changes automatically"><img src="/99host-assets/handbook/current-paint-autosave.webp" width="1440" height="900" alt="The Paint asset panel shows the automatic-upload setting and the resulting public URL." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Upload changes automatically</strong> Enable the option when you want edits to create new shareable versions.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="blueprint" aria-labelledby="blueprint-heading">
+          <h2 id="blueprint-heading">The Blueprint workspace</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/blueprint-canvas.webp" alt="A click node connects through a condition to a Set text action on the Blueprint canvas." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Blueprint is the workspace for actions your site takes while someone uses it. The canvas holds nodes and connecting wires. The inspector shows settings for the selected node. Add a node from the picker and search by its label or job. Search for “submit” if you want the event that starts when someone sends a form. Search for “visibility” if you want to show or hide a block.</p>
+          <p>The <a href="/docs/nodes">node reference</a> lists every available node with its purpose and typed ports. Open it beside Studio when you need the exact name of an input or output.</p>
+          <h3>Move around the graph</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/pan-and-zoom.webp" alt="Viewport corners frame a node next to mouse-drag arrows and a zoom lens." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Drag with the right mouse button to pan in any direction. Use the wheel to zoom toward the pointer. <strong>Fit graph</strong> brings everything into view, and <strong>Frame</strong> centers your selection. Zoom in when you need to work precisely on a port. On touch, drag an empty part of the canvas to pan.</p>
+          <table class="shortcuts">
+            <caption>Blueprint canvas controls</caption>
+            <thead><tr><th scope="col">Gesture</th><th scope="col">Action</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Right-drag</th><td>Pan the canvas horizontally and vertically.</td></tr>
+              <tr><th scope="row">Right-click</th><td>Open the context menu near the pointer.</td></tr>
+              <tr><th scope="row">Mouse wheel</th><td>Zoom around the pointer.</td></tr>
+              <tr><th scope="row">Left-drag empty canvas</th><td>Draw a selection rectangle around nodes.</td></tr>
+              <tr><th scope="row">Arrow keys</th><td>Pan when focus is on the canvas itself.</td></tr>
+              <tr><th scope="row"><kbd>F</kbd> or <kbd>Home</kbd></th><td>Frame the selection.</td></tr>
+              <tr><th scope="row"><kbd>N</kbd> / <kbd>C</kbd></th><td>Open the node picker / add a comment.</td></tr>
+              <tr><th scope="row"><kbd>Alt</kbd> + click a port</th><td>Break the connections on that port.</td></tr>
+              <tr><th scope="row">Drag an output to blank space</th><td>Find a compatible node and connect it from the source port.</td></tr>
+            </tbody>
+          </table>
+          <h3>Organize a growing graph</h3>
+          <p>Use <strong>Find</strong> to locate a node already on the graph. Use <strong>Add node</strong> when you need a new one. Click the minimap to jump to another area. Collapse <strong>Details</strong> for more room, or use <strong>Focus</strong> to give the canvas the screen. Open Details again when you need to edit the selected node.</p>
+          <p>Box-select related nodes before applying commands to the set. Drag a selected node to move them together. Use <strong>Arrange</strong> to align the selection, or add a comment around it to name the steps. Give significant nodes a clear title or note in Details. Lock nodes that should stay in place while you arrange their neighbors. Open <strong>Graph → Bookmarks</strong> to save the current view and jump back to a named area later.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/graph-bookmarks.webp" alt="A grouped graph branches to two actions and is saved as a named view." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Use the selection commands to copy, duplicate, or delete a group. Copy and paste let you reuse a pattern elsewhere on the canvas. Verify the destination blocks and tables after pasting, especially if the pasted routine is meant for another page. Select a connection to inspect its endpoints, jump to the source or destination, or remove that wire.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/copy-a-node-group.webp" alt="Two connected nodes inside a selection copy together to another area of the canvas." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>A readable graph follows the order of the interaction. Put the event on the left, steps that prepare data in the middle, and the visible result on the right. Place an error branch below its success branch. Use distinct paths for separate visitor actions, even when both update the same block.</p>
+          <h3 id="graph-review-routine">Review a graph before editing it</h3>
+          <p>Use Fit graph to establish where the work lives. Select one event and read its target in Details. Use Find to jump to an action by its name, block target or note. Frame the selected group so you can work on it more closely. Use the minimap when the next action falls outside the current view.</p>
+          <p>Read from the event toward the result. Group the nodes that prepare data separately from the write and the visible outcome. Label groups with what they do, such as “Write the Inbox record and report a failure”. Search the picker by the required behavior and compare the descriptions before placing an action. After adding it, check whether it needs a target block, table or value wire.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-blueprint-board.webp" aria-label="Open full-size screenshot: Blueprint overview"><img src="/99host-assets/handbook/screen-blueprint-board.webp" width="1440" height="880" alt="An event, Set text action, Details panel and minimap in the Logic workspace." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Blueprint overview</strong> Fit the graph and choose an event before tracing the interaction.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-node-picker.webp" aria-label="Open full-size screenshot: Add an action"><img src="/99host-assets/handbook/screen-node-picker.webp" width="562" height="332" alt="Blueprint node picker with a visibility search and a matching action." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Add an action</strong> Compare the results against the behavior you need.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-graph-finder.webp" aria-label="Open full-size screenshot: Find an existing node"><img src="/99host-assets/handbook/screen-graph-finder.webp" width="562" height="184" alt="Blueprint Find opens with a Click result." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Find an existing node</strong> Jump to an existing node by its label or target.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-blueprint-night.webp" aria-label="Open full-size screenshot: Dark workspace"><img src="/99host-assets/handbook/screen-blueprint-night.webp" width="1440" height="880" alt="The demonstration graph in the dark Blueprint workspace." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Dark workspace</strong> Switch the board theme independently from the exported site’s theme.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="wiring" aria-labelledby="wiring-heading">
+          <h2 id="wiring-heading">Events, wires, and values</h2>
+          <p>An event node is the entry point of a graph. <strong>Click</strong> starts from a page block, <strong>Input change</strong> starts when a field changes, <strong>Form submission</strong> collects the fields of a form, and <strong>Page load</strong> starts when a page opens. Some events let you select a page or a particular form field. Choose an explicit target whenever the interaction belongs to one page or control.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/event-into-action.webp" alt="A form’s Submit control triggers a Form submission event, which starts an action." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <div class="rules" aria-label="Connection types">
+            <section><h3>Execution wires</h3><p>They determine when things happen. Connect an event's <strong>Run</strong> output to the first action, then follow its <strong>Next</strong>, <strong>Yes</strong>, <strong>No</strong>, <strong>Success</strong>, or <strong>Error</strong> output as appropriate.</p></section>
+            <section><h3>Value wires</h3><p>They carry information such as text, a number, a record, or an array. Connect the output of the node that supplies the value to a compatible input on a later step.</p></section>
+          </div>
+          <p>Provide both kinds of wire when an action needs to run and receive input. For example, connecting a form's <strong>Fields</strong> to a later node gives that node the submitted object. The execution wire tells the later node when to process it. Values produced by an action become available after that action has run on the same branch. A <strong>Constant</strong> supplies a fixed value without an execution step.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/execution-and-value.webp" alt="The form sends Run and Fields over separate wires to Map fields." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Build one path at a time. First confirm the click or submit event is connected to the intended block. Then connect a visible outcome such as <strong>Set text</strong>, <strong>Change visibility</strong>, or <strong>Show notification</strong>. Use a condition when an interaction has more than one result. Attach feedback to both outcomes where the distinction matters to the visitor.</p>
+          <p>For repeated routines, create a <strong>Flow input</strong>, give it a clear name, and finish the routine with <strong>Return value</strong>. Call it from an event path with <strong>Run flow</strong>. Use <strong>For each item</strong> to apply a flow to items in an array. A flow can be tested on a simple example before you call it from several places. Use flow-run variables for values needed during that interaction and page-scoped variables for shared values while a page remains open.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/reusable-flow.webp" alt="Click and Load each call a shared flow that ends in Return value." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Resolve missing targets and incompatible connections before exporting. Read the node and port labels rather than relying on the wire color alone. If a database or request node exposes both success and error, connect the success branch to confirmation and the error branch to useful feedback. Add <strong>Log value</strong> at the nearest step where you can check an unexpected input or output.</p>
+          <h3>Control how often a path can run</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/throttle-repeated-events.webp" alt="Several incoming events pass through a throttle interval and leave as one event." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Put <strong>Throttle flow</strong> before an operation that should run at most once in an interval. Put <strong>Run once per page</strong> before an action that should happen once until reload. Both expose Pass and Fail paths, so a skipped action can have its own behavior. <strong>Wait</strong> pauses a running flow for a configured delay. <strong>Timer after delay</strong> starts a separate flow once after page load. <strong>Timer interval</strong> starts a sequence of ticks and lets you limit how many ticks occur.</p>
+          <p>Blueprint validates graph size and puts limits on work at runtime. A graph supports up to 1,200 nodes and 6,000 wires. An individual run can use up to 8,000 steps within two minutes. HTTP request nodes support timeouts up to 30 seconds. Where bursts of events are expected, keep each path short and use throttling to control repeat calls. Use the Preview Console to see where a path reached a limit or encountered an error.</p>
+          <h3 id="wire-review">Trace execution and data separately</h3>
+          <p>In the Inbox demo, follow Run through the mapper and across to the write. Trace the submitted object separately from Fields to Source, then from Result to Field values. Check both paths when an action runs with an empty input. A value supplied by another action is available after its producer has run in that flow.</p>
+          <p>Test each risky action in both directions. A mapping error and a failed write in the demo go to a separate feedback step, while a successful write goes to confirmation. If the path runs with the wrong value, put Log value right after the producer. Reproduce the same input in Preview, then compare the measured type with the receiving port's type. Try empty strings, missing keys and zero values.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-submit-settings.webp" aria-label="Open full-size screenshot: Bind the event"><img src="/99host-assets/handbook/screen-submit-settings.webp" width="297" height="580" alt="Form submission settings show the Home form and event options." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Bind the event</strong> Confirm the event is bound to the intended form.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-field-mapping.webp" aria-label="Open full-size screenshot: Map form keys"><img src="/99host-assets/handbook/screen-field-mapping.webp" width="297" height="680" alt="Map object fields with Inbox destination keys and form field paths." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Map form keys</strong> Match stable destination IDs to the names supplied by the form.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-create-record-node.webp" aria-label="Open full-size screenshot: Choose a table"><img src="/99host-assets/handbook/screen-create-record-node.webp" width="297" height="600" alt="The Create record node is configured to use Inbox." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Choose a table</strong> Check the destination before starting the write.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-error-branch-settings.webp" aria-label="Open full-size screenshot: Show a separate error"><img src="/99host-assets/handbook/screen-error-branch-settings.webp" width="297" height="630" alt="The error branch’s Set text node includes the target and a retry message." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Show a separate error</strong> Tell the reader what they can do after a failed write.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="recipes" aria-labelledby="recipes-heading">
+          <h2 id="recipes-heading">No-code recipes</h2>
+          <p>Use the recipes as patterns. Create the target blocks in Design first, give their content recognizable labels, then add the nodes. Test each flow in Preview before combining it with another interaction.</p>
+
+          <h3 id="recipe-details">Reveal details with a button</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/recipe-toggle-details.webp" alt="Selecting Details updates a page from hidden copy to visible text below the button." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <ol>
+            <li>Add a Button with the label “Show details” and keep its URL at the default <code>#</code>. Add a Text block immediately below it containing the details.</li>
+            <li>In Logic, add <strong>Page load</strong>, select the current page, and connect its Run output to <strong>Change visibility</strong>. Target the Text block and set the mode to <strong>Hide</strong>.</li>
+            <li>Add <strong>Click</strong> and target the Button. Connect Run to a second Change visibility node, target the same Text block, and choose <strong>Toggle</strong>.</li>
+            <li>Open Preview. At first, the details should be hidden. Click once to show them and again to hide them. Reload Preview and check the starting state again.</li>
+          </ol>
+          <p>For details that can simply expand and collapse by themselves, try a <strong>FAQ</strong> block. Use Blueprint when the trigger lives elsewhere or opening the details also changes another block.</p>
+
+          <h3 id="recipe-mirror">Mirror a field into live page text</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/recipe-mirror-text.webp" alt="The name Maya in a text field is passed by Set text to a live page heading." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <ol>
+            <li>Add an <strong>Input</strong> with the label “Display name” and a Text block with the content “Your name appears here.”</li>
+            <li>Add <strong>Input change</strong> in Logic and select the Input block. Add <strong>Set text</strong> and choose the Text block as its target.</li>
+            <li>Connect the event's <strong>Run</strong> output to Set text's execution input. Connect its <strong>Value</strong> output to the Set text value input.</li>
+            <li>In Preview, type a name and then delete it. To display a fallback for an empty value, put a <strong>Condition</strong> before the Set text actions and add a branch with your fallback sentence. Test both branches.</li>
+          </ol>
+          <p>If you put a group of inputs inside a Form and target the Form in an input event, check the Form field setting. The event can react to one specific control or to changes anywhere inside the form.</p>
+
+          <h3 id="recipe-branch">Show a message based on a choice</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/recipe-branch-on-choice.webp" alt="The Support selection enters a condition with distinct Support and Product message branches." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Add a <strong>Select</strong> block with the options <code>Product | product</code> and <code>Support | support</code> on separate lines. The first part is visible to the visitor. The second part is the value supplied to the graph. Add an output Text block so both branches have somewhere to write their result.</p>
+          <ol>
+            <li>Target the Select with <strong>Input change</strong> and add a <strong>Condition</strong>.</li>
+            <li>Connect Run to the condition's execution input and Value to the condition's value input. Set its comparison to <strong>Equals</strong> and enter <code>support</code> as the comparison value.</li>
+            <li>Use one <strong>Set text</strong> node for <strong>Yes</strong> and another for <strong>No</strong>. Both can target the output Text block with different messages.</li>
+            <li>Test Product, Support, and the initial empty state. Set a default selection or an opening message if visitors need to see a meaningful result before changing the field.</li>
+          </ol>
+
+          <h3 id="recipe-database">Save a form submission to a table</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/recipe-form-to-table.webp" alt="A form passes its fields to Map fields, then into the two-column Inquiries table." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>To inspect the entire workflow first, choose <strong>Open form + database demo</strong> from the project menu and open Logic. The mapper in the example connects its form fields to the sample table.</p>
+          <p>Create a Form with two required controls. Give the name field the internal name <code>name</code> and the email field the internal name <code>email</code>. In Data, create an <strong>Inquiries</strong> table with required Name and Email fields. Copy the actual field IDs from the <strong>Fields</strong> tab. Field IDs stay stable when display labels change.</p>
+          <p>In Logic, add <strong>Form submission</strong> and target the Form. Add <strong>Map object fields</strong>. Connect the event's <strong>Run</strong> output to the mapper's execution input and its <strong>Fields</strong> output to the mapper's <strong>Source</strong> input. Select the mapper, open <strong>Field map</strong> in Details, and use <strong>Add field mapping</strong> to create these two rows. Replace the examples with the field IDs you copied.</p>
+          <ul>
+            <li><strong>Destination key:</strong> your Name field ID. <strong>Source field path:</strong> <code>name</code>.</li>
+            <li><strong>Destination key:</strong> your Email field ID. <strong>Source field path:</strong> <code>email</code>.</li>
+          </ul>
+          <p>Add <strong>Create record</strong> and choose Inquiries as the target table. Connect the mapper's <strong>Success</strong> port to Create record's execution input and its <strong>Result</strong> port to <strong>Field values</strong>. If you change a form field name, update its matching value in Field map.</p>
+          <p>Connect Create record's <strong>Success</strong> and <strong>Error</strong> ports to separate feedback actions. The success message can say “Your inquiry was received.” The error message can say “Your inquiry could not be saved. Try again.” Try leaving a required field empty to check the browser's form validation.</p>
+          <p>In the table's <strong>API access</strong> tab, enable the operation visitors need for the submission. For a contact form, <strong>Create records</strong> is usually enough. To check the database's Error branch, test a valid submission with Create records off and <strong>Enforce public API permissions</strong> on. Then enable Create records and test again with Preview open on the updated draft. Use <strong>Keep test records</strong> when you want a successful Preview submission to appear in your draft.</p>
+
+          <h3 id="recipe-quantity">Validate a quantity and calculate a total</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/recipe-quantity-total.webp" alt="A quantity of four passes the one-to-fifty check and is multiplied by 25 to produce 100." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Add an <strong>Input</strong> labelled “Quantity” with type <strong>Number</strong> and a Text block for the total. You will use a fixed sample unit price of 25. Start with <strong>Input change</strong> for the quantity. Connect its value to <strong>Convert to number</strong> and connect the execution ports.</p>
+          <ol>
+            <li>Connect the converter's <strong>Success</strong> and numeric <strong>Result</strong> to <strong>Require number range</strong>. Set the minimum to 1 and maximum to 50.</li>
+            <li>Continue through <strong>Multiply numbers</strong> and pass the validated number into <strong>Number A</strong>. Enter 25 for <strong>Number B</strong>.</li>
+            <li>Pass the result into <strong>Format number</strong> and then <strong>Set text</strong>. Connect each preceding Success port and matching Result port so the output is available when Set text runs.</li>
+            <li>Connect the converter and range check error paths to feedback such as “Enter a quantity from 1 to 50.” Check blank input, 1, 50, and 51 in Preview.</li>
+          </ol>
+          <p>Use <strong>Condition</strong> or another check when the next step depends on a comparison. Use <strong>Require value</strong>, <strong>Require email</strong>, and <strong>Require text length</strong> for constraints visitors should fix before a later step runs.</p>
+
+          <h3 id="recipe-image">Switch an image with a selector</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/recipe-replace-a-picture.webp" alt="Selecting Stair sends Set image URL to a picture block and displays its stair scene." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Add an Image block with a working default address and a Select block. Give each option a descriptive label followed by its own direct URL. Use <strong>Committed field change</strong> and target the Select. Wire its <strong>Run</strong> to <strong>Set image URL</strong>, select the Image as the target, and wire <strong>Value</strong> to <strong>URL</strong>. When each choice needs different alt text, take the successful path to <strong>Set image alternative text</strong> and pass a description that corresponds to that choice.</p>
+          <p>Try both choices on Phone and Desktop. The URL action validates address format. Preview is still needed to see whether the external host serves the file.</p>
+          <h3 id="recipe-acceptance">Run each recipe against concrete checks</h3>
+          <table class="shortcuts">
+            <caption>Practice checks for the recipes above</caption>
+            <thead><tr><th scope="col">Recipe</th><th scope="col">What to verify in Preview</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Reveal details</th><td>Hidden on load, visible on the first click, hidden on the second click and after restart.</td></tr>
+              <tr><th scope="row">Mirror a field</th><td>Typing updates the text. Clearing produces an empty result or your chosen fallback.</td></tr>
+              <tr><th scope="row">Branch on a choice</th><td>Both select options reach their intended, distinct messages.</td></tr>
+              <tr><th scope="row">Save a form</th><td>A valid submit writes one temporary record. A rejected write shows separate feedback and keeps the row count unchanged.</td></tr>
+              <tr><th scope="row">Calculate a total</th><td>1 yields 25, 50 yields 1,250 in en-US, and blank, 0 or 51 shows range feedback.</td></tr>
+              <tr><th scope="row">Switch an image</th><td>Each choice loads, preserves meaningful alternative text and still crops well on Phone.</td></tr>
+            </tbody>
+          </table>
+          <p>Start with one positive case. Then vary one input, permission or URL and write down the expected result before trying it. When preparing for <a href="/certification">PLOT Studio certification</a>, rebuild one recipe in a fresh draft with your own labels and example values. Keep the editable project as evidence of how you solved the exercise.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-recipe-database-overview.webp" aria-label="Open full-size screenshot: Complete form recipe"><img src="/99host-assets/handbook/screen-recipe-database-overview.webp" width="1440" height="880" alt="A five-node form graph has a mapper, write node and separate success and error outcomes." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Complete form recipe</strong> Read the execution and value wires on the same example.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-preview-form-success.webp" aria-label="Open full-size screenshot: End-to-end check"><img src="/99host-assets/handbook/screen-preview-form-success.webp" width="1282" height="832" alt="The filled Fieldwork form in Preview shows a successful submission." loading="lazy" decoding="async"></a>
+            <figcaption><strong>End-to-end check</strong> Confirm both the visitor message and the logged write.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="data" aria-labelledby="data-heading">
+          <h2 id="data-heading">Data and API access</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/record-structure.webp" alt="Typed fields become the columns of a table, and each record fills one row." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>In <strong>Data</strong>, use <strong>New table</strong> to organize records that share a purpose. Add fields in <strong>Fields</strong>, including types such as text, email, number, date, boolean, and JSON. Mark a field required when every row needs it. Add a few representative records with <strong>Add record</strong> to check the structure before importing a large list or wiring up a form.</p>
+          <p>Use <strong>Import CSV</strong> after defining the fields. Align column headings with the target fields and start with a small sample. Open the imported rows and check punctuation, dates, empty cells, and numeric values. Use <strong>Export CSV</strong> when you need a copy of a table's draft records. Exporting a CSV and downloading the entire site ZIP serve different purposes.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/map-csv-columns.webp" alt="Two columns from a CSV file map into fields of a table." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <h3>Choose the operations a visitor may use</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/visitor-operations.webp" alt="Visitor permissions leave listing off while allowing a contact form to create records." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Open <strong>API access</strong> for the individual table. Every operation starts off. <strong>List records</strong> returns a collection, <strong>Read one record</strong> returns a row by its ID, <strong>Create records</strong> inserts, and update or delete changes stored records. Enabling an operation exposes it to visitors of the exported site. A contact inbox generally needs Create records. A public directory generally needs List records. Give a table only the access its public feature needs.</p>
+          <p>The exported runtime uses SQLite and applies the table schema and public operation settings. For visitor accounts or access that depends on an individual user's identity, arrange that in the published application's backend. Avoid using a public list operation for an inbox containing private submissions.</p>
+          <p>Browser requests run in the visitor's browser. Anything configured in a request or included in the public JavaScript can be inspected. For API credentials that must stay private, use a backend endpoint you control. For no-code projects, choose public request endpoints intended for browser use or use the included table runtime.</p>
+          <h3 id="table-check">Define and test the smallest useful schema</h3>
+          <p>Begin with the table's purpose and the minimum fields that support it. For an inbox, Name, Email and Message are enough to test the workflow. Make a field required when the form and mapper both supply it. Copy stable IDs from Fields. Changing a readable label keeps the underlying field ID available to existing mappings.</p>
+          <p>Enter one representative record by hand, then search for it. Before importing a full CSV, try a small sample and verify row counts, required fields, dates and empty cells. A contact inbox usually needs Create only. For a public directory, List may be appropriate while writes stay off. Test an allowed operation and a denied operation before publishing.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-data-records.webp" aria-label="Open full-size screenshot: Draft records"><img src="/99host-assets/handbook/screen-data-records.webp" width="1440" height="392" alt="Inbox shows a sample row and a second record from Preview." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Draft records</strong> Check the draft’s row count before and after a test.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-data-filter.webp" aria-label="Open full-size screenshot: Find a record"><img src="/99host-assets/handbook/screen-data-filter.webp" width="1218" height="219" alt="Searching for River narrows the Inbox record list." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Find a record</strong> Use a known string to verify a particular row.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-data-add-record.webp" aria-label="Open full-size screenshot: Enter a row"><img src="/99host-assets/handbook/screen-data-add-record.webp" width="457" height="373" alt="The Add record form has required Name, Email and Message inputs." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Enter a row</strong> Add a representative row before wiring or importing.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-data-field-ids.webp" aria-label="Open full-size screenshot: Stable field IDs"><img src="/99host-assets/handbook/screen-data-field-ids.webp" width="1218" height="342" alt="The Fields tab lists the displayed name, identifier, type and required status." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Stable field IDs</strong> Use the actual identifier in a mapping.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-data-edit-email.webp" aria-label="Open full-size screenshot: Field type"><img src="/99host-assets/handbook/screen-data-edit-email.webp" width="457" height="469" alt="The email field editor shows Email type and a required value." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Field type</strong> Confirm type and required status before testing a write.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-data-public-access.webp" aria-label="Open full-size screenshot: Public operations"><img src="/99host-assets/handbook/screen-data-public-access.webp" width="1218" height="594" alt="The API access tab displays operation permissions and the query endpoint." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Public operations</strong> Give the table the operations the published feature requires.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-data-create-table.webp" aria-label="Open full-size screenshot: Create a table"><img src="/99host-assets/handbook/screen-data-create-table.webp" width="457" height="210" alt="The Create table dialog prompts for the table name." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Create a table</strong> Define the table and fields before loading rows.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="backend" aria-labelledby="backend-heading">
+          <h2 id="backend-heading">Backend workflows</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/endpoint-response.webp" alt="A browser sends a GET request to a server and receives a response with status 200." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Open <strong>Backend → Workflows</strong> to edit the logic that runs on the server. A workflow starts when the server receives an HTTP request with a matching method and path. Select <strong>New</strong> to add a route. The first endpoint starts at <code>GET /api/status</code> with a JSON response. Use <strong>Send request</strong> to see its status, body and execution trace.</p>
+          <h3>Build a request flow</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/request-branches.webp" alt="A request enters a validation step that branches to a normal response or an error." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <ol>
+            <li>Set a path under <code>/api/</code> and choose a method. Use <code>:id</code> in a configured path to match a value such as <code>/api/products/123</code>. Enter the real value when testing.</li>
+            <li>Use <strong>Add node</strong> and search for the operation you need. Each node lists its fields, expected input and purpose. Use the Details panel to name the node and choose what should run on success or error. Nodes without a manual destination run in order.</li>
+            <li>Choose <strong>From workflow</strong> to use request data or a previous node result. A path such as <code>request.body.email</code> picks one field. A result can feed a decision, a database operation, or the final response.</li>
+            <li>Finish with a JSON or text response and set an appropriate status. For a write endpoint, exercise valid data, a missing field, and a failed write. Use <strong>Validate</strong> to check branches and references before publishing.</li>
+          </ol>
+          <p>Backend nodes can access the draft's table definitions and data. To insert a row, pick a table, then supply an object keyed by its field IDs. Server-side table actions follow the workflow's route access policy. The separate table API uses the permissions configured in Data.</p>
+          <p>For a button or form on the website, use <strong>Call backend route</strong> in Logic. For example, a form can take its Fields output, call a POST endpoint, and display a success message for the returned body. The server route can validate the body, write to SQLite, and return a result. Preview runs requests against temporary draft data. Publish a private release to test persistent writes and registered services.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/form-route-storage.webp" alt="A form posts its fields to a server route, which writes a record and reports success." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Use <a href="#publishing">public and private hosting</a> to test a running release against its own database, then share the appropriate address.</p>
+          <h3>Connections, registered programs, and Rust</h3>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/registered-workflow-tools.webp" alt="A workflow can call a registered HTTP connection, a named server task, or a Rust operation." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Use <strong>Backend → Connections</strong> to register an HTTP address under a short name. Choose the allowed method and configure the connector node with that name. Connectors use a registered destination and send request fields as data. If the destination needs a credential, configure a <a href="#secret-connections">saved alias for the connection</a>. Use <strong>Allow this address on the private network</strong> for a service on your own network or VPS.</p>
+          <p>The registered task node runs a named program from the server configuration and passes its input as JSON. <strong>Server clock</strong> is available as a simple test. A VPS administrator can register additional labels and fixed argument lists in <code>PLOT_SERVER_TASKS</code> or a JSON file designated by <code>PLOT_SERVER_TASKS_FILE</code>. Each task entry has a <code>label</code> and an <code>argv</code> array starting with the program's absolute path.</p>
+          <p>Rust operations call the compiled helper on the VPS from the workflow. Choose an operation from the Rust category and configure its inputs in the same Details panel. For a standalone ZIP, set up the bundled helper with the command in <code>BACKEND.md</code>. Store credentials on the server and verify the success and error branches on your private hosted link.</p>
+          <h3 id="workflow-packages">Add a workflow package</h3>
+          <p>Open <strong>Backend → Packages</strong>. Enable a reviewed package for the current project and expand its action list. In Workflows, open <strong>Add node</strong> and search by action or package name. Use the Packages category to see all enabled package actions. The editor shows each action’s input fields and describes its output.</p>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-backend-packages.webp" aria-label="Open full-size screenshot of the workflow package catalogue"><img src="/99host-assets/handbook/screen-backend-packages.webp" width="1150" height="598" alt="The Packages panel shows the enabled CSV Toolkit alongside Decimal Billing, Document Text and Phone Contacts." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Enable a package</strong> The version is pinned in the current project, and its actions become available in the workflow picker.</figcaption>
+          </figure>
+          <ul>
+            <li><strong>CSV Toolkit</strong> reads header-based CSV into records and writes structured rows back to CSV.</li>
+            <li><strong>Decimal Billing</strong> calculates quotes with decimal rounding, line totals and tax. It also converts exact decimal strings into integer minor units.</li>
+            <li><strong>Document Text</strong> fills named fields in a plain text template and measures the text against size limits.</li>
+            <li><strong>Phone Contacts</strong> checks a number using offline numbering plans and formats it for storage or display. The server requires its pinned Python dependency.</li>
+          </ul>
+          <p>Try a quote endpoint. Add <strong>Convert to minor units</strong> and bind its input to the request body. Connect a JSON response to the action’s result. Send <code>{"amount":"19.995","decimals":2}</code> and check that <code>minorUnits</code> is <code>2000</code>. Then try invalid input and inspect the error branch. Use <strong>Add missing input fields</strong> when you want to map individual values from several sources.</p>
+          <p>Enabled versions are saved with the editable project and its backend ZIP. On an independent server, follow <code>BACKEND.md</code> and use the dependency file shipped with the export when the project enables Phone Contacts. The hosted instance shows whether each package is available. <a href="#advanced-workflows">Follow the full package and server workflow recipes</a>.</p>
+          <h3>Compose larger data workflows</h3>
+          <p>Use the category filter in the node picker to find list joins, grouping, pagination, percentiles, date windows and exact money conversions. Start with a small fixture. For example, join two lists on stable IDs and use a group sum to show a summary. Try an empty list, an unknown ID and duplicate keys before using production records.</p>
+          <h3 id="backend-release-check">Test the HTTP contract before publishing</h3>
+          <p>Write down the method, route, payload and expected HTTP status. Start with <code>GET /api/status</code> and a JSON response. In Request test, check the status and body and expand the trace to locate the node that returned it. Exercise an invalid request and an unknown route before testing against a private release.</p>
+          <p>Validate data before writing a record. Use a precise outcome for missing input or a failed write. Request test uses temporary draft data. Use a deliberately separate private release with representative data when checking persistence. In Hosting, confirm the address, whether it already owns a database and whether seed records belong in a new database.</p>
+          <p>Expand <strong>Test headers and secrets</strong> for signed JSON fixtures or authenticated requests. Enter the headers and temporary alias values for that test. The runner supplies the original entered JSON to signature nodes, so whitespace matters. Use an intentionally wrong test signature to check the error branch. Follow the <a href="#secret-testing">saved-secret request testing steps</a> to verify an alias already configured for the project.</p>
+          <p>A result in the node picker shows that the operation exists. Check Connections to see which named services and programs the selected server actually provides. Store credentials in their server-side configuration. Test Rust operations on a server that has the compiled helper available.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-backend-new-endpoint.webp" aria-label="Open full-size screenshot: Endpoint settings"><img src="/99host-assets/handbook/screen-backend-new-endpoint.webp" width="1236" height="84" alt="Backend controls show the method, route, access and name." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Endpoint settings</strong> Select the method and path that requests must match.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-backend-node-picker.webp" aria-label="Open full-size screenshot: Add a backend response"><img src="/99host-assets/handbook/screen-backend-node-picker.webp" width="682" height="437" alt="Filtered backend node picker with JSON and text response choices." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Add a backend response</strong> Select a terminal response that matches the intended body and status.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-backend-response-node.webp" aria-label="Open full-size screenshot: Configure an operation"><img src="/99host-assets/handbook/screen-backend-response-node.webp" width="1236" height="481" alt="A JSON response step and its arguments in the backend builder." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Configure an operation</strong> Set the response status and body separately.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-backend-request-result.webp" aria-label="Open full-size screenshot: Read the execution trace"><img src="/99host-assets/handbook/screen-backend-request-result.webp" width="1236" height="300" alt="Request test returns a 200 status with two trace entries." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Read the execution trace</strong> Expand the trace to check which step returned the response.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-backend-connections.webp" aria-label="Open full-size screenshot: Check configured services"><img src="/99host-assets/handbook/screen-backend-connections.webp" width="1152" height="493" alt="Connections shows registered destinations, tasks and Rust availability." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Check configured services</strong> Verify the capabilities available to the project on this server.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-backend-rust-nodes.webp" aria-label="Open full-size screenshot: Browse Rust operations"><img src="/99host-assets/handbook/screen-backend-rust-nodes.webp" width="682" height="491" alt="Backend node picker filtered to Rust operations." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Browse Rust operations</strong> Check server support before using these in a release.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="project-secrets" aria-labelledby="project-secrets-heading">
+          <h2 id="project-secrets-heading">Project secrets and .env</h2>
+          <p>Use <strong>Backend → Secrets</strong> to store API keys, tokens and signing keys for a saved server project. A secret has an alias such as <code>PLOT_SECRET_ORDERS_API_KEY</code> and an encrypted value held on the Studio server. Use the alias in a credential field so the server can resolve it when the workflow runs.</p>
+          <nav class="recipe-index" aria-label="Project secret instructions">
+            <a href="#save-project-secret">Add a secret</a>
+            <a href="#secret-workflows">Protect a workflow</a>
+            <a href="#secret-connections">Authenticate a connection</a>
+            <a href="#secret-testing">Test and rotate</a>
+            <a href="#exported-env">Set up a self-hosted .env</a>
+          </nav>
+
+          <h3 id="save-project-secret">Save an alias and its value</h3>
+          <ol>
+            <li>Open the project and choose <strong>Backend → Secrets</strong>. If the draft is stored in your browser, use <strong>Save project to server</strong> to give it a server project.</li>
+            <li>In <strong>Add a secret</strong>, enter an <strong>Alias</strong>. Start it with <code>PLOT_SECRET_</code> and add up to 60 uppercase letters, digits or underscores. Use a name that identifies its purpose, for example <code>PLOT_SECRET_WEBHOOK</code> for a signing key.</li>
+            <li>Enter the <strong>Secret value</strong>. Choose <strong>Enter a multiline value</strong> for a value that needs line breaks. The server preserves whitespace. Use just the raw key or token for an HTTP credential.</li>
+            <li>Select <strong>Save secret</strong>. The saved row displays its alias and last update. <strong>Copy alias</strong> copies the name you can use in a workflow.</li>
+          </ol>
+          <p>The encrypted values belong to this saved project. Its workflow settings, project checkpoints and <code>.plot</code> backups carry alias references. A separate server copy or an imported draft needs its own saved credentials before it can use those references. Keep the original values in a password manager or the provider’s dashboard for recovery.</p>
+
+          <h3 id="secret-workflows">Protect an endpoint or verify a signature</h3>
+          <p>For an endpoint used by a server client, choose <strong>Backend → Workflows</strong>, set <strong>Access</strong> to <strong>API key required</strong> and select the alias in <strong>Secret alias</strong>. The client sends the corresponding value in <code>Authorization: Bearer &lt;value&gt;</code> or <code>X-API-Key</code>. The default <code>PLOT_API_KEY</code> is the built-in hosted site key available from <strong>Copy API key</strong> in Hosting.</p>
+          <p>For a signed webhook, add a verifier such as <strong>Verify timestamped HMAC</strong> and choose your alias for its server key. Bind the raw request, signature and timestamp from the request. Route success to the intended operation and failure to a rejection. Compare valid and invalid signatures before enabling the endpoint for production traffic.</p>
+          <p>In <strong>Backend → Hosting</strong>, use <strong>Project secrets → Current saved project</strong> to link the release. New releases preselect the current project when one is saved. When updating an existing release, review its selected link before publishing. A linked release reads the project’s current values. For an external API, have the browser call a backend route and let that route authenticate to the provider.</p>
+
+          <h3 id="secret-connections">Authenticate an outbound HTTPS connection</h3>
+          <ol>
+            <li>Store the provider’s key in <strong>Backend → Secrets</strong>. Use a single line of printable ASCII for an HTTP header.</li>
+            <li>Open <strong>Backend → Connections</strong> and register the provider’s final HTTPS address and allowed method. Select the <strong>Secret alias</strong> that holds the value.</li>
+            <li>Set <strong>Credential header</strong> to <strong>Authorization (Bearer)</strong> if the provider expects a bearer token, or to <strong>X-API-Key</strong> if it expects the raw key in that header. Studio builds the selected header.</li>
+            <li>Add <strong>Call named connection</strong> to a workflow and use the connection’s ID. Publish to a private address first, then send a sample request and check the status and expected response fields.</li>
+          </ol>
+          <p>Connection definitions specify where requests go. The published project supplies its own saved value for the alias on that connection. If two projects use the same connection and alias, each resolves the value in its own project.</p>
+
+          <h3 id="secret-testing">Test, replace or remove a credential</h3>
+          <p>In a workflow’s <strong>Request test</strong>, expand <strong>Test headers and secrets</strong> and enable <strong>Use this project's saved secrets for this request</strong> when you need the current saved values. A matching entry under <strong>Temporary secret aliases (JSON)</strong> takes precedence for that run. Use a synthetic value such as <code>{"PLOT_SECRET_WEBHOOK":"fixture-only"}</code> to exercise a verifier with test data before using a saved value. Test outbound calls in a private release.</p>
+          <p>To rotate a key, open <strong>Backend → Secrets</strong>, choose <strong>Replace</strong> next to its alias, enter the new value and select <strong>Replace value</strong>. Linked releases read the new value on subsequent requests without another build or publish. Use <strong>Delete</strong> to remove an alias when integrations no longer need it. Deleting the saved server project also deletes its secrets. Supply the credentials in a new saved project and publish it to the existing address if that release still needs them.</p>
+
+          <h3 id="exported-env">Configure an exported backend with .env</h3>
+          <p>When a backend export references credential aliases, its ZIP includes <code>.env.example</code> with their names and blank values at the server level. Use the template to create a private <code>.env</code>, enter values for your own deployment and have your process manager load the environment when it starts the Python runner. Keep <code>.env</code> in the server’s private configuration outside the public site folder.</p>
+          <p>On a Unix development machine, run the following from the exported backend directory if <code>.env</code> is your own file and uses shell-compatible assignments and quoting.</p>
+          <pre><code>set -a
+. ./.env
+set +a
+python runtime.py --port 8080</code></pre>
+          <p>If the workflow calls a named connection, also configure the connection on your host using the instructions in <code>BACKEND.md</code>. Start the server, test the protected route or the outbound call, and check that the expected data reaches the client.</p>
+        </section>
+
+        <section id="publishing" aria-labelledby="publishing-heading">
+          <h2 id="publishing-heading">Public and private hosting</h2>
+          <p>Hosting creates a release from the draft you have open. Each release has an address and a dedicated database. Choose who can open the site before publishing, then use that address to test pages, forms and backend routes in the environment visitors will use.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-publish-route-diagram.webp" alt="Publishing a Studio draft with a custom address creates a public link containing the address and a site ID." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+
+          <h3 id="release-access">Choose access and publish</h3>
+          <ol>
+            <li>Open <strong>Backend → Hosting</strong>, or choose <strong>Publish project</strong> in the project menu. In <strong>Custom address</strong>, enter the address you want to reuse for this site. Use lowercase letters, numbers and dashes, and start and end with a letter or number.</li>
+            <li>Use <strong>Who can open the site?</strong> to choose <strong>Studio sign-in required</strong> for a signed-in review, or <strong>Anyone with the link</strong> for a release visitors can open directly. Review the address and the draft name before publishing.</li>
+            <li>Turn on <strong>Seed an empty database with draft records</strong> when a new release should start with the records in the draft. Leave it clear to start with empty tables. This choice applies on the first publication for a custom address.</li>
+            <li>Select <strong>Publish site</strong>. In <strong>Published sites</strong>, find the matching project by its custom address. The <strong>Private</strong> or <strong>Public</strong> badge shows its current access setting.</li>
+          </ol>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-hosting-private.webp" aria-label="Open full-size screenshot of private hosting"><img src="/99host-assets/handbook/current-hosting-private.webp" width="1440" height="900" alt="The Hosting panel shows Studio sign-in required and a private release in Published sites." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Private release</strong> Use the Studio sign-in address to review the hosted project.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-hosting-public-option.webp" aria-label="Open full-size screenshot of the public access setting"><img src="/99host-assets/handbook/current-hosting-public-option.webp" width="1440" height="900" alt="The Who can open the site control is set to Anyone with the link." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Public access setting</strong> Select Anyone with the link before publishing a guest release.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="share-a-release">Copy and test the public address</h3>
+          <p>Select <strong>Copy link</strong> next to the <strong>Public</strong> badge. The link follows <code>/s/your-site/site-id/</code>. The first part comes from <strong>Custom address</strong> and the site ID is assigned by Studio. Copy the whole link from Hosting so it includes both parts. A private release opens at <code>/studio/sites/your-site/</code> with a Studio session.</p>
+          <p>Paste the public link into a private browsing window to check the guest experience. Follow a page link, refresh the destination directly, and open the release on a phone. If the site has a form, send a sample submission and verify the visible result and the corresponding action.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-hosting-public.webp" aria-label="Open full-size screenshot of a published public site"><img src="/99host-assets/handbook/current-hosting-public.webp" width="1440" height="900" alt="The Published sites list shows a Public badge, the full site address and the Copy link button." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Where to copy the link</strong> The public release row shows the full URL and its Copy link action.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-hosting-guest.webp" aria-label="Open full-size screenshot of the guest site on desktop"><img src="/99host-assets/handbook/current-hosting-guest.webp" width="1440" height="900" alt="A public example website opens directly in a browser without the Studio editor." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Guest check on desktop</strong> Open the copied address in a fresh browser session and verify the released page.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-hosting-phone.webp" aria-label="Open full-size screenshot of Hosting on a phone"><img src="/99host-assets/handbook/current-hosting-phone.webp" width="390" height="844" alt="The Hosting form and Published sites list stack on a phone." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Hosting on a phone</strong> Find the release and its copy controls below the form.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-hosting-guest-phone.webp" aria-label="Open full-size screenshot of the guest site on a phone"><img src="/99host-assets/handbook/current-hosting-guest-phone.webp" width="390" height="844" alt="The published example site shown at a phone viewport." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Guest check on a phone</strong> Check the page layout and navigation at the shared address.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="update-a-release">Update, restrict, or take a release offline</h3>
+          <p>Open the draft you intend to release. In Hosting, use <strong>Select</strong> on the matching row in <strong>Published sites</strong>. Review the populated address and access selection, then choose <strong>Update site</strong>. Pages and workflows are updated from that draft. The same address keeps its site ID and database. A different custom address starts a separate release.</p>
+          <p>To restrict an existing release, select it, choose <strong>Studio sign-in required</strong>, and update it. To take it offline, use <strong>Unpublish</strong> and confirm. The list shows <strong>Offline</strong> and the hosted pages stop serving. The database and site ID are retained for a later publication at the same custom address. Check the previous public link as a guest after changing access.</p>
+          <p>If Studio reports a newer site revision, use <strong>Refresh</strong> and review the registered address before trying again. If the draft schema is incompatible with the release database, read the validation message and reconcile the field changes in Data before publishing.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-hosting-update.webp" aria-label="Open full-size screenshot of updating an existing release"><img src="/99host-assets/handbook/current-hosting-update.webp" width="1440" height="900" alt="The Hosting form shows Update site with the existing custom address selected." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Update the existing release</strong> Confirm the selected address before publishing the current draft to it.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-hosting-unpublish.webp" aria-label="Open full-size screenshot of the offline release"><img src="/99host-assets/handbook/current-hosting-unpublish.webp" width="1440" height="900" alt="The Published sites list shows an Offline badge after the release was unpublished." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Verify that the release is offline</strong> The badge confirms the change. Open the old link in a guest session to test it.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="public-release-data">Check routes, data, and assets</h3>
+          <p>Review each route’s <strong>Access</strong> setting and the permissions in Data before opening a release to guests. A direct hosted endpoint appends its route to the site’s address, for example <code>/s/your-site/site-id/api/status</code>. For routes configured as <strong>API key required</strong>, send the value for the route’s alias from your server client in the <code>Authorization: Bearer …</code> header. Use <strong>Copy API key</strong> in Hosting for the default <code>PLOT_API_KEY</code>. Set a custom alias under <a href="#project-secrets">Project secrets</a>.</p>
+          <p>Published pages use compact, obfuscated browser code that the visitor’s browser can read and execute. Backend workflows and their configured secrets run on the server. Images saved to Assets have their own public file URLs. When a release goes offline, those image URLs continue to serve their files.</p>
+        </section>
+
+        <section id="advanced-workflows" aria-labelledby="advanced-workflows-heading">
+          <h2 id="advanced-workflows-heading">Advanced workflow recipes</h2>
+          <p>Build these examples in a disposable project. Each starts with a request and ends with a response you can inspect. Use <strong>Validate</strong> to check the graph and <strong>Send request</strong> to run the selected input. Exercise a valid input, an invalid one and any missing values before connecting the workflow to a page or a live service.</p>
+
+          <nav class="recipe-index" aria-label="Advanced workflow recipes">
+            <a href="#recipe-package-contract">Package setup</a><a href="#recipe-decimal">Quotes</a><a href="#recipe-csv">CSV</a>
+            <a href="#recipe-document">Text templates</a><a href="#recipe-phone">Phone numbers</a><a href="#recipe-collections">Lists and objects</a>
+            <a href="#recipe-analytics">Analytics</a><a href="#recipe-time-windows">Time windows</a><a href="#recipe-timed-signature">Signed requests</a>
+            <a href="#recipe-portability">Portable releases</a>
+          </nav>
+          <h3 id="recipe-package-contract">Read a package contract</h3>
+          <p>Open <strong>Backend → Packages</strong> and enable the package in the current project. Return to <strong>Workflows</strong>, choose a route and use <strong>Add node</strong> to find the action by name. A project stores the package ID and version. Actions become available in the picker when that exact version is enabled and available on the current server.</p>
+          <ol>
+            <li>Open the operation’s Details and read <strong>Action inputs</strong>. The names are case-sensitive. Keep the input shape limited to fields listed in the contract.</li>
+            <li>Choose <strong>Object fields</strong> for <strong>Input fields</strong> and select <strong>Add missing input fields</strong>. It adds the required names while preserving existing values. Add optional fields only when you want to change the action’s defaults.</li>
+            <li>Set a literal with <strong>Value</strong> or bind an input with <strong>From workflow</strong>. A path such as <code>request.body.lines</code> selects part of the request. Binding the whole input object to <code>request.body</code> works when the request matches the package contract exactly.</li>
+            <li>Set the success step to a response and bind its body to the action’s result using the <code>steps.&lt;node-id&gt;.value</code> path displayed in Details. Once you know the result shape, select only the fields the caller needs. Keep failure separate and read the trace to identify the step that rejected the input.</li>
+          </ol>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-package-catalog.webp" aria-label="Open full-size screenshot: Browse workflow packages"><img src="/99host-assets/handbook/screen-advanced-package-catalog.webp" width="1150" height="598" alt="The Backend Packages grid lists CSV Toolkit, Decimal Billing, Document Text and Phone Contacts." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Browse workflow packages</strong> Each package shows its version, availability and the actions available to a project.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-enable-decimal.webp" aria-label="Open full-size screenshot: Enable Decimal Billing"><img src="/99host-assets/handbook/screen-advanced-enable-decimal.webp" width="539" height="289" alt="The Decimal Billing package is enabled and its two actions are listed." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Enable Decimal Billing</strong> Enable the package for the current project, then choose one of its actions in Workflows.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-phone-dependency.webp" aria-label="Open full-size screenshot: Check the Phone Contacts dependency"><img src="/99host-assets/handbook/screen-advanced-phone-dependency.webp" width="539" height="289" alt="Phone Contacts is enabled and displays its pinned phonenumbers 9.0.43 dependency." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Check the Phone Contacts dependency</strong> Availability depends on the installed runtime. The project records the version it uses.</figcaption>
+            </figure>
+          </div>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-package-picker.webp" aria-label="Open full-size screenshot: Find enabled package actions"><img src="/99host-assets/handbook/screen-advanced-package-picker.webp" width="680" height="404" alt="Add a backend node filtered to Packages with Decimal Billing and Phone Contacts actions." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Find enabled package actions</strong> Search the Packages category after enabling the versions your workflow needs.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-package-action-search.webp" aria-label="Open full-size screenshot: Search for a particular action"><img src="/99host-assets/handbook/screen-advanced-package-action-search.webp" width="680" height="188" alt="The backend picker filters Packages to Convert to minor units." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Search for a particular action</strong> Search by task or name, then pick the action appropriate for your input.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-package-input-contract.webp" aria-label="Open full-size screenshot: Start with the action inputs"><img src="/99host-assets/handbook/screen-advanced-package-input-contract.webp" width="360" height="720" alt="The Convert to minor units node shows the required amount field and the typed action input contract." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Start with the action inputs</strong> Add missing input fields gives you the required keys and a starting point for each value.</figcaption>
+            </figure>
+          </div>
+          <div class="doc-table-scroll" role="region" aria-label="Workflow package contracts" tabindex="0">
+            <table class="shortcuts">
+              <thead><tr><th scope="col">Package</th><th scope="col">Actions and results</th><th scope="col">What to check</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">CSV Toolkit</th><td><strong>Parse CSV</strong> accepts CSV text and returns <code>columns</code>, <code>records</code> and <code>rowCount</code>. <strong>Write CSV</strong> accepts an ordered column list and records, then returns <code>csv</code> and <code>rowCount</code>.</td><td>Parsed cells are strings. Check column names, record count, quoting and the delimiter before mapping values to typed fields.</td></tr>
+                <tr><th scope="row">Decimal Billing</th><td><strong>Convert to minor units</strong> returns a decimal string and integer minor units. <strong>Calculate quote totals</strong> returns line totals, subtotal, tax and total as decimal strings, plus integer <code>totalMinorUnits</code>.</td><td>Send prices as decimal strings or whole JSON numbers. Check the chosen precision and rounding on a boundary value.</td></tr>
+                <tr><th scope="row">Document Text</th><td><strong>Fill text template</strong> returns rendered <code>text</code> and <code>fieldsUsed</code>. <strong>Measure text</strong> reports <code>characters</code>, <code>bytes</code>, <code>words</code> and <code>lines</code>.</td><td>Check an omitted field, an empty value and a string containing a non-ASCII character.</td></tr>
+                <tr><th scope="row">Phone Contacts</th><td><strong>Check phone number</strong> returns <code>possible</code>, <code>valid</code> and <code>region</code>. <strong>Normalize phone number</strong> returns <code>e164</code>, <code>international</code>, <code>national</code>, <code>region</code> and <code>extension</code> for a valid input.</td><td>Use the correct two-letter region for local numbers. Check the availability of the pinned phone metadata dependency.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="recipe-decimal">Calculate a quote in decimal values</h3>
+          <p>Create a practice POST route such as <code>/api/practice-quote</code>, then add <strong>Calculate quote totals</strong> from Decimal Billing. Bind <code>lines</code> from <code>request.body.lines</code>. Set optional <code>taxRate</code> to the sample fraction <code>0.075</code> as decimal text and choose <code>2</code> decimal places. Start with a JSON response bound to the operation’s result.</p>
+          <pre><code>{
+  "lines": [
+    {"quantity": "3", "unitPrice": "19.995"},
+    {"quantity": 2, "unitPrice": "4.10"}
+  ]
+}</code></pre>
+          <p>The operation rounds each line half up, adds the rounded lines and rounds the tax on that subtotal. Expect line totals <code>59.99</code> and <code>8.20</code>, a subtotal of <code>68.19</code>, tax of <code>5.11</code> and a total of <code>73.30</code>. The integer <code>totalMinorUnits</code> is <code>7330</code>. A configured fractional rate of <code>0.075</code> means 7.5 percent for this example.</p>
+          <p>Try zero quantity, an empty list and a fractional number sent without quotes as <code>unitPrice</code>. These inputs are rejected. In a second practice route, send <code>{"amount":"19.995","decimals":2}</code> to <strong>Convert to minor units</strong> and check for <code>"20.00"</code> and <code>2000</code>. The action accepts a precision from zero to four places. It calculates from the values you give it. Price selection, applicable tax, creating an order and taking payment are separate operations.</p>
+          <p>The screenshots below use the smaller conversion route. Follow the mapped input to the JSON response, then compare the success and error traces.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-workflow-branches.webp" aria-label="Open full-size screenshot: Follow the two outcomes"><img src="/99host-assets/handbook/screen-advanced-workflow-branches.webp" width="1235" height="600" alt="The quote workflow shows Convert quote amount with a success branch and an error response." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Follow the two outcomes</strong> Define separate outcomes before running a test so the caller receives useful error feedback.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-map-request-fields.webp" aria-label="Open full-size screenshot: Bind the amount and precision"><img src="/99host-assets/handbook/screen-advanced-map-request-fields.webp" width="360" height="570" alt="The package action maps amount from the request and supplies a literal decimals value of 2." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Bind the amount and precision</strong> Bind request.body.amount as the input and keep the selected precision explicit.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-respond-with-node-value.webp" aria-label="Open full-size screenshot: Read the prior result"><img src="/99host-assets/handbook/screen-advanced-respond-with-node-value.webp" width="360" height="460" alt="A JSON response references steps.convert-quote.value as its response body." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Read the prior result</strong> Set the HTTP status separately from the returned object.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-workflow-validated.webp" aria-label="Open full-size screenshot: Check the graph before running it"><img src="/99host-assets/handbook/screen-advanced-workflow-validated.webp" width="1440" height="360" alt="The backend editor confirms No validation issues on the quote workflow." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Check the graph before running it</strong> Validate the assembled graph, then exercise both outcomes with actual request values.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-quote-success-trace.webp" aria-label="Open full-size screenshot: Confirm the exact result"><img src="/99host-assets/handbook/screen-advanced-quote-success-trace.webp" width="1235" height="477" alt="Request test returns HTTP 200 and minorUnits 2000, with the execution trace open." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Confirm the exact result</strong> Confirm the rounded output of the package action and which response step returned it.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-quote-error-trace.webp" aria-label="Open full-size screenshot: Verify the error route"><img src="/99host-assets/handbook/screen-advanced-quote-error-trace.webp" width="1235" height="495" alt="An invalid amount produces HTTP 422 and QUOTE_INPUT, with a trace showing the action error." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Verify the error route</strong> Try an input that fails conversion and confirm it reaches the custom error response.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="recipe-csv">Validate CSV before importing or exporting</h3>
+          <p><strong>Data → Records → Import CSV</strong> appends rows to the draft table after checking its headers and typed fields. Define the fields first and use an unambiguous field name or the ID from the Fields tab. Start with a small sample and inspect the draft’s row count before and after. <strong>Export CSV</strong> downloads the table’s current draft records.</p>
+          <p>Use <strong>CSV Toolkit → Parse CSV</strong> when a backend workflow needs to inspect incoming text or validate an expected header. Map the input <code>csv</code> from your request. Use <code>requiredColumns</code> to require exact names. The default delimiter is a comma. Both package actions also accept a semicolon or tab when chosen explicitly.</p>
+          <pre><code>label,units
+"Press, small",2
+Mat,4</code></pre>
+          <p>Expect two records and the column names <code>label</code> and <code>units</code>. The first record’s label includes the comma, and its units cell is the string <code>"2"</code>. Try a missing required header, duplicate headers and a record with too few cells. Parsing produces an object for the next step. To persist results, validate and convert the cells first, map the validated values to table field IDs and connect an explicit database write.</p>
+          <p>For an export workflow, first select or project the fields you intend to share, then pass them to <strong>Write CSV</strong> with an ordered <code>columns</code> array. Each record may only contain fields from that array. The action quotes cells where needed and prefixes formula-like string cells with an apostrophe. Try a literal cell such as <code>=2+2</code> and inspect the generated text. Return the <code>csv</code> field to your caller or use a Text response to inspect it. Each package operation handles up to 500 records and 40 columns, with size limits on individual cells and total data.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-parse-csv-result.webp" aria-label="Open full-size screenshot: Validate a small CSV import"><img src="/99host-assets/handbook/screen-advanced-parse-csv-result.webp" width="1235" height="627" alt="Request test returns two parsed records and the SKU and price headers." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Validate a small CSV import</strong> Test the column contract on a small sample. Parsed cell values remain strings.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="recipe-document">Fill and measure a plain-text document</h3>
+          <p>Add <strong>Fill text template</strong> from Document Text. Use simple named placeholders such as <code>{{reference}}</code>. Give the action a <code>template</code> string and a <code>fields</code> object. Field values can be text, numbers, booleans or null. The output contains the rendered text and the names actually used.</p>
+          <pre><code>{
+  "template": "Draft {{reference}} for {{team}}",
+  "fields": {"reference": "R-17", "team": "North desk"}
+}</code></pre>
+          <p>Expect <code>Draft R-17 for North desk</code> and <code>["reference","team"]</code> in <code>fieldsUsed</code>. Remove <code>team</code> to exercise the failure path, then try <code>null</code> to see an explicitly empty value render as empty text. The template action fills text. Use a separate response or page action to display it. A delivery integration or a document generator requires its own workflow.</p>
+          <p>Pass the rendered value to <strong>Measure text</strong> when you need character or byte counts before handing a document to another system. For the input <code>"Café\nBook"</code>, with a single line break, expect nine characters, ten UTF-8 bytes, two words and two lines.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-fill-document-template.webp" aria-label="Open full-size screenshot: Fill a plain text template"><img src="/99host-assets/handbook/screen-advanced-fill-document-template.webp" width="1235" height="401" alt="The rendered work note replaces name and count and reports which fields were used." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Fill a plain text template</strong> Feed fields into a text template and inspect the final wording before using it in another step.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="recipe-phone">Check and normalise a phone number</h3>
+          <p>Confirm <strong>Phone Contacts</strong> is available in Packages, enable it, and add <strong>Check phone number</strong>. Send a <code>number</code> string and supply a two-letter <code>region</code> for local formats. You can omit the region with a number that begins with <code>+</code> and includes its country calling code.</p>
+          <p>Try the practice input <code>{"number":"020 7946 0123","region":"GB"}</code> and a malformed sample such as <code>{"number":"abc","region":"GB"}</code>. Inspect <code>possible</code> and <code>valid</code> independently. For the recognised example, <strong>Normalize phone number</strong> produces <code>+442079460123</code> in <code>e164</code>. A failed check stays in your correction path. Store the normalised value after a successful check if the workflow needs it.</p>
+          <p>Phone Contacts uses offline numbering metadata. Its results describe the number’s format and numbering rules. Ownership, reachability and permission to send messages each require separate evidence.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-phone-format-result.webp" aria-label="Open full-size screenshot: Normalize a phone number"><img src="/99host-assets/handbook/screen-advanced-phone-format-result.webp" width="1235" height="401" alt="The contact-number test shows E.164, international and national formats for a US sample." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Normalize a phone number</strong> Use a region with local numbers. Choose the returned format needed by the next operation.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="recipe-collections">Shape collections before you respond</h3>
+          <p>Use Backend list and object actions to keep the output contract small. For a practice route, pass <code>request.body.rows</code> as the list input, then test these operations with a few sample records rather than the full table.</p>
+          <ul>
+            <li><strong>Project list fields</strong> chooses output names and source paths. Map two nested values to flat response fields. Test a missing path with <strong>Missing fields</strong> set to <code>null</code>, <code>omit</code> and <code>error</code> to see what each gives the caller.</li>
+            <li><strong>Sort list by field</strong> takes an explicit sort type and direction. For a list of numbers, choose <code>number</code> and send numbers rather than numeric text. Equal entries keep their order. Missing and null values sort last.</li>
+            <li><strong>Distinct list by field</strong> keeps the first or last occurrence. <strong>Index list by text field</strong> builds a lookup and lets you pick how duplicate text keys are handled. Use its error policy when a duplicate means the source data needs fixing.</li>
+            <li><strong>Join two lists by key</strong> expects unique right-side keys. Compare <code>left</code> mode, which keeps unmatched left rows with a null match, with <code>inner</code> mode. <strong>Paginate a list</strong> reports the current numbered page, total, page count, and next and previous indicators. Sort before paginating when results need a stable order.</li>
+          </ul>
+          <p>For object inputs, <strong>Fill missing fields</strong> can fill absent values and optionally nulls. <strong>Rename object fields</strong> rejects collisions. <strong>Flatten object paths</strong> keeps arrays intact, and <strong>Expand dot paths</strong> rejects a key used both as a value and as a parent. These actions shape temporary results. To change stored rows, connect a database write after validation.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-filter-list-operations.webp" aria-label="Open full-size screenshot: Find sorting actions"><img src="/99host-assets/handbook/screen-advanced-filter-list-operations.webp" width="680" height="296" alt="The backend picker filters the Lists category to sorting actions." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Find sorting actions</strong> Search Lists for a sort operation that matches the shape of the incoming records.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-sort-by-number.webp" aria-label="Open full-size screenshot: Sort by a typed field"><img src="/99host-assets/handbook/screen-advanced-sort-by-number.webp" width="360" height="570" alt="The Sort list by field inspector binds request.body.rows and sorts score numerically in descending order." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Sort by a typed field</strong> Choose a numeric comparison for numeric scores and check the direction explicitly.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="recipe-analytics">Check analytics on a small known sample</h3>
+          <p>Try <strong>Summarise numbers</strong> on records with a <code>minutes</code> field. Pass the array as the input and <code>minutes</code> as the field path. Use values <code>12</code>, <code>6</code>, <code>18</code> and <code>null</code>. The summary has count <code>3</code>, sum <code>36</code>, mean and median <code>12</code>, minimum <code>6</code> and maximum <code>18</code>. Missing and null values are skipped.</p>
+          <ul>
+            <li><strong>Calculate percentile</strong> interpolates between sorted values. The 90th percentile is <code>16.8</code> for this sample.</li>
+            <li><strong>Count histogram buckets</strong> with boundaries <code>[10,15]</code> puts one value in each bucket. Add <code>10</code> to check that a value on a boundary goes to the bucket beginning at that boundary.</li>
+            <li><strong>Sum amounts by group</strong> needs a group path and a numeric amount path. Compare the sum and numeric count for two groups. <strong>Moving average</strong> uses the supplied row order after skipping absent and null samples. Sort by the intended ordering field before interpreting the moving average, and check the initial incomplete windows, which return null.</li>
+          </ul>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-group-amounts-by-field.webp" aria-label="Open full-size screenshot: Group the sorted list"><img src="/99host-assets/handbook/screen-advanced-group-amounts-by-field.webp" width="360" height="570" alt="The Sum amounts by group inspector reads steps.sort-list.value and groups hours by team." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Group the sorted list</strong> Connect the output of one transformation to the next and identify the group and amount fields.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-team-summary-result.webp" aria-label="Open full-size screenshot: Verify the team summary"><img src="/99host-assets/handbook/screen-advanced-team-summary-result.webp" width="1235" height="645" alt="The summary returns counts and hour totals for Field and Studio, with sort and group traces." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Verify the team summary</strong> Compare a short known list against its expected groups before increasing the sample size.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="recipe-time-windows">Test a reporting window</h3>
+          <p>Add <strong>UTC time window</strong> to calculate a reporting boundary from an ISO timestamp. For weekly totals, choose <code>week</code>. The node returns a Monday start and the next Monday in UTC, so timestamps with different offsets can be compared consistently.</p>
+          <p>Test <code>2026-05-03T23:30:00-04:00</code>. That instant is Monday in UTC. Expect a start of <code>2026-05-04T00:00:00.000Z</code> and an end of <code>2026-05-11T00:00:00.000Z</code>. Use <strong>Time in window</strong> to include the start and exclude the end. A record at the exact boundary then belongs to just one weekly report.</p>
+          <p>Use <strong>ISO calendar week</strong> for a week label and keep the returned week-year with the week number. If a business report follows local midnight, define that requirement explicitly and test the time zone conversion before adopting UTC windows.</p>
+
+          <h3 id="recipe-timed-signature">Test a timestamped signature</h3>
+          <p>Use a disposable POST route such as <code>/api/receipt-check</code>. Add <strong>Verify timestamped HMAC</strong> before any write. Bind <strong>Raw payload</strong> to <code>request.raw</code>, <strong>Unix seconds</strong> to <code>request.headers.x-sample-timestamp</code>, and <strong>Signature</strong> to <code>request.headers.x-sample-signature</code>. Select the server key alias <code>PLOT_SECRET_FIXTURE</code>. Have the success path return a small JSON receipt and leave the error path to reject the request.</p>
+          <p>The signed input is the Unix timestamp in seconds, a literal dot, and the exact body text. Keep spaces, line endings and encoding consistent. Use HMAC-SHA256 with a disposable test key and a hex signature. The node accepts a plain hex digest and the optional <code>sha256=</code> prefix. The default clock tolerance is 300 seconds. Use a fresh timestamp and send the request within the chosen window.</p>
+          <ol>
+            <li>In <strong>Request body (JSON)</strong>, paste the exact text your fixture signer used. For this example use <code>{"report":"sample","total":4}</code>.</li>
+            <li>Expand <strong>Test headers and secrets</strong>. Paste a JSON object with <code>x-sample-timestamp</code> and <code>x-sample-signature</code> as strings under <strong>Request headers (JSON)</strong>. Under <strong>Temporary secret aliases (JSON)</strong>, enter <code>{"PLOT_SECRET_FIXTURE":"plot-receipt-fixture-only"}</code> if that is the key used to sign the example.</li>
+            <li>Use <strong>Send request</strong> and check that the signature step succeeded. Change the body while keeping the old signature, then try a correctly signed but expired fixture. Both should reject the request. Missing headers and a missing key are separate errors. Use the trace to distinguish the missing value, unavailable key and signature rejection.</li>
+          </ol>
+          <details>
+            <summary>Generate disposable test headers locally</summary>
+            <p>Run this with Python 3 on your own machine. It prints the header object for the example above. This is test data for Request test. The project’s verification flow is built with nodes.</p>
+            <pre><code>import hashlib
+import hmac
+import json
+import time
+
+body = '{"report":"sample","total":4}'
+timestamp = str(int(time.time()))
+message = (timestamp + "." + body).encode("utf-8")
+signature = hmac.new(b"plot-receipt-fixture-only", message, hashlib.sha256).hexdigest()
+print(json.dumps({"x-sample-timestamp": timestamp, "x-sample-signature": "sha256=" + signature}))</code></pre>
+          </details>
+          <p>Request test uses temporary aliases and a copy of the draft’s database. Use a private rehearsal release to verify the route’s own API-key access and the actual deployment credentials. Freshness alone permits a valid message to be repeated inside its time window. If a repeated delivery must have a single effect, implement and test a durable event record and an atomic update. <strong>Require idempotency key</strong> checks the key’s format. Your workflow still needs a way to enforce uniqueness and handle concurrent deliveries.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-signature-input-bindings.webp" aria-label="Open full-size screenshot: Bind the raw body and signature fields"><img src="/99host-assets/handbook/screen-advanced-signature-input-bindings.webp" width="360" height="708" alt="Verify timestamped HMAC uses request.raw, two request header paths and a server key alias." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Bind the raw body and signature fields</strong> Select the raw payload and map the exact header names expected by the sender.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-signed-request-test-context.webp" aria-label="Open full-size screenshot: Supply temporary test values"><img src="/99host-assets/handbook/screen-advanced-signed-request-test-context.webp" width="1235" height="282" alt="The Request test header and secret fields contain a synthetic timestamp, signature and alias value." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Supply temporary test values</strong> Test with generated fixture values in Preview. Store deployment credentials in the server environment.</figcaption>
+            </figure>
+          </div>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-signed-event-accepted.webp" aria-label="Open full-size screenshot: Confirm delivery was accepted"><img src="/99host-assets/handbook/screen-advanced-signed-event-accepted.webp" width="1203" height="252" alt="The signed-event test returns HTTP 202 and a successful HMAC trace." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Confirm delivery was accepted</strong> Check that signature verification succeeds before the acknowledgement step runs.</figcaption>
+            </figure>
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/screen-advanced-changed-signature-rejected.webp" aria-label="Open full-size screenshot: Verify changed bytes fail"><img src="/99host-assets/handbook/screen-advanced-changed-signature-rejected.webp" width="1203" height="264" alt="The request checker returns HTTP 401 and the timestamped HMAC step records an error." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Verify changed bytes fail</strong> Change the raw request while keeping the signature. Confirm the verification step rejects it.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="recipe-portability">Move a workflow and test it again</h3>
+          <p>Download the editable <code>.plot</code> project for work in Studio. Export the website ZIP to run the site elsewhere. A ZIP with Backend routes includes <code>backend.json</code>, its enabled package versions, the Python workflow runtime and <code>BACKEND.md</code>. If Phone Contacts is in use, the export also includes <code>workflow-package-requirements.txt</code>. Follow the pinned, hash-checked install command in the exported instructions using the Python environment that will run the app.</p>
+          <ul>
+            <li><strong>Package unavailable.</strong> Check that the destination server provides the pinned version. For Phone Contacts, confirm the backend environment has the version listed in the dependency file. Return to Packages and Workflow validation after restoring it.</li>
+            <li><strong>Missing reference or wrong type.</strong> Compare the value path, input name and type with the operation contract. Check the case of the field name, the actual step ID and whether the referenced step ran on the same branch.</li>
+            <li><strong>Works in Request test, fails after publishing.</strong> Check server-side aliases, route access, named Connections and the published database. Request test does not call registered live connections or tasks. Repeat with synthetic data in the target private release before using real data.</li>
+            <li><strong>A valid test did not create a persistent record.</strong> Check which environment ran the request. Validation inspects configuration. Request test executes against a temporary copy. Check persistent effects using a separate rehearsal release with its own database.</li>
+          </ul>
+          <p>Check the workflow in both runtime environments before handing off a project. Record the app version, package pins, required configuration names and a sample request with its expected response. Keep secret values out of source, exports and screenshots. See <a href="#backend-release-check">how to test an HTTP contract</a> and <a href="#export">how to choose and test an export</a>.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/screen-advanced-package-in-use.webp" aria-label="Open full-size screenshot: Check where a package is used"><img src="/99host-assets/handbook/screen-advanced-package-in-use.webp" width="539" height="220" alt="The Decimal Billing card shows one workflow reference and a disabled Remove from project button." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Check where a package is used</strong> Remove or replace the referencing node before removing this package.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="preview" aria-labelledby="preview-heading">
+          <h2 id="preview-heading">Test in Preview</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/preview-device-check.webp" alt="Play a test interaction in both desktop and phone previews." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>Select <strong>Preview</strong> in the header or <strong>Test site</strong> from Logic. Pick the page and device in the Preview toolbar. The Preview is interactive, so click actual buttons, tab through form inputs, use navigation links, and check the page after a reload. Start with the expected path, then test what happens when a field is empty, a request fails, or permissions are off.</p>
+          <ol>
+            <li>Open <strong>Show preview console</strong>. Add a Log value node after an event or data action if you need to inspect the value carried by a wire.</li>
+            <li>Run an interaction once and read the messages. Compare the result to the event target and the branch you expected. If nothing appears, check the event, the execution wires, and whether you opened the intended page.</li>
+            <li>Use <strong>Restart preview</strong> when you need the initial page state again. Rerun the same actions after each change so the effect of that change is easy to see.</li>
+            <li>For a database test, leave <strong>Enforce public API permissions</strong> enabled to verify how the exported runtime will treat requests. Use <strong>Keep test records</strong> only when you want the temporary data in the draft.</li>
+          </ol>
+          <p>For a test that intentionally uses an external service, open the Preview Console and enable <strong>Allow fetch and sockets</strong>. This rerenders the preview page. The setting starts off each time you open Preview. SQLite preview requests continue to use the internal preview bridge. Check the success and error branch of every step that calls a remote service. Confirm HTTPS, the request method, response body format, and that the service permits browser requests from your site's origin. Test again from the actual export, because the preview and published site can have different origins.</p>
+          <p>After testing, open <strong>Graph → Execution trace</strong> to see recent node steps, log messages, and faults. Select a trace entry to locate its node. Write down what passed in observable terms. “The button changed the text,” “the form added one sample record,” or “both page links opened the intended destination” helps the next person verify the work quickly.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/find-node-from-trace.webp" alt="Select a failed step in the execution trace to find its node on the graph." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <h3 id="preview-test-run">Run repeatable preview passes</h3>
+          <p>Keep a short test record by page and device. On the first pass, click the main action and complete the form with sample data. On the second, try an incomplete entry or an operation you expect to be denied. Repeat the same steps after restarting Preview so the next change is easy to compare.</p>
+          <p>Use the Console to inspect the submitted value, the executed action and the reported result. Review permission enforcement first. Before enabling network access, identify the external service and choose synthetic data safe to send there. Preview writes to temporary tables. Review the sample before choosing Keep test records, and test the extracted export separately when a server runtime is involved.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-preview-desktop.webp" aria-label="Open full-size screenshot: Desktop preview"><img src="/99host-assets/handbook/screen-preview-desktop.webp" width="1282" height="832" alt="A full browser-like interactive preview of PRÓG." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Desktop preview</strong> Pick the page, device and restart behavior from the toolbar.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-preview-phone.webp" aria-label="Open full-size screenshot: Phone preview"><img src="/99host-assets/handbook/screen-preview-phone.webp" width="1282" height="832" alt="PRÓG in the narrow interactive Preview frame." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Phone preview</strong> Test the site’s own controls at the phone width.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-preview-console.webp" aria-label="Open full-size screenshot: Console settings"><img src="/99host-assets/handbook/screen-preview-console.webp" width="1282" height="178" alt="Preview Console has network off and public API enforcement enabled." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Console settings</strong> Set the intended conditions before a monitored run.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-preview-test-records.webp" aria-label="Open full-size screenshot: Review a preview write"><img src="/99host-assets/handbook/screen-preview-test-records.webp" width="1282" height="178" alt="The console shows the write result and the Keep test records action." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Review a preview write</strong> Copy test data into the draft only when it belongs in the checkpoint.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="export" aria-labelledby="export-heading">
+          <h2 id="export-heading">Project files, history, and export</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/save-project-copies.webp" alt="Keep the browser draft, download an editable project file, or save a server copy." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p><strong>Saved locally</strong> refers to the editable draft in this browser. Use a protected <code>.plot</code> file for a downloadable copy, <strong>Server projects</strong> for a revision history, and <strong>Export</strong> for a ZIP you can run on another host. To make a visitor link from your current draft, open <a href="#publishing">Hosting</a>.</p>
+          <h3 id="plot-project-files">Download and reopen a protected .plot file</h3>
+          <p>A <code>.plot</code> file stores the editable pages, styles, Blueprint graph, draft records, Backend workflows and asset references. Each hosted release stores live records in its own database. New downloads from the project menu and version history are protected with AES-256-GCM by the Studio server. Keep the file and sign in to the same Studio instance to reopen it. Earlier valid <code>.plot</code> files still import.</p>
+          <p>Studio derives a fresh key for each new download and checks the file for changes before importing it. Sign in to the workspace that created the export to reopen it. Handbook templates work in every licensed workspace. Project secrets stay in the vault. An older export stored as JSON is unencrypted; import it and download a new protected copy.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/current-protected-project-diagram.webp" alt="Studio protects a downloaded project file. The file returns to its original Studio server during an authorised import." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <ol>
+            <li>Open the project name menu and choose <strong>Download .plot project</strong>. Wait for <strong>Protected project downloaded.</strong> and check your browser downloads for the project file.</li>
+            <li>When you want to reopen it, sign in to the Studio instance that issued it. Save a checkpoint of the active draft if you plan to keep that work. Choose <strong>Import project</strong> and select the original <code>.plot</code> file.</li>
+            <li>Confirm <strong>Replace</strong> on the prompt when you are ready to load the imported draft. Check the project name, page list and one working Blueprint or Backend workflow.</li>
+          </ol>
+          <p>If Studio reports a damaged file or a file from another server, return to the issuing Studio instance and try the original download or a fresh copy from <strong>History</strong>. If your session has expired, sign in before retrying. Review referenced images separately by opening the imported draft in Preview.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-plot-project-menu.webp" aria-label="Open full-size screenshot of project file commands"><img src="/99host-assets/handbook/current-plot-project-menu.webp" width="1440" height="900" alt="The project menu shows Download .plot project, Import project, Save to server, and Server projects." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Project file commands</strong> Open the project name menu to find download, import and server projects.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-plot-download.webp" aria-label="Open full-size screenshot of a protected project download"><img src="/99host-assets/handbook/current-plot-download.webp" width="1440" height="900" alt="Studio reports that it downloaded a protected project file." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Download completed</strong> Keep the original file from the browser’s download list.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-plot-import.webp" aria-label="Open full-size screenshot of the project import confirmation"><img src="/99host-assets/handbook/current-plot-import.webp" width="1440" height="900" alt="The Replace the current project prompt offers Cancel and Replace." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Import confirmation</strong> Replace loads the selected file into the editor.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="server-project-history">Save a server revision, then recover it</h3>
+          <p>Open <strong>Server projects</strong> from the project menu. Enter a short <strong>Revision note</strong> such as <em>Before updating the intake form</em>. Select <strong>Save current project</strong> for a first save or <strong>Save current revision</strong> for an open server project. The list shows which saved project is open and its current version.</p>
+          <p>Use <strong>Save as copy</strong> on an open server project to create a separate editable copy. If another browser has saved a newer revision, open that revision for review or use <strong>Save as copy</strong> to preserve your draft separately. Server saves and their history are encrypted at rest.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen doc-screen-wide">
+              <a href="/99host-assets/handbook/current-plot-server-copy.webp" aria-label="Open full-size screenshot of server save and copy controls"><img src="/99host-assets/handbook/current-plot-server-copy.webp" width="1440" height="900" alt="The Server projects dialog lists the open saved project and shows Save as copy and Save current revision." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Server save and copy</strong> Use a revision note for a checkpoint or save a separate project for parallel work.</figcaption>
+            </figure>
+          </div>
+          <p>Select <strong>History</strong> on the project row to see up to 30 recent revisions, with timestamps, notes and the <strong>Current</strong> marker. Use <strong>Download .plot</strong> beside any listed version for a protected copy. To recover an earlier version on the server, choose <strong>Restore</strong> on its row, then <strong>Confirm restore</strong>. This creates a new current revision and keeps the previous one in history, subject to the revision limit. Use <strong>Open current</strong> and confirm <strong>Replace</strong> to load the restored version in the editor.</p>
+          <div class="doc-screen-grid">
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-plot-server-history.webp" aria-label="Open full-size screenshot of a project's version history"><img src="/99host-assets/handbook/current-plot-server-history.webp" width="1440" height="900" alt="Version history lists the current and earlier revisions with their notes and Download .plot actions." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Version history</strong> Identify a checkpoint by its revision number, date and note.</figcaption>
+            </figure>
+            <figure class="doc-screen">
+              <a href="/99host-assets/handbook/current-plot-restore.webp" aria-label="Open full-size screenshot of the restore confirmation"><img src="/99host-assets/handbook/current-plot-restore.webp" width="1440" height="900" alt="An earlier version in history has an active Confirm restore button." loading="lazy" decoding="async"></a>
+              <figcaption><strong>Restore a checkpoint</strong> Confirm the version on the selected row, then open the new current revision.</figcaption>
+            </figure>
+          </div>
+
+          <h3 id="site-zip">Package a site ZIP</h3>
+          <p>Use <strong>Export</strong> for the finished website. A static ZIP contains HTML pages, styles, JavaScript, and packaged local assets when present. It retains remote image addresses. For a site with a table, the ZIP also contains a Python runtime and database schema. The SQLite export dialog gives you the option to include records as seed data. Leave that option off for a clean database or when the draft contains test or private records.</p>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/static-zip-files.webp" alt="A static site ZIP expands into HTML pages, CSS, and JavaScript files." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <h3>Check the exported files</h3>
+          <p>Extract the ZIP to a new folder. For a static export, serve the files with a static host and make <code>index.html</code> the home page. To check it locally, open a terminal in the extracted folder and run the command below, then visit <code>http://localhost:8080/</code>.</p>
+          <pre><code>python -m http.server 8080</code></pre>
+          <p>For an export with Data, start the included runtime from the extracted folder. The bundled <code>DATABASE.md</code> describes the API, permissions, and runtime files. Use the runtime behind HTTPS when deploying a data-backed site.</p>
+          <pre><code>python runtime.py --port 8080</code></pre>
+          <p>Follow the primary links and repeat the main interaction in the extracted export. If you use a database, submit a test record, confirm it persists, and check that the allowed operations match your intent. A site can be ready for export even when its production hosting is a separate task.</p>
+          <h3 id="handoff-choice">Choose the right deliverable</h3>
+          <table class="shortcuts">
+            <caption>Save and release options</caption>
+            <thead><tr><th scope="col">Deliverable</th><th scope="col">What the recipient can do with it</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>.plot</code> project</th><td>Sign in to its issuing Studio instance and import the editable draft.</td></tr>
+              <tr><th scope="row">Server project</th><td>Open the saved project or recover a checkpoint after signing in.</td></tr>
+              <tr><th scope="row">Site ZIP</th><td>Run the generated site after extracting it, using its runtime if it depends on one.</td></tr>
+              <tr><th scope="row">Private release</th><td>Open the hosted site after signing in to Studio.</td></tr>
+              <tr><th scope="row">Public release</th><td>Open the hosted site from the full shared URL.</td></tr>
+            </tbody>
+          </table>
+          <p>For example, send <code>harbour-site.plot</code> to a colleague who edits in the same Studio instance and <code>harbour-site.zip</code> to the person deploying the site. Reopen the project in Studio and run the exported ZIP from its extracted folder to check each handoff.</p>
+          <p>Open Code before handoff and confirm the correct project, pages and expected files. If a newer server revision exists, download the current local project before opening it. Save a copy to preserve parallel work. For data exports, confirm the seed content separately from the schema. Repeat the key user journey after starting the exported site.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-code-files.webp" aria-label="Open full-size screenshot: Generated files"><img src="/99host-assets/handbook/screen-code-files.webp" width="1440" height="517" alt="The Code workspace lists HTML, stylesheet and script files from the draft." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Generated files</strong> Inspect the files before packaging the site.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-custom-css.webp" aria-label="Open full-size screenshot: Optional custom styles"><img src="/99host-assets/handbook/screen-custom-css.webp" width="1440" height="455" alt="The active Custom CSS editor in Code." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Optional custom styles</strong> Review any existing site-wide CSS before a handoff.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-export-runtime.webp" aria-label="Open full-size screenshot: ZIP record choices"><img src="/99host-assets/handbook/screen-export-runtime.webp" width="402" height="207" alt="Export with server runtime dialog has seed records turned off." loading="lazy" decoding="async"></a>
+            <figcaption><strong>ZIP record choices</strong> Confirm whether the download should contain any draft records.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="automation" aria-labelledby="automation-heading">
+          <h2 id="automation-heading">Guide for AI operators</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/operator-workflow-checklist.webp" alt="Start with the project requirements, build the page in the editor, and check the result before handoff." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <p>This workflow is for an assistant using the browser to build in Studio. Treat the user's page requirements, content, and asset list as the scope. Use the editor's normal controls, blocks, styling fields, and built-in nodes. Preserve existing work by checking the current project before creating, importing, or replacing a draft.</p>
+          <ol>
+            <li><strong>Establish the project.</strong> Read the active project name and page list. Create a checkpoint if the draft is already in use. Keep a short checklist of intended pages and actions.</li>
+            <li><strong>Build the page structure.</strong> Create page names and slugs, add the navigation, and place sections in reading order. Use realistic copy from the project instructions and wire basic navigation before adding conditional behavior.</li>
+            <li><strong>Keep inputs stable.</strong> Set clear labels and field names. For images, use only approved direct image URLs supplied for the project and verify each one loads. Keep URLs and copy editable in the appropriate Content tab.</li>
+            <li><strong>Connect interactions.</strong> Locate the right page and target block in each node. Keep a record of the event, outputs, and expected behavior for each route. Use the recipes as building patterns.</li>
+            <li><strong>Test with real controls.</strong> Check the main path, smaller devices, typing and tab order where relevant, and the error path of a data action. Use sample data with no private information.</li>
+            <li><strong>Save and hand off.</strong> Save the editable <code>.plot</code> file in the requested location. Export a ZIP when deployment files are requested. In the handoff, list the pages created, interactions verified, and any assets or settings that still need the user.</li>
+          </ol>
+          <p>Useful project instructions specify which project to open, the style, pages, and at least one behavior that can be tested. The example below is ready to adapt.</p>
+          <blockquote>Build a service studio site in PLOT using the visual editor and built-in nodes. Create Home, Services, and Contact pages. Use the copy and image URLs I supplied. On Contact, save name and email to an Inquiries table and show separate success and failure messages. Check the result in Desktop and Phone Preview, then save a server copy and tell me what passed.</blockquote>
+          <p>If a step behaves unexpectedly, inspect the visible state before repeating it. Check the form field names, the target block, the menu item's destination, and the latest console messages. Report the concrete gap when a required service, image URL, or project is unavailable. Keep the handoff clear enough that someone else could reproduce the test through the editor.</p>
+          <h3 id="operator-verification">Leave a reproducible handoff</h3>
+          <p>Give the operator a starting draft, a definition of done and boundaries. For example, “Use a new draft, build Home and Contact, stop after one verified Preview submission, and save an editable checkpoint.” When the work belongs in an existing draft, name it and specify the checkpoint.</p>
+          <p>Ask for evidence that someone can repeat, such as “Phone Preview opened Contact and the Submit event targets its form.” Check the page and field settings in the UI before changing graphs. Use the draft's actual table and field IDs. Report which changes landed in the draft, which records were temporary, and whether a release was made. Use synthetic addresses and keep credentials out of captures and examples.</p>
+          <h3 id="operator-backend-checks">Check a workflow before handing it off</h3>
+          <p>Open the actual endpoint in Backend and record its method, path, access rule and expected result. Follow each value from the request or a previous node to its next use. Check which nodes run on success and which run on error. Record any package ID and version the draft needs, then compare them with the Packages panel on the server that will run it.</p>
+          <p>Use Request test to collect one successful result and one expected rejection. Write down the fixture, HTTP status, relevant trace step and effect on records. If a workflow needs a signed request, use a test alias and a synthetic payload. For a connection to an external service, separate the checks that passed against a fixture from the ones that still need a configured test service.</p>
+          <p>For a portable handoff, include the editable <code>.plot</code> file and the backend ZIP. Check the ZIP’s requirements and runtime notes, and identify the service settings that must be recreated in the next environment. <a href="#advanced-workflows">Use the advanced examples to set up a repeatable check</a>.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-automation-target-search.webp" aria-label="Open full-size screenshot: Locate the flow"><img src="/99host-assets/handbook/screen-automation-target-search.webp" width="562" height="236" alt="Find returns results related to the Inbox workflow." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Locate the flow</strong> Search by the existing flow target to avoid creating duplicate behavior.</figcaption>
+          </figure>
+          <figure class="doc-screen">
+            <a href="/99host-assets/handbook/screen-automation-form-contract.webp" aria-label="Open full-size screenshot: Read the source fields"><img src="/99host-assets/handbook/screen-automation-form-contract.webp" width="276" height="602" alt="The Fieldwork Form inspector contains the form field labels and submit label." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Read the source fields</strong> Read the actual field settings before choosing mapper keys.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-automation-field-contract.webp" aria-label="Open full-size screenshot: Read the destination fields"><img src="/99host-assets/handbook/screen-automation-field-contract.webp" width="1440" height="428" alt="The Data workspace identifies the Inbox schema and actual field IDs." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Read the destination fields</strong> Record the destination IDs used by the existing mapping.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-compiled-script.webp" aria-label="Open full-size screenshot: Inspect generated behavior"><img src="/99host-assets/handbook/screen-compiled-script.webp" width="1440" height="540" alt="Code displays the script compiled from the running example project." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Inspect generated behavior</strong> Compare the intended behavior in Code with the result in Preview.</figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="reference" aria-labelledby="reference-heading">
+          <h2 id="reference-heading">Troubleshooting</h2>
+          <figure class="doc-sketch">
+            <img src="/99host-assets/handbook/investigate-a-broken-wire.webp" alt="Inspect the connection between an event and its action to locate a failed interaction." width="1050" height="300" loading="lazy" decoding="async">
+          </figure>
+          <dl class="troubleshooting">
+            <dt>The graph runs without a visible result.</dt>
+            <dd>Check the selected event target, page, and execution wires. Add Log value after the event to verify it fires. Open the action settings and check the target block and value input.</dd>
+            <dt>A value is missing or appears on the wrong branch.</dt>
+            <dd>Check that the producer runs before the consumer on that route. For an object or array, confirm the property path or item index you are using. Check input type and make conversions explicit.</dd>
+            <dt>A request or database operation fails.</dt>
+            <dd>Connect the Error branch, look at the Preview Console, and reproduce the smallest failing request. For a record write, verify required fields, field IDs, field types, and table permissions.</dd>
+            <dt>A picture loads for you but disappears for a visitor.</dt>
+            <dd>Open the direct address in a private browser window. Check HTTPS, link expiration, and whether the host permits displaying the image on other sites.</dd>
+            <dt>Phone layout shifts or scrolls sideways.</dt>
+            <dd>Inspect the widest child. Check its fixed width, minimum width, long unbroken text, and the column or flex layout of its parent. Retest in Preview at Phone width.</dd>
+            <dt>The ZIP opens but the form cannot write records.</dt>
+            <dd>If the ZIP includes SQLite, run the included runtime and visit it through its HTTP address. Confirm the table permits the public operation and that the exported schema contains the fields used by the graph.</dd>
+          </dl>
+          <p class="reference-note">Background reading for the graph interaction model is available in the <a href="https://dev.epicgames.com/documentation/unreal-engine/graph-editor-for-the-blueprints-visual-scripting-editor-in-unreal-engine">Unreal Engine Graph Editor documentation</a>.</p>
+          <a class="back-link" href="#main">Back to the handbook contents</a>
+          <h3 id="diagnose-failure">Identify the smallest failing step</h3>
+          <ol>
+            <li>Record the page, device, input and action that reproduce the problem. Repeat in a fresh Preview.</li>
+            <li>If a block is missing before interaction, check Design and device overrides. If the interaction never fires, inspect the event target and execution wire. If the output is wrong, compare the produced value and the input's type.</li>
+            <li>In Backend, compare the actual request method and path with the route definition. Check status and body before changing the response node. In a data-backed export, verify the runtime and table permissions.</li>
+            <li>Make one correction. Repeat the original failing case, the ordinary case and any affected error branch.</li>
+          </ol>
+          <p>A 404 for a backend workflow points first to the method and path. A message about a required field points to the submitted fields or mapper. Record the first useful symptom before adding nodes or enabling extra permissions.</p>
+          <div class="doc-screen-grid">
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-troubleshoot-backend-result.webp" aria-label="Open full-size screenshot: Missing route response"><img src="/99host-assets/handbook/screen-troubleshoot-backend-result.webp" width="1236" height="300" alt="Request test for /api/unknown returns HTTP 404 and ROUTE_NOT_FOUND." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Missing route response</strong> Compare the failing request to the method and path registered in Workflows.</figcaption>
+          </figure>
+          <figure class="doc-screen doc-screen-wide">
+            <a href="/99host-assets/handbook/screen-value-wire-on-canvas.webp" aria-label="Open full-size screenshot: Trace a connection"><img src="/99host-assets/handbook/screen-value-wire-on-canvas.webp" width="1440" height="880" alt="Blueprint displays typed form wires and highlights compatible execution inputs." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Trace a connection</strong> Inspect the source and destination on whichever path did not run as expected.</figcaption>
+          </figure>
+          </div>
+        </section>
+      </article>
+      </div>
+    </main>
+
+    <footer class="plot-site-footer">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="32" height="32" alt="">PLOT.</a>
+        <nav class="plot-site-nav" aria-label="Footer navigation">
+          <a href="/docs">Docs</a>
+          <a href="/certification">Certification</a>
+          <a href="/license">Licence</a>
+          <a href="/terms">Terms of service</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

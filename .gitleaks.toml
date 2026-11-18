@@ -1,0 +1,12 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Dependency installs, Git storage, and a public browser localStorage key"
+paths = [
+  '''(^|[\\/])node_modules[\\/]''',
+  '''(^|[\\/])\.git[\\/]''',
+]
+regexes = [
+  '''plot\.certification\.enrolments\.v1''',
+]

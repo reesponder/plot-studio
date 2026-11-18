@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#181817">
+    <meta name="description" content="Two foundational PLOT Studio Builder practice drills with worked solutions, Studio screenshots and expected test results.">
+    <title>Builder practice · PLOT Studio</title>
+    <link rel="canonical" href="https://plotstudio.pro/certification/builder/practice">
+    <link rel="icon" type="image/webp" href="/99host-assets/plot-mark.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="/99host-assets/site-chrome.css?v=5">
+    <script type="module" src="/99host-assets/site-chrome.mjs?v=1"></script>
+    <link rel="stylesheet" href="/99host-assets/certification.css?v=9">
+    <link rel="stylesheet" href="/99host-assets/certification-practice.css?v=3">
+    <script src="/99host-assets/cookie-notice.js?v=1" defer></script>
+  </head>
+  <body class="cert-page cert-practice-page">
+    <a class="plot-skip" href="#main">Skip to content</a>
+    <header class="plot-site-header">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="34" height="34" alt="">PLOT.</a>
+        <button class="plot-menu-button" type="button" aria-expanded="false" aria-controls="plot-main-navigation" aria-label="Open navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav id="plot-main-navigation" class="plot-site-nav" aria-label="Main navigation">
+          <a href="/#overview">Overview</a>
+          <a href="/docs">Docs</a>
+          <a href="/certification" aria-current="location">Certification</a>
+          <a href="/license">Licence</a>
+          <a class="plot-site-action" href="/studio/">Open Studio</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <nav class="cert-shell cert-local-nav" aria-label="Certification navigation"><a href="/certification/builder">Back to the exam</a><a href="/certification">All certifications</a></nav>
+      <header class="cert-shell cert-practice-hero">
+        <div class="cert-hero-copy">
+          <h1>Builder practice</h1>
+          <p>Two foundational drills from the earlier Studio Enquiry scenario. Practise page navigation and form feedback before the timed exam.</p>
+          <div class="cert-actions"><a class="cert-button" href="#responsive-site">Read the drills</a><a class="cert-text-action" href="/studio/">Open Studio</a></div>
+        </div>
+      </header>
+      <div class="cert-shell cert-practice-layout">
+        <nav class="cert-practice-index" aria-label="Practice drills">
+          <h2>On this page</h2>
+          <ol><li><a href="#responsive-site">Create the three pages</a></li><li><a href="#form-outcomes">Wire the live result</a></li></ol>
+        </nav>
+        <div class="cert-practice-content">
+          <article class="cert-practice-task" id="responsive-site" aria-labelledby="responsive-site-title">
+            <header class="cert-practice-task-head">
+              <h2 id="responsive-site-title">Create the three pages.</h2>
+              <div class="cert-practice-prompt">
+                <p>Task instructions</p>
+                <blockquote><p>Use Home (index), Services (services) and Contact (contact). Add one meaningful H1 or hero heading per page. Give each page a navigation menu that reaches the other two. Add a named Home button or hero action that leads directly to Contact.</p></blockquote>
+              </div>
+              <figure class="cert-practice-image cert-practice-exam-shot">
+                <a href="/99host-assets/handbook/screen-exam-responsive-site.webp" aria-label="Open the full-size candidate portal screenshot for “Create the three pages”"><img src="/99host-assets/handbook/screen-exam-responsive-site.webp" width="1702" height="242" alt="Candidate portal showing the task “Create the three pages”." loading="lazy" decoding="async"></a>
+                <figcaption>Candidate portal</figcaption>
+              </figure>
+            </header>
+            <div class="cert-practice-work">
+              <div>
+                <h3>How I solve it</h3>
+                <ol class="cert-practice-steps">
+                  <li><strong>Set the page names and routes</strong><p>I keep the existing Home page as the index and create Services with slug <code>services</code> and Contact with slug <code>contact</code> in <strong>Design → Pages</strong>.</p></li>
+                  <li><strong>Give every page a distinct heading</strong><p>I use “Rooms with a point of view.” on Home, “Services” on Services, and “Contact” on Contact. I check each H1 on the canvas.</p></li>
+                  <li><strong>Build the navigation and Home action</strong><p>I add a Navigation block to all three pages. With automatic page links enabled, I confirm each menu reaches both other pages. I set the Home hero action to “Start an enquiry” and choose Contact as its destination.</p></li>
+                  <li><strong>Check the links in Preview</strong><p>Starting from Home, I open Contact with the new button. I return via Services and Home using the navigation, then repeat using Phone Preview.</p></li>
+                </ol>
+              </div>
+              <aside aria-label="Expected results">
+                <h3>How I check it</h3>
+                <dl class="cert-practice-checks">
+                  <div><dt>Home action</dt><dd>“Start an enquiry” opens Contact directly, with the Contact heading visible.</dd></div>
+                  <div><dt>All three menus</dt><dd>Home reaches Services and Contact. Services reaches Home and Contact. Contact reaches Home and Services.</dd></div>
+                  <div><dt>Desktop and Phone</dt><dd>The same navigation works on both sizes. At each stop I can identify the new page from its heading.</dd></div>
+                </dl>
+                <a class="cert-text-action" href="/docs#pages">Pages and navigation in the handbook</a>
+              </aside>
+            </div>
+            <div class="cert-practice-shots" aria-label="Studio screenshots for this task">
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-exam-builder-studio.webp"><img src="/99host-assets/handbook/screen-exam-builder-studio.webp" width="1440" height="880" alt="The Orchard Studio project in PLOT Studio with Home, Services and Contact in the Pages panel and Start an enquiry in the Home hero." loading="lazy" decoding="async"></a><figcaption>The worked project has three pages. The Home hero action opens Contact.</figcaption></figure>
+              <figure class="cert-practice-image"><a href="/99host-assets/handbook/screen-pages-list.webp"><img src="/99host-assets/handbook/screen-pages-list.webp" width="212" height="490" alt="The PRÓG Pages library lists Home, Projects, Studio and Contact with their paths." loading="lazy" decoding="async"></a><figcaption>Check the active page and exported paths in Pages.</figcaption></figure>
+              <figure class="cert-practice-image"><a href="/99host-assets/handbook/screen-add-page-template.webp"><img src="/99host-assets/handbook/screen-add-page-template.webp" width="402" height="321" alt="The Add a page dialog shows its name, slug and template fields." loading="lazy" decoding="async"></a><figcaption>Set a unique URL slug while creating the page.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-preview-phone.webp"><img src="/99host-assets/handbook/screen-preview-phone.webp" width="1282" height="832" alt="PRÓG in the narrow interactive Preview frame." loading="lazy" decoding="async"></a><figcaption>Use the site’s own navigation in interactive Phone Preview.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="cert-practice-task" id="form-outcomes" aria-labelledby="form-outcomes-title">
+            <header class="cert-practice-task-head">
+              <h2 id="form-outcomes-title">Wire the live result.</h2>
+              <div class="cert-practice-prompt">
+                <p>Task instructions</p>
+                <blockquote><p>Connect the Contact form’s Form submission event to a Set text node. Target a visible text element in Contact and enter a meaningful, literal confirmation message. Prevent the native form submission so the page can display the result. Use Blueprint nodes for the behaviour.</p></blockquote>
+              </div>
+              <figure class="cert-practice-image cert-practice-exam-shot">
+                <a href="/99host-assets/handbook/screen-exam-form-outcomes.webp" aria-label="Open the full-size candidate portal screenshot for “Wire the live result”"><img src="/99host-assets/handbook/screen-exam-form-outcomes.webp" width="1702" height="242" alt="Candidate portal showing the task “Wire the live result”." loading="lazy" decoding="async"></a>
+                <figcaption>Candidate portal</figcaption>
+              </figure>
+            </header>
+            <div class="cert-practice-work">
+              <div>
+                <h3>How I solve it</h3>
+                <ol class="cert-practice-steps">
+                  <li><strong>Make the confirmation visible</strong><p>I add a paragraph immediately below the Contact form. I label it “Contact status” in the editor so that I can pick the right target, and give it the starting text “Use the form above to send your enquiry.”</p></li>
+                  <li><strong>Select the correct trigger</strong><p>In <strong>Logic</strong> I add <strong>Form submission</strong> and choose the form on Contact as the target. I enable the option to prevent the native submission. That keeps Contact open after the event.</p></li>
+                  <li><strong>Set the exact message in the graph</strong><p>I connect the trigger’s execution output to <strong>Set text</strong>, select Contact status and type “Thank you. Your enquiry was received.” as the action’s literal text. I leave the value input unwired so all valid submissions get the same message.</p></li>
+                  <li><strong>Run both cases in Preview</strong><p>I submit once with Message empty, then provide Riley Sample, <code>riley@example.com</code> and “Please send your opening hours.” I check both behaviours in Desktop and Phone Preview.</p></li>
+                </ol>
+              </div>
+              <aside aria-label="Expected results">
+                <h3>How I check it</h3>
+                <dl class="cert-practice-checks">
+                  <div><dt>Required Message left blank</dt><dd>The browser highlights Message and the original text stays in place.</dd></div>
+                  <div><dt>Valid submit</dt><dd>The paragraph reads “Thank you. Your enquiry was received.” and the Contact page stays open.</dd></div>
+                  <div><dt>Fresh Preview at Phone width</dt><dd>The original paragraph appears when I open the page. Submitting again updates that same visible paragraph.</dd></div>
+                </dl>
+                <a class="cert-text-action" href="/docs#blueprint">The Blueprint workspace in the handbook</a>
+              </aside>
+            </div>
+            <div class="cert-practice-shots" aria-label="Studio screenshots for this task">
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-exam-builder-form-studio.webp"><img src="/99host-assets/handbook/screen-exam-builder-form-studio.webp" width="1440" height="880" alt="Studio Blueprint editor showing a form submission wired to the visible confirmation." loading="lazy" decoding="async"></a><figcaption>The Contact form triggers Set text on the same page.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-blueprint-board.webp"><img src="/99host-assets/handbook/screen-blueprint-board.webp" width="1440" height="880" alt="An event, Set text action, Details panel and minimap in the Logic workspace." loading="lazy" decoding="async"></a><figcaption>A demo graph shows where the event and Set text action sit on the Blueprint board.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-value-wire-on-canvas.webp"><img src="/99host-assets/handbook/screen-value-wire-on-canvas.webp" width="1440" height="880" alt="Blueprint displays typed form wires and highlights compatible execution inputs." loading="lazy" decoding="async"></a><figcaption>The form demo illustrates typed ports. This exam task uses the execution connection and literal output text.</figcaption></figure>
+              <figure class="cert-practice-image cert-practice-image-wide"><a href="/99host-assets/handbook/screen-preview-form-success.webp"><img src="/99host-assets/handbook/screen-preview-form-success.webp" width="1282" height="832" alt="The filled Fieldwork form in Preview shows a successful submission." loading="lazy" decoding="async"></a><figcaption>A separate Studio demo shows visible feedback under a submitted form.</figcaption></figure>
+            </div>
+          </article>
+
+          <p class="cert-practice-closing"><a class="cert-text-action" href="/certification/builder#prepare">Return to the exam study plan</a></p>
+        </div>
+      </div>
+    </main>
+    <footer class="plot-site-footer">
+      <div class="plot-site-bar">
+        <a class="plot-site-brand" href="/" aria-label="PLOT Studio home"><img src="/99host-assets/plot-mark.webp" width="27" height="27" alt="">PLOT.</a>
+        <nav class="plot-site-nav" aria-label="Footer navigation">
+          <a href="/docs">Docs</a><a href="/certification">Certification</a><a href="/license">Licence</a><a href="/terms">Terms of service</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
